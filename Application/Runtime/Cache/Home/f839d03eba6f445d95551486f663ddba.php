@@ -1,0 +1,251 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>时光之旅</title>
+    <style>
+        .ds-meta {
+            display: none;
+        }
+    </style>
+<link href="/timetravel/Public/css/common.css" rel="stylesheet" type="text/css" />
+<link href="/timetravel/Public/css/travel_content.css" rel="stylesheet" type="text/css" />
+<script src="/timetravel/Public/js/jquery-1.8.2.min.js"></script>
+<script>
+window.onload = function(){
+	var oD = document.getElementById('order');
+	oD.style.width=document.body.clientWidth+'px';
+    oD.style.height=document.body.clientHeight+'px';
+    oD.style.filter = 'alpha(opacity=50)';
+    oD.style.opacity = 0.5;
+    oD.style.background = '#000';
+    var oDe  = document.getElementById('login_box');
+    var oY = document.getElementById('login');
+    var oN = document.getElementById('cancel');
+     var te = (document.documentElement.clientWidth-772)/2 +'px';
+    oDe.style.left = te;
+    oY.onclick =function(){
+         oD.style.display = 'block';
+          oDe.style.display = 'block';
+    }
+    oN.onclick = function(){
+    	oD.style.display = 'none';
+        oDe.style.display = 'none';
+    }
+}
+function getByClass(oparent,sClass){
+		var aResult=[];
+		var aEle = oparent.getElementsByTagName('*');
+		for(var i=0;i<aEle.length;i++){
+			if(aEle[i].className==sClass){
+				aResult.push(aEle[i]);
+			}
+		}
+		return aResult;
+}
+window.onscroll = function(){
+	 var oFix = document.getElementById("fixed");
+	 var oTop = getByClass(oFix,'f_t')[0];
+	 oTop.onclick = function(){	
+	 	startMove(oFix.srcollTop,{top:0});
+	 }
+	if (document.documentElement.scrollTop + document.body.scrollTop > 360) { 
+	    oFix.style.display = "block"; 
+	} 
+	else { 
+	     oFix.style.display = "none"; 
+	} 
+}
+</script>
+<script>
+$(function(){
+        showScroll();
+        function showScroll(){
+            $(window).scroll( function() { 
+                var scrollValue=$(window).scrollTop();
+                scrollValue > 100 ? $('a[class=f_t]').fadeIn():$('a[class=f_t]').fadeOut();
+            } );    
+            $('.f_t').click(function(){
+                $("html,body").animate({scrollTop:0},200);  
+            }); 
+        }
+ });
+</script>
+</head>
+<!--its in nav-->
+<body id="main">
+<div id="top">
+    <p>
+        <a href="#"><img src="/timetravel/Public/image/weibo.png"/></a>
+        <a href="#"><img src="/timetravel/Public/image/qq.png"/></a>
+        <a href="#" id="login">登陆</a>
+        <a href="<?php echo U('Home/Index/register');?>" id="register">注册</a>
+    </p>
+</div>
+<div id="nav">
+    <div id="nav_main">
+        <a href="<?php echo U('Home/Index/index');?>"><img src="/timetravel/Public/image/logo.png"/></a>
+        <ul>
+            <li><a href="<?php echo U('Home/Index/index');?>">首页</a></li>
+            <li><a href="<?php echo U('Home/Time/index');?>">时光之旅</a></li>
+            <li><a href="<?php echo U('Home/Explore/index');?>">极致探险</a></li>
+            <li><a href="<?php echo U('Home/Young/index');?>">Young探险</a></li>
+            <li><a href="<?php echo U('Home/Memory/index');?>">时光印记</a></li>
+            <li><a href="">时光小铺</a></li>
+        </ul>
+        <div class="search">
+            <form action="#" method="post">
+                <input type="text" class="soso" value="搜索路线/目的" onclick="this.value = ''">
+                <input type="submit" class="sub_go" value="">
+            </form>
+        </div>
+    </div>
+</div>
+<!--nav ends-->
+	<div id="c_content">
+		<div class="c_left">
+			<div class="c_leftmain">
+				<img src="<?php echo ($memory["pic_url"]); ?>" />
+				<div class="share">
+					<img src="/timetravel/Public/image/d_look.png" />
+					<span class="s_title"><?php echo ($memory["title"]); ?></span>
+					<span>作者：<?php echo (getusernamebyuserid($memory["user_id"])); ?>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <?php echo (date("Y.m.d",$memory["create_time"])); ?>
+                        <a class="c_f" href="#"><?php echo ($memory["click"]); ?></a>
+                        <a class="c_s" href="<?php echo U('Memory/good',array('id'=>$memory['id']));?>"><?php echo ($memory["good"]); ?></a>
+                        <!--<a class="c_t" href="#">113</a></span>-->
+					<!--<span class="sh">分享：</span>-->
+				</div>
+				<?php echo (htmlspecialchars_decode($memory["content"])); ?>
+			</div>
+			<p class="page"><a class="p_prev" href="#">上一篇:农夫山泉</a><a class="p_next" href="#">下一篇：农夫山泉</a></p>
+
+            <!-- 多说评论框 start -->
+
+            <div class="ds-thread"
+                 data-thread-key="memory<?php echo ($memory["id"]); ?>"
+                 data-title="<?php echo ($memory["title"]); ?>"
+                 data-url="<?php echo U('Memory/detail',array('id'=>$memory['id']));?>"></div>
+
+            <!-- 多说评论框 end -->
+
+            <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+
+            <script type="text/javascript">
+                var duoshuoQuery = {short_name:"timetravel"};
+                (function() {
+                    var ds = document.createElement('script');
+                    ds.type = 'text/javascript';ds.async = true;
+                    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+                    ds.charset = 'UTF-8';
+                    (document.getElementsByTagName('head')[0]
+                    || document.getElementsByTagName('body')[0]).appendChild(ds);
+                })();
+            </script>
+
+            <!-- 多说公共JS代码 end -->
+        </div>
+		<div class="c_right">
+			<a herf="#">
+				<div class="talk">
+					<span>在线支付</span>
+					<span>123456789</span>
+				</div>
+				<div class="er_code">
+					<p>
+						<img src="/timetravel/Public/image/er_code.png" />
+					</p>
+					<span>关注微信二维码</span>
+				</div>
+				<div class="er_code">
+					<p>
+						<img src="/timetravel/Public/image/er_code.png" />
+					</p>
+					<span>关注微博二维码</span>
+				</div>
+			</a>
+		</div>
+	</div>
+	<div id="footer">
+		<div id="f_content">
+			<div id="f_left">
+			<img  class="f_logo" src="/timetravel/Public/image/logo.png" />
+			<span>备案J1541558436[京] </span>
+			</div>
+			<div id="f_center">
+				<p>
+					<a href="#">关于我们</a>    
+					<a href="#">联系我们</a>     
+					<a href="#">隐私条款</a>     
+					<a href="#">加入我们</a>
+				</p>
+				<p class="f_pic">
+					<a href="#">关于我们:</a>    
+					<a href="#"><img src="/timetravel/Public/image/f_web.png" /></a>
+					<a href="#"><img src="/timetravel/Public/image/f_qq.png" /></a>
+				</p>
+			</div>
+			<div id="f_right">
+				<img src="/timetravel/Public/image/erw.png" />
+				<span>扫一扫关注时光旅行</span>
+			</div>
+		</div>
+		<div id="f_bottom">
+			<span>友情链接</span>
+			<p>
+				<a href="#">关于我们</a>    
+				<a href="#">联系我们</a>     
+				<a href="#">隐私条款</a>     
+				<a href="#">加入我们</a>
+				<a href="#">关于我们</a>    
+				<a href="#">联系我们</a>     
+				<a href="#">隐私条款</a>     
+				<a href="#">加入我们</a>
+				<a href="#">加入我们</a>
+				<a href="#">关于我们</a>    
+			</p>
+			<p>
+				<a href="#">关于我们</a>    
+				<a href="#">联系我们</a>     
+				<a href="#">隐私条款</a>     
+				<a href="#">加入我们</a>
+				<a href="#">关于我们</a>    
+				<a href="#">联系我们</a>     
+				<a href="#">隐私条款</a>     
+				<a href="#">加入我们</a>
+				<a href="#">加入我们</a>
+				<a href="#">关于我们</a>    
+			</p>
+		</div>
+	</div>
+	<div id="fixed">
+		<ul>
+			<li><a class="f_f" href="#">在线咨询</a></li>
+			<li><a class="f_s" href="#">123456789</a></li>
+			<li><a class="f_t" href="javascript:void(0);">回到顶部</a></li>
+		</ul>
+	</div>
+	<div id="order">
+	</div>
+	<div id="login_box" style="background:#fff;z-indent:12px;opacity:1;">
+    <h4>登陆<img id="cancel" src="/timetravel/Public/image/close.png" /></h4>
+    <div class="l_left">
+        <p>使用社交网络登陆</p>
+        <span><a href="#"><img src="/timetravel/Public/image/l_web.png" /></a>新浪微博</span>
+        <span class="qq"><a href="#"><img src="/timetravel/Public/image/l_qq.png" /></a><br />腾讯QQ</span>
+    </div>
+    <div class="l_right">
+        <p><a class="l_first" href="#">使用本网账号登陆</a><a class="l_last" href="#">注册</a></p>
+        <form action="<?php echo U('Index/login');?>" method="post">
+            <input type="text" name="username">
+            <input type="password" name="password">
+            <p class="tell">
+                <span><input name="remember" type="checkbox" class="radio"/>记住我</span><a href="#">忘记密码?</a>
+            </p>
+            <input type="submit" class="l_sub" value="登陆">
+        </form>
+    </div>
+</div>
+</body>
+</html>

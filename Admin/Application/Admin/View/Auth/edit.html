@@ -1,0 +1,81 @@
+<extend name="Public/base" />
+<block name="head">
+
+</block>
+<block name="body">
+<ul class="breadcrumb">
+	<li><a href="javascript:history.back(-1)">返回上一页</a> <span
+		class="divider">/</span></li>
+	<li class="active">{$meta_title}</li>
+</ul>
+<div class="row-fluid">
+	<form class="form-horizontal" action="{:U('edit')}">
+		<input type="hidden" name="id" value="{$info.id|default=''}">
+		<div class="control-group">
+			<label class="control-label" for="title">规则标题</label>
+			<div class="controls">
+				<input type="text" id="title" name="title" class="span8"
+					placeholder="规则标题" value="{$info.title}">
+			</div>
+		</div>
+
+		<div class="control-group">
+			<label class="control-label" for="pid">上级规则</label>
+			<div class="controls">
+				<select id="pid" name="pid" class="span8">
+				<option value="0">顶级栏目</option>
+					<volist name="auth" id="vo">
+					<option value="{$vo.id}">{$vo.title_show}</option>
+					</volist>
+				</select>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="url">URL</label>
+			<div class="controls">
+				<input type="text" name="url" id="url" class="span8"
+					value="{$info.url}" placeholder="URL">
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="hide">是否隐藏</label>
+			<div class="controls">
+				<select id="hide" name="hide" class="span8">
+					<option value="1">隐藏</option>
+					<option value="0">显示</option>
+				</select>
+			</div>
+		</div>
+
+
+		<div class="control-group">
+			<label class="control-label" for="sort">排序</label>
+			<div class="controls">
+				<input type="text" name="sort" id="sort" class="span8"
+					value="{$info.sort}" placeholder="排序">
+			</div>
+		</div>
+				<div class="control-group">
+			<label class="control-label" for="tip">提示</label>
+			<div class="controls">
+				<input type="text" name="tip" id="tip" class="span8"
+					value="{$info.tip}" placeholder="提示">
+			</div>
+		</div>
+		<div class="control-group">
+			<div class="controls">
+				<button type="submit" class="btn ajax-post"
+					target-form="form-horizontal">保存</button>
+				<button type="button" class="btn"
+					onclick="javascript:history.back(-1)">取消</button>
+			</div>
+		</div>
+	</form>
+</div>
+</block>
+<block name="script">
+ <script type="text/javascript">
+setValue("pid", {$info.pid|default = 0});
+ setValue("hide", {$info.hide|default = 0});
+
+  </script> </block>

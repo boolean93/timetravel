@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>时光旅行</title>
+<link href="__PUBLIC__/css/common.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/css/index.css" rel="stylesheet" type="text/css" />
+<script src="__PUBLIC__/js/move.js" text="javascript/text"></script>
+<script src="__PUBLIC__/js/index.js" text="javascript/text"></script>
+<script src="__PUBLIC__/js/jquery-1.8.2.min.js"></script>
+<script>
+$(function(){
+        showScroll();
+        function showScroll(){
+            $(window).scroll( function() { 
+                var scrollValue=$(window).scrollTop();
+                scrollValue > 100 ? $('a[class=f_t]').fadeIn():$('a[class=f_t]').fadeOut();
+            } );    
+            $('.f_t').click(function(){
+                $("html,body").animate({scrollTop:0},200);  
+            }); 
+        }
+    });
+</script>
+<script>
+window.onload = function(){
+	show();
+}
+</script>
+
+</head>
+<include file="Public/nav" />
+	<div id="slider">
+		<img id="prev" src="__PUBLIC__/image/prev.png"/>
+		<img id="next" src="__PUBLIC__/image/next.png"/>
+		<ul>
+            <volist id="vo" name="slider">
+                <li><a href="#"><img src="{$vo.img_url}"></a></li>
+            </volist>
+		</ul>
+		<div id="forms">
+			<form action="#" method="post">
+				<h4>私人定制</h4>
+				<p><span>目的地</span><input type="text" name="place">
+				</p>
+				<p><span>特色主题</span>
+					<select  name="place">
+						<option value>所有主题</option>
+						<option>轻松休闲</option>
+						<option>人文体验</option>
+					</select>
+				</p>
+				<p><span>时长</span>
+					<select  name="place">
+						<option value>所有时长</option>
+						<option>1天</option>
+						<option>2-4天</option>
+					</select>
+				</p>
+				<p><span>价格</span>
+					<select  name="place">
+						<option value>所有价格</option>
+						<option><99元</option>
+						<option>100-200元</option>
+					</select>
+				</p>
+				<p><span>关键词</span><input type="text" name="place">
+				</p>
+				<input class="submit" type="submit" value="立即提交">
+			</form>
+		</div>
+	</div>
+
+	<div id="travel">
+		<span><a href="#">时光之旅</a></span>
+		<img class="f_prev" src="__PUBLIC__/image/tprev.png"/>
+		<img class="f_next" src="__PUBLIC__/image/f_prev.png"/>
+		<div id="looks">
+			<div id="pic_look">
+                <volist id="vo" name="time">
+                    <div class="look">
+                        <ul>
+                            <volist id="v" name="vo">
+                                <li>
+                                    <img src="{$v.pic_url}"/>
+                                    <a href="{:U('Route/detail', array('id'=>$v['id']))}" class="test">
+                                        <h4>{$v.title}</h4>
+                                        <p>{$v.travel_line}</p>
+                                        <h4>￥{$v['id']|getLowestPriceByRouteId}/1人</h4>
+                                        <p class="detal">查看详情</p>
+                                    </a>
+                                </li>
+                            </volist>
+                        </ul>
+                    </div>
+                </volist>
+			</div>
+		</div>
+	</div>
+
+	<div id="explore">
+		<span><a href="{:U('Explore/index')}">极致探险</a></span>
+		<div id="sliders">
+			<img class="s_prev" src="__PUBLIC__/image/s_prev.png" />
+			<img class="s_next" src="__PUBLIC__/image/s_next.png" />
+			<div class="pic_side">
+				<span>极致探险</span>
+				<p>生命是一段美好的旅程，我们在生活中紧紧相拥，我们用认真的态度的对待每一天，经费噶接法界个二哥，生活美好，认真对待。</p>
+				<p>美好的生活要来啦，快来参与吧，你好我好大家好，世界因你而美好，极致探险，真棒。</p>
+			</div>
+			<ul>
+                <volist id="vo" name="extreme">
+				    <li>
+                        <a href="{:U('Route/detail', array('id'=>$vo['id']))}">
+                            <img src="{$vo.pic_url}"/>
+                        </a>
+                    </li>
+                </volist>
+			</ul>
+		</div>
+	</div>
+
+	<div id="train">
+		<span><a href="#">Young 训练营</a></span>
+		<div class="left_train">
+            {$youngIntro.other}
+			<a href="{:U('Young/index')}" class="more">了解更多详情</a>
+		</div>
+		<div class="right_train">
+			<img class="t_prev" src="__PUBLIC__/image/s_prev.png" />
+			<img class="t_next" src="__PUBLIC__/image/s_next.png" />
+            <volist id="vo" name="youngImg" key="k">
+                <switch name="k">
+                    <case value="1"><img class="big_pic"</case>
+                    <case value="2"><img class="small_pic" style="filter:alpha(opacity:100);opacity:1;"</case>
+                    <case value="$youngCount"><img class="small_pic" id="lasts" </case>
+                    <default /><img class="small_pic"
+                </switch> src="{$vo.pic_url}" />
+            </volist>
+		</div>
+	</div>
+	<div id="memory">
+		<span class="m_title"><a href="#">时光印记</a></span>
+		<ul>
+            <volist id="vo" name="memory">
+                <li>
+                    <a class="m_content" href="{:U('Memory/detail', array('id'=>$vo['id']))}">
+                        <p class="content">{$vo.content|htmlspecialchars_decode|strip_tags|mb_substr=###,0,45,"UTF-8"}</p>
+                    </a>
+                    <a href="{:U('Memory/detail', array('id'=>$vo['id']))}"><h4 class="from">{$vo.title}</h4></a>
+                    <p class="author"><span class="write">作者:{$vo.user_id|getUsernameByUserId}</span><span class="dates">
+                        {$vo.create_time|date="Y-m-d",###}</span>
+                        <b class="b_first">{$vo.click}</b><b class="b_last">{$vo.good}</b>
+                    </p>
+                </li>
+            </volist>
+		</ul>
+	</div>
+	<div id="store">
+		<span><a href="#">时光小铺</a></span>
+		<a href="#"><img src="__PUBLIC__/image/store.gif" /></a>
+	</div>
+	<div id="footer">
+		<div id="f_content">
+			<div id="f_left">
+			<img  class="f_logo" src="__PUBLIC__/image/logo.png" />
+			<span>备案J1541558436[京] </span>
+			</div>
+			<div id="f_center">
+				<p>
+					<a href="#">关于我们</a>
+					<a href="#">联系我们</a>
+					<a href="#">隐私条款</a>
+					<a href="#">加入我们</a>
+				</p>
+				<p class="f_pic">
+					<a href="#">关于我们:</a>
+					<a href="#"><img src="__PUBLIC__/image/f_web.png" /></a>
+					<a href="#"><img src="__PUBLIC__/image/f_qq.png" /></a>
+				</p>
+			</div>
+			<div id="f_right">
+				<img src="__PUBLIC__/image/erw.png" />
+				<span>扫一扫关注时光旅行</span>
+			</div>
+		</div>
+		<div id="f_bottom">
+			<span>友情链接</span>
+			<p>
+				<a href="#">关于我们</a>
+				<a href="#">联系我们</a>
+				<a href="#">隐私条款</a>
+				<a href="#">加入我们</a>
+				<a href="#">关于我们</a>
+				<a href="#">联系我们</a>
+				<a href="#">隐私条款</a>
+				<a href="#">加入我们</a>
+				<a href="#">加入我们</a>
+				<a href="#">关于我们</a>
+			</p>
+			<p>
+				<a href="#">关于我们</a>
+				<a href="#">联系我们</a>
+				<a href="#">隐私条款</a>
+				<a href="#">加入我们</a>
+				<a href="#">关于我们</a>
+				<a href="#">联系我们</a>
+				<a href="#">隐私条款</a>
+				<a href="#">加入我们</a>
+				<a href="#">加入我们</a>
+				<a href="#">关于我们</a>
+			</p>
+		</div>
+	</div>
+	<div id="fixed">
+		<ul>
+			<li><a class="f_f" href="#">在线咨询</a></li>
+			<li><a class="f_s" href="#">123456789</a></li>
+			<li><a class="f_t" href="javascript:void(0);">回到顶部</a></li>
+		</ul>
+	</div>
+	<div id="order">
+	</div>
+	<include file="Public/login"/>
+<php>
+</php>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<extend name="Public/base" />
+<block name="head">
+<link href="__BOOTSTRAP__/css/bootstrap-datetimepicker.min.css"
+	rel="stylesheet" type="text/css">
+<link href="__KINDEDITOR__/themes/default/default.css" rel="stylesheet"
+	type="text/css">
+</block>
+<block name="body">
+<ul class="breadcrumb">
+	<li><a href="javascript:history.back(-1)">返回上一页</a> <span
+		class="divider">/</span></li>
+	<li class="active">{$meta_title}</li>
+</ul>
+<div class="row-fluid">
+	<form class="form-horizontal" action="{:U('saveConfig')}">
+		<input type="hidden" name="id" value="{:I('id')}">
+		<empty name="custom_config">
+			<foreach name="data['config']" item="form" key="o_key">
+				<div class="control-group"">
+					<label class="control-label">
+						{$form.title|default=''}
+						
+					</label>
+						<switch name="form.type">
+							<case value="text">
+							<div class="controls">
+								<input type="text" name="config[{$o_key}]" class="span8" value="{$form.value}">
+							</div>
+							</case>
+							<case value="password">
+							<div class="controls">
+								<input type="password" name="config[{$o_key}]" class="span8" value="{$form.value}">
+							</div>
+							</case>
+							<case value="hidden">
+								<input type="hidden" name="config[{$o_key}]" value="{$form.value}">
+							</case>
+							<case value="radio">
+							<div class="controls">
+								<foreach name="form.options" item="opt" key="opt_k">
+									<label class="radio">
+										<input type="radio" name="config[{$o_key}]" value="{$opt_k}" <eq name="form.value" value="$opt_k"> checked</eq>>{$opt}
+									</label>
+								</foreach>
+							</div>
+							</case>
+							<case value="checkbox">
+							<div class="controls">
+								<foreach name="form.options" item="opt" key="opt_k">
+									<label class="checkbox">
+										<php>
+											is_null($form["value"]) && $form["value"] = array();
+										</php>
+										<input type="checkbox" name="config[{$o_key}][]" value="{$opt_k}" <in name="opt_k" value="$form.value"> checked</in>>{$opt}
+									</label>
+								</foreach>
+							</div>
+							</case>
+							<case value="select">
+							<div class="controls">
+								<select name="config[{$o_key}]" class="span8">
+									<foreach name="form.options" item="opt" key="opt_k">
+										<option value="{$opt_k}" <eq name="form.value" value="$opt_k"> selected</eq>>{$opt}</option>
+									</foreach>
+								</select>
+							</div>
+							</case>
+							<case value="textarea">
+							<div class="controls">
+								<label class="span8">
+									<textarea name="config[{$o_key}]">{$form.value}</textarea>
+								</label>
+							</div>
+							</case>
+							<case value="picture_union">
+								<div class="controls">
+								<input type="file" class="span8" id="upload_picture_{$o_key}">
+								<input type="hidden" name="config[{$o_key}]" id="cover_id_{$o_key}" value="{$form.value}"/>
+								<div class="upload-img-box">
+									<notempty name="form['value']">
+									<php> $mulimages = explode(",", $form["value"]); </php>
+									<foreach name="mulimages" item="one">
+										<div class="upload-pre-item" val="{$one}">
+											<img class="span8" src="{$one|get_cover='path'}"  ondblclick="removePicture{$o_key}(this)"/>
+										</div>
+									</foreach>
+									</notempty>
+								</div>
+								</div>
+								<script type="text/javascript">
+									//上传图片
+									/* 初始化上传插件 */
+									$("#upload_picture_{$o_key}").uploadify({
+										"height"          : 30,
+										"swf"             : "__STATIC__/uploadify/uploadify.swf",
+										"fileObjName"     : "download",
+										"buttonText"      : "上传图片",
+										"uploader"        : "{:U('File/uploadPicture',array('session_id'=>session_id()))}",
+										"width"           : 120,
+										'removeTimeout'   : 1,
+										'fileTypeExts'    : '*.jpg; *.png; *.gif;',
+										"onUploadSuccess" : uploadPicture{$o_key},
+										'onFallback' : function() {
+								            alert('未检测到兼容版本的Flash.');
+								        }
+									});
+
+									function uploadPicture{$o_key}(file, data){
+										var data = $.parseJSON(data);
+										var src = '';
+										if(data.status){
+											src = data.url || '__ROOT__' + data.path
+											$("#cover_id_{$o_key}").parent().find('.upload-img-box').append(
+												'<div class="upload-pre-item" val="' + data.id + '"><img src="__ROOT__' + src + '" ondblclick="removePicture{$o_key}(this)"/></div>'
+											);
+											setPictureIds{$o_key}();
+										} else {
+											updateAlert(data.info);
+											setTimeout(function(){
+												$('#top-alert').find('button').click();
+												$(that).removeClass('disabled').prop('disabled',false);
+											},1500);
+										}
+									}
+									function removePicture{$o_key}(o){
+										var p = $(o).parent().parent();
+										$(o).parent().remove();
+										setPictureIds{$o_key}();
+									}
+									function setPictureIds{$o_key}(){
+										var ids = [];
+										$("#cover_id_{$o_key}").parent().find('.upload-img-box').find('.upload-pre-item').each(function(){
+											ids.push($(this).attr('val'));
+										});
+										if(ids.length > 0)
+											$("#cover_id_{$o_key}").val(ids.join(','));
+										else
+											$("#cover_id_{$o_key}").val('');
+									}
+								</script>
+							</case>
+							
+						</switch>
+
+					</div>
+			</foreach>
+		<else />
+			<present name="custom_config">
+				{$custom_config}
+			</present>
+		</empty>
+		<div class="control-group">
+			<div class="controls">
+				<button type="submit" class="btn ajax-post"
+					target-form="form-horizontal">保存</button>
+				<button type="button" class="btn"
+					onclick="javascript:history.back(-1)">取消</button>
+			</div>
+		</div>
+	</form>
+</div>
+</block>
+<block name="script"> <script type="text/javascript">
+
+setValue("status", {$info.status|default = 1}); 
+
+</script> </block>

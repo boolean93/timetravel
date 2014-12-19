@@ -1,0 +1,391 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8" content="text/html" http-equiv="content-type" />
+<link id="lhgdialoglink" rel="stylesheet" href="scripts/lhgdialog/skins/idialog.css">
+<title>后台管理中心</title>
+<link href="css/default/style.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="scripts/jquery/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="scripts/jquery/jquery.nicescroll.js"></script>
+<script type="text/javascript" src="js/layout.js"></script>
+<script type="text/javascript">
+//页面加载完成时
+$(function() {
+    //检测IE
+    if ('undefined' == typeof(document.body.style.maxHeight)) {
+        window.location.href = 'ie6update.html';
+
+    }
+    loadMenuTree(true);
+    //加载管理首页左边导航菜单
+
+});
+//页面尺寸改变时
+$(window).resize(function() {
+    navresize();
+
+});
+
+//加载管理首页左边导航菜单
+function loadMenuTree(_islink) {
+    //判断是否跳转链接
+    var islink = false;
+    if (arguments.length == 1 && _islink) {
+        islink = true;
+
+    }
+
+    //初始化导航菜单
+    initMenuTree(islink);
+    //设置左边导航滚动条
+    $("#sidebar-nav").niceScroll({
+        touchbehavior: false,
+        cursorcolor: "#7C7C7C",
+        cursoropacitymax: 0.6,
+        cursorwidth: 5
+    });
+    //设置主导航菜单显示和隐藏
+    navresize();
+
+}
+ //初始化导航菜单
+    function initMenuTree(islink) {
+        //先清空NAV菜单内容
+        $("#nav").html('');
+        $("#sidebar-nav .list-box .list-group").each(function (i) {
+            //添加菜单导航
+            var navHtml = $('<li><span>' + $(this).attr("name") + '</span></li>').appendTo($("#nav"));
+            //默认选中第一项
+            if (i == 0) {
+                $(this).show();
+                navHtml.addClass("selected");
+            }
+            //为菜单添加事件
+            navHtml.click(function () {
+                $("#nav li").removeClass("selected");
+                $(this).addClass("selected");
+                $("#sidebar-nav .list-box .list-group").hide();
+                $("#sidebar-nav .list-box .list-group").eq($("#nav li").index($(this))).show();
+            });
+            //为H2添加事件
+            $(this).children("h2").click(function () {
+                if ($(this).next("ul").css('display') != 'none') {
+                    return false;
+                }
+                $(this).siblings("ul").slideUp(300);
+                $(this).next("ul").slideDown(300);
+                //展开第一个菜单
+                if ($(this).next("ul").children("li").first().children("ul").length > 0) {
+                    //$(this).next("ul").children("li").first().children("a").children(".expandable").last().removeClass("close");
+                    //$(this).next("ul").children("li").first().children("a").children(".expandable").last().addClass("open");
+                    //$(this).next("ul").children("li").first().children("ul").first().show();
+                }
+            });
+
+            //首先隐藏所有的UL
+            $(this).find("ul").hide();
+            //绑定树菜单事件.开始
+            $(this).find("ul").each(function (j) { //遍历所有的UL
+                //遍历UL第一层LI
+                $(this).children("li").each(function () {
+                    liObj = $(this);
+                    //插入选中的三角
+                    var spanObj = liObj.children("a").children("span");
+                    $('<div class="arrow"></div>').insertBefore(spanObj); //插入到span前面
+                    //判断是否有子菜单和设置距左距离
+                    var parentExpandableLen = liObj.parent().parent().children("a").children(".expandable").length; //父节点的左距离
+                    if (liObj.children("ul").length > 0) { //如果有下级菜单
+                        //删除链接，防止跳转
+                        liObj.children("a").removeAttr("href");
+                        //更改样式
+                        liObj.children("a").addClass("pack");
+                        //设置左距离
+                        var lastExpandableObj;
+                        for (var n = 0; n <= parentExpandableLen; n++) { //注意<=
+                            lastExpandableObj = $('<div class="expandable"></div>').insertBefore(spanObj); //插入到span前面
+                        }
+                        //设置最后一个为闭合+号
+                        lastExpandableObj.addClass("close");
+                        //创建和设置文件夹图标
+                        $('<div class="folder close"></div>').insertBefore(spanObj); //插入到span前面
+                        //隐藏下级的UL
+                        liObj.children("ul").hide();
+                        //绑定单击事件
+                        liObj.children("a").click(function () {
+                            //搜索所有同级LI且有子菜单的左距离图标为+号及隐藏子菜单
+                            $(this).parent().siblings().each(function () {
+                                //alert($(this).html());
+                                if ($(this).children("ul").length > 0) {
+                                    //设置自身的左距离图标为+号
+                                    $(this).children("a").children(".expandable").last().removeClass("open");
+                                    $(this).children("a").children(".expandable").last().addClass("close");
+                                    //隐藏自身子菜单
+                                    $(this).children("ul").slideUp(300);
+                                }
+                            });
+
+                            //设置自身的左距离图标为-号
+                            $(this).children(".expandable").last().removeClass("close");
+                            $(this).children(".expandable").last().addClass("open");
+                            //显示自身父节点的UL子菜单
+                            $(this).parent().children("ul").slideDown(300);
+                        });
+                    } else {
+                        //设置左距离
+                        for (var n = 0; n < parentExpandableLen; n++) {
+                            $('<div class="expandable"></div>').insertBefore(spanObj); //插入到span前面
+                        }
+                        //创建和设置文件夹图标
+                        $('<div class="folder open"></div>').insertBefore(spanObj); //插入到span前面
+                        //绑定单击事件
+                        liObj.children("a").click(function () {
+                            //删除所有的选中样式
+                            $("#sidebar-nav .list-box .list-group ul li a").removeClass("selected");
+                            //自身添加样式
+                            $(this).addClass("selected");
+                            //保存到cookie
+                            addCookie("dt_manage_navigation_cookie", $(this).attr("navid"), 240);
+                        });
+                    }
+                });
+                //显示第一个UL
+                if (j == 0) {
+                    $(this).show();
+                    //展开第一个菜单
+                    if ($(this).children("li").first().children("ul").length > 0) {
+                        $(this).children("li").first().children("a").children(".expandable").last().removeClass("close");
+                        $(this).children("li").first().children("a").children(".expandable").last().addClass("open");
+                        $(this).children("li").first().children("ul").show();
+                    }
+                }
+            });
+            //绑定树菜单事件.结束
+        });
+        //定位或跳转到相应的菜单
+       // linkMenuTree(islink);
+    }
+    
+
+
+
+//导航菜单显示和隐藏
+function navresize() {
+    var docWidth = $(document).width();
+    if (docWidth < 1004) {
+        $(".nav li span").hide();
+
+    } else {
+        $(".nav li span").show();
+
+    }
+
+}
+
+</script>
+</head>
+
+<body class="indexbody">
+<div class="" style="left: 0px; top: 0px; visibility: hidden; position: absolute;">
+  <table class="ui_border">
+    <tbody>
+      <tr>
+        <td class="ui_lt"></td>
+        <td class="ui_t"></td>
+        <td class="ui_rt"></td>
+      </tr>
+      <tr>
+        <td class="ui_l"></td>
+        <td class="ui_c"><div class="ui_inner">
+            <table class="ui_dialog">
+              <tbody>
+                <tr>
+                  <td colspan="2"><div class="ui_title_bar">
+                      <div style="cursor: move;" class="ui_title" unselectable="on"></div>
+                      <div class="ui_title_buttons"><a style="display: inline-block;" class="ui_min" href="javascript:void(0);" title="最小化"><b class="ui_min_b"></b></a><a style="display: inline-block;" class="ui_max" href="javascript:void(0);" title="最大化"><b class="ui_max_b"></b></a><a class="ui_res" href="javascript:void(0);" title="还原"><b class="ui_res_b"></b><b class="ui_res_t"></b></a><a style="display: inline-block;" class="ui_close" href="javascript:void(0);" title="关闭(esc键)">×</a></div>
+                    </div></td>
+                </tr>
+                <tr>
+                  <td style="display: none;" class="ui_icon"></td>
+                  <td style="width: auto; height: auto;" class="ui_main"><div style="padding: 10px;" class="ui_content"></div></td>
+                </tr>
+                <tr>
+                  <td colspan="2"><div style="display: none;" class="ui_buttons"></div></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></td>
+        <td class="ui_r"></td>
+      </tr>
+      <tr>
+        <td class="ui_lb"></td>
+        <td class="ui_b"></td>
+        <td style="cursor: se-resize;" class="ui_rb"></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<form name="form1" method="post" action="index.aspx" id="form1">
+  <div class="header">
+    <div class="header-box">
+      <h1 class="logo"></h1>
+      <ul id="nav" class="nav">
+        <li class="selected"><span>内容</span></li>
+        <li><span>会员</span></li>
+        <li><span>订单</span></li>
+        <li><span>界面</span></li>
+        <li><span>控制面板</span></li>
+      </ul>
+      <div class="nav-right">
+        <div class="icon-info"> <span> 您好，admin<br>
+          超级管理组 </span> </div>
+        <div class="icon-option"> <i></i>
+          <div class="drop-box">
+            <div class="arrow"></div>
+            <ul class="drop-item">
+              <li><a target="_blank" href="../">预览网站</a></li>
+              <li><a href="center.aspx" target="mainframe">管理中心</a></li>
+              <li><a onclick="linkMenuTree(false, '');" href="manager/manager_pwd.aspx" target="mainframe">修改密码</a></li>
+              <li><a id="lbtnExit" href="javascript:__doPostBack('lbtnExit','')">注销登录</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="main-sidebar">
+    <div tabindex="5000" style="overflow: hidden;" id="sidebar-nav" class="sidebar-nav">
+      <div class="list-box">
+        <div class="list-group" name="内容">
+          <h2>默认站点<i></i></h2>
+          <ul>
+            <li> <a navid="channel_news" class="item"> <span>新闻资讯</span> </a>
+              <ul>
+                <li> <a navid="channel_news_list" href="article/article_list.aspx?channel_id=1" target="mainframe" class="item"> <span>内容管理</span> </a> </li>
+                <li> <a navid="channel_news_category" href="article/category_list.aspx?channel_id=1" target="mainframe" class="item"> <span>栏目类别</span> </a> </li>
+                <li> <a navid="channel_news_comment" href="article/comment_list.aspx?channel_id=1" target="mainframe" class="item"> <span>评论管理</span> </a> </li>
+              </ul>
+            </li>
+            <li> <a navid="channel_goods" class="item"> <span>购物商城</span> </a>
+              <ul>
+                <li> <a navid="channel_goods_list" href="article/article_list.aspx?channel_id=2" target="mainframe" class="item"> <span>内容管理</span> </a> </li>
+                <li> <a navid="channel_goods_category" href="article/category_list.aspx?channel_id=2" target="mainframe" class="item"> <span>栏目类别</span> </a> </li>
+                <li> <a navid="channel_goods_comment" href="article/comment_list.aspx?channel_id=2" target="mainframe" class="item"> <span>评论管理</span> </a> </li>
+              </ul>
+            </li>
+            <li> <a navid="channel_down" class="item"> <span>资源下载</span> </a>
+              <ul>
+                <li> <a navid="channel_down_list" href="article/article_list.aspx?channel_id=4" target="mainframe" class="item"> <span>内容管理</span> </a> </li>
+                <li> <a navid="channel_down_category" href="article/category_list.aspx?channel_id=4" target="mainframe" class="item"> <span>栏目类别</span> </a> </li>
+                <li> <a navid="channel_down_comment" href="article/comment_list.aspx?channel_id=4" target="mainframe" class="item"> <span>评论管理</span> </a> </li>
+              </ul>
+            </li>
+            <li> <a navid="channel_photo" class="item"> <span>图片分享</span> </a>
+              <ul>
+                <li> <a navid="channel_photo_list" href="article/article_list.aspx?channel_id=3" target="mainframe" class="item"> <span>内容管理</span> </a> </li>
+                <li> <a navid="channel_photo_category" href="article/category_list.aspx?channel_id=3" target="mainframe" class="item"> <span>栏目类别</span> </a> </li>
+                <li> <a navid="channel_photo_comment" href="article/comment_list.aspx?channel_id=3" target="mainframe" class="item"> <span>评论管理</span> </a> </li>
+              </ul>
+            </li>
+            <li> <a navid="channel_content" class="item"> <span>公司介绍</span> </a>
+              <ul>
+                <li> <a navid="channel_content_list" href="article/article_list.aspx?channel_id=5" target="mainframe" class="item"> <span>内容管理</span> </a> </li>
+                <li> <a navid="channel_content_category" href="article/category_list.aspx?channel_id=5" target="mainframe" class="item"> <span>栏目类别</span> </a> </li>
+                <li> <a navid="channel_content_comment" href="article/comment_list.aspx?channel_id=5" target="mainframe" class="item"> <span>评论管理</span> </a> </li>
+              </ul>
+            </li>
+          </ul>
+          <h2>插件管理<i></i></h2>
+          <ul>
+            <li> <a navid="plugin_link" href="/plugins/link/admin/index.aspx" target="mainframe" class="item"> <span>链接管理</span> </a> </li>
+            <li> <a navid="plugin_feedback" href="/plugins/feedback/admin/index.aspx" target="mainframe" class="item"> <span>留言管理</span> </a> </li>
+          </ul>
+        </div>
+        <div class="list-group" name="会员">
+          <h2>会员管理<i></i></h2>
+          <ul>
+            <li> <a navid="user_manage" class="item"> <span>会员管理</span> </a>
+              <ul>
+                <li> <a navid="user_audit" href="users/user_audit.aspx" target="mainframe" class="item"> <span>审核会员</span> </a> </li>
+                <li> <a navid="user_list" href="users/user_list.aspx" target="mainframe" class="item"> <span>所有会员</span> </a> </li>
+                <li> <a navid="user_group" href="users/group_list.aspx" target="mainframe" class="item"> <span>会员组别</span> </a> </li>
+              </ul>
+            </li>
+            <li> <a navid="user_log" class="item"> <span>会员日志</span> </a>
+              <ul>
+                <li> <a navid="user_sms" href="users/user_sms.aspx" target="mainframe" class="item"> <span>发送短信</span> </a> </li>
+                <li> <a navid="user_message" href="users/message_list.aspx" target="mainframe" class="item"> <span>站内消息</span> </a> </li>
+                <li> <a navid="user_point_log" href="users/point_log.aspx" target="mainframe" class="item"> <span>积分记录</span> </a> </li>
+                <li> <a navid="user_amount_log" href="users/amount_log.aspx" target="mainframe" class="item"> <span>消费记录</span> </a> </li>
+              </ul>
+            </li>
+            <li> <a navid="user_settings" class="item"> <span>会员设置</span> </a>
+              <ul>
+                <li> <a navid="user_config" href="users/user_config.aspx" target="mainframe" class="item"> <span>参数设置</span> </a> </li>
+                <li> <a navid="user_sms_template" href="users/sms_template_list.aspx" target="mainframe" class="item"> <span>短信模板</span> </a> </li>
+                <li> <a navid="user_mail_template" href="users/mail_template_list.aspx" target="mainframe" class="item"> <span>邮件模板</span> </a> </li>
+                <li> <a navid="user_oauth" href="users/oauth_app_list.aspx" target="mainframe" class="item"> <span>OAuth设置</span> </a> </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="list-group" name="订单">
+          <h2>订单管理<i></i></h2>
+          <ul>
+            <li> <a navid="order_manage" class="item"> <span>订单管理</span> </a>
+              <ul>
+                <li> <a navid="order_confirm" href="order/order_confirm.aspx" target="mainframe" class="item"> <span>待确认订单</span> </a> </li>
+                <li> <a navid="order_list" href="order/order_list.aspx" target="mainframe" class="item"> <span>全部订单</span> </a> </li>
+              </ul>
+            </li>
+            <li> <a navid="order_settings" class="item"> <span>订单设置</span> </a>
+              <ul>
+                <li> <a navid="order_config" href="order/order_config.aspx" target="mainframe" class="item"> <span>订单参数设置</span> </a> </li>
+                <li> <a navid="order_payment" href="order/payment_list.aspx" target="mainframe" class="item"> <span>支付方式设置</span> </a> </li>
+                <li> <a navid="order_express" href="order/express_list.aspx" target="mainframe" class="item"> <span>配送方式设置</span> </a> </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="list-group" name="界面">
+          <h2>界面管理<i></i></h2>
+          <ul>
+            <li> <a navid="app_manage" class="item"> <span>应用管理</span> </a>
+              <ul>
+                <li> <a navid="app_templet_list" href="settings/templet_list.aspx" target="mainframe" class="item"> <span>网站模板管理</span> </a> </li>
+                <li> <a navid="app_plugin_list" href="settings/plugin_list.aspx" target="mainframe" class="item"> <span>插件安装配置</span> </a> </li>
+                <li> <a navid="app_builder_html" href="settings/builder_html.aspx" target="mainframe" class="item"> <span>生成静态页面</span> </a> </li>
+                <li> <a navid="app_navigation_list" href="settings/nav_list.aspx" target="mainframe" class="item"> <span>后台导航管理</span> </a> </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="list-group" name="控制面板">
+          <h2>控制面板<i></i></h2>
+          <ul>
+            <li> <a navid="site_manage" class="item"> <span>系统管理</span> </a>
+              <ul>
+                <li> <a navid="site_config" href="settings/sys_config.aspx" target="mainframe" class="item"> <span>系统设置</span> </a> </li>
+                <li> <a navid="site_url_rewrite" href="settings/url_rewrite_list.aspx" target="mainframe" class="item"> <span>URL配置</span> </a> </li>
+                <li> <a navid="site_channel_list" href="channel/channel_list.aspx" target="mainframe" class="item"> <span>频道管理</span> </a> </li>
+                <li> <a navid="site_channel_category" href="channel/category_list.aspx" target="mainframe" class="item"> <span>频道分类</span> </a> </li>
+                <li> <a navid="site_channel_field" href="channel/attribute_field_list.aspx" target="mainframe" class="item"> <span>扩展字段</span> </a> </li>
+              </ul>
+            </li>
+            <li> <a navid="sys_manager" class="item"> <span>系统用户</span> </a>
+              <ul>
+                <li> <a navid="manager_list" href="manager/manager_list.aspx" target="mainframe" class="item"> <span>管理员管理</span> </a> </li>
+                <li> <a navid="manager_role" href="manager/role_list.aspx" target="mainframe" class="item"> <span>角色管理</span> </a> </li>
+                <li> <a navid="manager_log" href="manager/manager_log.aspx" target="mainframe" class="item"> <span>管理日志</span> </a> </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="main-container">
+    <iframe id="mainframe" name="mainframe" src="http://www.coolhots.net" frameborder="0"></iframe>
+  </div>
+</form>
+</body>
+</html>

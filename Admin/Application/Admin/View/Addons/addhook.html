@@ -1,0 +1,61 @@
+<extend name="Public/base" />
+<block name="head">
+<link href="__BOOTSTRAP__/css/bootstrap-datetimepicker.min.css"
+	rel="stylesheet" type="text/css">
+</block>
+<block name="body">
+<ul class="breadcrumb">
+	<li><a href="javascript:history.back(-1)">返回上一页</a> <span
+		class="divider">/</span></li>
+	<li class="active">{$meta_title}</li>
+</ul>
+<div class="row-fluid">
+	<form class="form-horizontal" action="{:U('updateHook')}">
+		<input type="hidden" name="id" value="{$info.id|default=''}">
+		<div class="control-group">
+			<label class="control-label" for="name">钩子名称</label>
+			<div class="controls">
+				<input type="text" id="name" name="name" class="span8"
+					placeholder="钩子名称" value="{$info.name}">
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="description">钩子描述</label>
+			<div class="controls">
+				<input type="text" id="description" name="description" class="span8"
+					placeholder="钩子描述" value="{$info.description}">
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="type">钩子类型</label>
+			<div class="controls">
+				<select id="type" name="type" class="span8">
+				<volist name=":C('HOOKS_TYPE')" id="vo">
+						<option value="{$key}" <eq name="info.type" value="$key"> selected</eq>>{$vo}</option>
+					</volist>
+				</select>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="description">摘要描述</label>
+			<div class="controls">
+				<textarea rows="3" name="description" id="description" class="span8"
+					placeholder="摘要描述">{$info.description}</textarea>
+			</div>
+		</div>
+		<div class="control-group">
+			<div class="controls">
+				<button type="submit" class="btn ajax-post"
+					target-form="form-horizontal">保存</button>
+				<button type="button" class="btn"
+					onclick="javascript:history.back(-1)">取消</button>
+			</div>
+		</div>
+	</form>
+</div>
+</block>
+<block name="script"> <script type="text/javascript">
+
+setValue("status", {$info.status|default = 1}); 
+
+</script> </block>

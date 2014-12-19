@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>时光旅行</title>
+<link href="./css/common.css" rel="stylesheet" type="text/css" />
+<link href="./css/index.css" rel="stylesheet" type="text/css" />
+<script src="./js/move.js" text="javascript/text"></script>
+<script src="./js/index.js" text="javascript/text"></script>
+<script src="js/jquery-1.8.2.min.js"></script>
+<script>
+$(function(){
+        showScroll();
+        function showScroll(){
+            $(window).scroll( function() { 
+                var scrollValue=$(window).scrollTop();
+                scrollValue > 100 ? $('a[class=f_t]').fadeIn():$('a[class=f_t]').fadeOut();
+            } );    
+            $('.f_t').click(function(){
+                $("html,body").animate({scrollTop:0},200);  
+            }); 
+        }
+    });
+</script>
+<script>
+window.onload = function(){
+	show();
+}
+</script>
+</style>
+</head>
+<body id="main">
+	<div id="top">
+		<p>
+			<a href="#"><img src="./image/weibo.png"/></a>
+			<a href="#"><img src="./image/qq.png"/></a>
+			<a href="#" id="login">登陆</a>
+			<a href="register.html" id="register">注册</a>
+		</p>
+	</div>
+	<div id="nav">
+		<div id="nav_main">
+			<a href="#"><img src="./image/logo.png"/></a>
+			<ul>
+				<li><a href="index.html">首页</a></li>
+				<li><a href="travel.html">时光之旅</a></li>
+				<li><a href="explore.html">极致探险</a></li>
+				<li><a href="train.html">Young探险</a></li>
+				<li><a href="memory.html">时光印记</a></li>
+				<li><a href="">时光小铺</a></li>
+			</ul>
+			<div class="search">
+				<form action="#" method="post">
+					<input type="text" class="soso" value="搜索路线/目的" onclick="this.value = ''">
+					<input type="submit" class="sub_go" value="">
+				</form>
+			</div>
+		</div>
+	</div>
+	<div id="slider">
+		<img id="prev" src="./image/prev.png"/>
+		<img id="next" src="./image/next.png"/>
+		<ul>
+			<li><a href="#"><img src="./image/pic1.png"></a></li>
+			<li><a href="#"><img src="./image/pic1.png"></a></li>
+			<li><a href="#"><img src="./image/pic1.png"></a></li>
+			<li><a href="#"><img src="./image/pic1.png"></a></li>
+		</ul>
+		<div id="forms">
+			<form action="#" method="post">
+				<h4>私人定制</h4>
+				<p><span>目的地</span><input type="text" name="place">
+				</p>
+				<p><span>特色主题</span>
+					<select  name="place">
+						<option value>所有主题</option>
+						<option>轻松休闲</option>
+						<option>人文体验</option>
+					</select>
+				</p>
+				<p><span>时长</span>
+					<select  name="place">
+						<option value>所有时长</option>
+						<option>1天</option>
+						<option>2-4天</option>
+					</select>
+				</p>
+				<p><span>价格</span>
+					<select  name="place">
+						<option value>所有价格</option>
+						<option><99元</option>
+						<option>100-200元</option>
+					</select>
+				</p>
+				<p><span>关键词</span><input type="text" name="place">
+				</p>
+				<input class="submit" type="submit" value="立即提交">
+			</form>
+		</div>
+	</div>
+	<div id="travel">
+		<span><a href="#">时光之旅</a></span>
+		<img class="f_prev" src="./image/f_prev.png"/>
+		<img class="f_next" src="./image/f_prev.png"/>
+		<div id="looks">
+			<div id="pic_look">
+				<div class="look">
+					<ul>
+						<li>
+							<img src="./image/pic_look1.jpg"/>
+							<a href="#" class="test">
+								<h4>费用一起游</h4>
+								<p>成都-雅安-上周古山-周公山</p>
+								<h4>348/1人</h4>
+								<p class="detal">查看详情</p>
+							</a>
+						</li>
+						<li>
+							<img src="./image/pic_look1.jpg"/>
+							<a href="#" class="test">
+								<h4>费用一起游</h4>
+								<p>成都-雅安-上周古山-周公山</p>
+								<h4>348/1人</h4>
+								<p class="detal">查看详情</p>
+							</a>
+						</li>
+						<li>
+							<img src="./image/pic_look1.jpg"/>
+							<a href="#" class="test">
+								<h4>费用一起游</h4>
+								<p>成都-雅安-上周古山-周公山</p>
+								<h4>348/1人</h4>
+								<p class="detal">查看详情</p>
+							</a>
+						</li>
+						<li>
+							<img src="./image/pic_look1.jpg"/>
+							<a href="#" class="test">
+								<h4>费用一起游</h4>
+								<p>成都-雅安-上周古山-周公山</p>
+								<h4>348/1人</h4>
+								<p class="detal">查看详情</p>
+							</a>
+						</li>
+						<li>
+							<img src="./image/pic_look1.jpg"/>
+							<a href="#" class="test">
+								<h4>费用一起游</h4>
+								<p>成都-雅安-上周古山-周公山</p>
+								<h4>348/1人</h4>
+								<p class="detal">查看详情</p>
+							</a>
+						</li>
+						<li>
+							<img src="./image/pic_look1.jpg"/>
+							<a href="#" class="test">
+								<h4>费用一起游</h4>
+								<p>成都-雅安-上周古山-周公山</p>
+								<h4>348/1人</h4>
+								<p class="detal">查看详情</p>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="look">
+					<ul>
+						<li>
+							<img src="./image/pic_look1.jpg"/>
+							<a href="#" class="test">
+								<h4>费用一起游</h4>
+								<p>成都-雅安-上周古山-周公山</p>
+								<h4>348/1人</h4>
+								<p class="detal">查看详情</p>
+							</a>
+						</li>
+						<li>
+							<img src="./image/pic_look1.jpg"/>
+							<a href="#" class="test">
+								<h4>费用一起游</h4>
+								<p>成都-雅安-上周古山-周公山</p>
+								<h4>348/1人</h4>
+								<p class="detal">查看详情</p>
+							</a>
+						</li>
+						<li>
+							<img src="./image/pic_look1.jpg"/>
+							<a href="#" class="test">
+								<h4>费用一起游</h4>
+								<p>成都-雅安-上周古山-周公山</p>
+								<h4>348/1人</h4>
+								<p class="detal">查看详情</p>
+							</a>
+						</li>
+						<li>
+							<img src="./image/pic_look1.jpg"/>
+							<a href="#" class="test">
+								<h4>费用一起游</h4>
+								<p>成都-雅安-上周古山-周公山</p>
+								<h4>348/1人</h4>
+								<p class="detal">查看详情</p>
+							</a>
+						</li>
+						<li>
+							<img src="./image/pic_look1.jpg"/>
+							<a href="#" class="test">
+								<h4>费用一起游</h4>
+								<p>成都-雅安-上周古山-周公山</p>
+								<h4>348/1人</h4>
+								<p class="detal">查看详情</p>
+							</a>
+						</li>
+						<li>
+							<img src="./image/pic_look1.jpg"/>
+							<a href="#" class="test">
+								<h4>费用一起游</h4>
+								<p>成都-雅安-上周古山-周公山</p>
+								<h4>348/1人</h4>
+								<p class="detal">查看详情</p>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="explore">
+		<span><a href="#">极致探险</a></span>
+		<div id="sliders">
+			<img class="s_prev" src="./image/s_prev.png" />
+			<img class="s_next" src="./image/s_next.png" />
+			<div class="pic_side">
+				<span>极致探险</span>
+				<p>生命是一段美好的旅程，我们在生活中紧紧相拥，我们用认真的态度的对待每一天，经费噶接法界个二哥，生活美好，认真对待。</p>
+				<p>美好的生活要来啦，快来参与吧，你好我好大家好，世界因你而美好，极致探险，真棒。</p>
+			</div>
+			<ul>
+				<li><a href="#"><img src="./image/explore.jpg"/></a></li>
+				<li><a href="#"><img src="./image/explore.jpg"/></a></li>
+				<li><a href="#"><img src="./image/explore.jpg"/></a></li>
+				<li><a href="#"><img src="./image/explore.jpg"/></a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="train">
+		<span><a href="#">Young 训练营</a></span>
+		<div class="left_train">
+			<h4>Young训练营 给你不一样的精彩</h4>
+			<p>以青春为主题，将青少年的青春朝气发散出来，在快节奏的生活下，人们需要更健康的生活方式，Young训练营带给青少年的不仅仅是健康，在这里，他们将学习多的知识，锻炼自己的能Youngg训练营给你不一样的精彩，我们具备三条原则：
+			</p>
+			<p class="special">实践<br/>在实践中成长，触动内心深处的自己</p>
+			<p class="special">分享<br/>分享自己的点点滴滴，将感动传递给每个人</p>
+			<p class="special">成长<br/>
+			成长是法界大家跟i额个将诶</p>
+			<a href="#" class="more">了解更多详情</a>
+		</div>
+		<div class="right_train">
+			<img class="t_prev" src="./image/s_prev.png" />
+			<img class="t_next" src="./image/s_next.png" />
+			<img class="big_pic" src="./image/pic2.png" />
+			<img style="filter:alpha(opacity:100);opacity:1;" class="small_pic" src="./image/pic3.png" />
+			<img class="small_pic" src="./image/pic4.png" />
+			<img class="small_pic" src="./image/pic5.png" />
+			<img class="small_pic" id="lasts" src="./image/pic6.png" />
+		</div>
+	</div>
+	<div id="memory">
+		<span class="m_title"><a href="#">时光印记</a></span>
+		<ul>
+			<li>
+				<a class="m_content" href="#"><p class="content">足迹遍布期间分享的指南、心得、工具无数使得是受益良多，本游记无意班门弄斧或是重复。足迹遍布期间分享的指南。</p></a>
+				<a href="#"><h4 class="from">节选自 <永远的天堂-西藏></h4></a>
+				<p class="author">作者:XXX&nbsp;&nbsp;&nbsp;&nbsp;2014-10-30<span>113</span><span>113</span></p>
+			</li>
+			<li>
+				<a class="m_content" href="#"><p class="content">足迹遍布期间分享的指南、心得、工具无数使得是受益良多，本游记无意班门弄斧或是重复。足迹遍布期间分享的指南。</p></a>
+				<a href="#"><h4 class="from">节选自 <永远的天堂-西藏></h4></a>
+				<p class="author">作者:XXX&nbsp;&nbsp;&nbsp;&nbsp;2014-10-30<span>113</span><span>113</span></p>
+			</li>
+			<li>
+				<a class="m_content" href="#"><p class="content">足迹遍布期间分享的指南、心得、工具无数使得是受益良多，本游记无意班门弄斧或是重复。足迹遍布期间分享的指南。</p></a>
+				<a href="#"><h4 class="from">节选自 <永远的天堂-西藏></h4></a>
+				<p class="author">作者:XXX&nbsp;&nbsp;&nbsp;&nbsp;2014-10-30<span>113</span><span>113</span></p>
+			</li>
+			<li>
+				<a class="m_content" href="#"><p class="content">足迹遍布期间分享的指南、心得、工具无数使得是受益良多，本游记无意班门弄斧或是重复。足迹遍布期间分享的指南。</p></a>
+				<a href="#"><h4 class="from">节选自 <永远的天堂-西藏></h4></a>
+				<p class="author">作者:XXX&nbsp;&nbsp;&nbsp;&nbsp;2014-10-30<span>113</span><span>113</span></p>
+			</li>
+			<li>
+				<a class="m_content" href="#"><p class="content">足迹遍布期间分享的指南、心得、工具无数使得是受益良多，本游记无意班门弄斧或是重复。足迹遍布期间分享的指南。</p></a>
+				<a href="#"><h4 class="from">节选自 <永远的天堂-西藏></h4></a>
+				<p class="author">作者:XXX&nbsp;&nbsp;&nbsp;&nbsp;2014-10-30<span>113</span><span>113</span></p>
+			</li>
+			<li>
+				<a class="m_content" href="#"><p class="content">足迹遍布期间分享的指南、心得、工具无数使得是受益良多，本游记无意班门弄斧或是重复。足迹遍布期间分享的指南。</p></a>
+				<a href="#"><h4 class="from">节选自 <永远的天堂-西藏></h4></a>
+				<p class="author">作者:XXX&nbsp;&nbsp;&nbsp;&nbsp;2014-10-30<span>113</span><span>113</span></p>
+			</li>
+		</ul>
+	</div>
+	<div id="store">
+		<span><a href="#">时光小铺</a></span>
+		<a href="#"><img src="./image/store.gif" /></a>
+	</div>
+	<div id="footer">
+		<div id="f_content">
+			<div id="f_left">
+			<img  class="f_logo" src="./image/logo.png" />
+			<span>备案J1541558436[京] </span>
+			</div>
+			<div id="f_center">
+				<p>
+					<a href="#">关于我们</a>    
+					<a href="#">联系我们</a>     
+					<a href="#">隐私条款</a>     
+					<a href="#">加入我们</a>
+				</p>
+				<p class="f_pic">
+					<a href="#">关于我们:</a>    
+					<a href="#"><img src="./image/f_web.png" /></a>   
+					<a href="#"><img src="./image/f_qq.png" /></a>     
+				</p>
+			</div>
+			<div id="f_right">
+				<img src="./image/erw.png" />
+				<span>扫一扫关注时光旅行</span>
+			</div>
+		</div>
+		<div id="f_bottom">
+			<span>友情链接</span>
+			<p>
+				<a href="#">关于我们</a>    
+				<a href="#">联系我们</a>     
+				<a href="#">隐私条款</a>     
+				<a href="#">加入我们</a>
+				<a href="#">关于我们</a>    
+				<a href="#">联系我们</a>     
+				<a href="#">隐私条款</a>     
+				<a href="#">加入我们</a>
+				<a href="#">加入我们</a>
+				<a href="#">关于我们</a>    
+			</p>
+			<p>
+				<a href="#">关于我们</a>    
+				<a href="#">联系我们</a>     
+				<a href="#">隐私条款</a>     
+				<a href="#">加入我们</a>
+				<a href="#">关于我们</a>    
+				<a href="#">联系我们</a>     
+				<a href="#">隐私条款</a>     
+				<a href="#">加入我们</a>
+				<a href="#">加入我们</a>
+				<a href="#">关于我们</a>    
+			</p>
+		</div>
+	</div>
+	<div id="fixed">
+		<ul>
+			<li><a class="f_f" href="#">在线咨询</a></li>
+			<li><a class="f_s" href="#">123456789</a></li>
+			<li><a class="f_t" href="javascript:void(0);">回到顶部</a></li>
+		</ul>
+	</div>
+	<div id="order">
+	</div>
+	<div id="login_box" style="background:#fff;z-indent:12px;opacity:1;">
+		<h4>登陆<img id="cancel" src="./image/close.png" /></h4>
+		<div class="l_left">
+			<p>使用社交网络登陆</p>
+			<span><a href="#"><img src="./image/l_web.png" /></a>新浪微博</span>
+			<span class="qq"><a href="#"><img src="./image/l_qq.png" /></a>腾讯QQ</span>
+		</div>
+		<div class="l_right">
+			<p><a class="l_first" href="#">使用本网账号登陆</a><a class="l_last" href="#">注册</a></p>
+			<form action="#" method="post">
+				<input type="text" name="username">
+				<input type="password" name="password">
+				<p class="tell">
+					<span><input type="checkbox" class="radio"/>记住我</span><a href="#">忘记密码?</a>
+				</p>
+				<input type="submit" class="l_sub" value="登陆">
+			</form>
+		</div>
+	</div>
+</body>
+</html>

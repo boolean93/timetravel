@@ -1,0 +1,738 @@
+[ 2014-12-03T00:52:42+08:00 ] ::1 /timetravel/Admin/index.php?s=/Admin/Public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.004140s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005057s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000782s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000832s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000068s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000161s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007222s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007272s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000425s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000506s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001029s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001105s ]
+
+[ 2014-12-03T00:52:43+08:00 ] ::1 /timetravel/Admin/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000751s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001002s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000357s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000404s ]
+
+[ 2014-12-03T00:52:43+08:00 ] ::1 /timetravel/Admin/index.php?s=/admin/index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001246s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001661s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000343s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000388s ]
+
+[ 2014-12-03T00:52:43+08:00 ] ::1 /timetravel/Admin/index.php?s=/Admin/Public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000837s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001095s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000282s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000318s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000039s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000099s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003979s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004013s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000092s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000114s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000292s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000318s ]
+
+[ 2014-12-03T00:52:48+08:00 ] ::1 /timetravel/Admin/index.php?s=/Admin/Public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001843s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002290s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000845s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000950s ]
+SQL: SHOW COLUMNS FROM `member` [ RunTime:0.016369s ]
+SQL: SELECT * FROM `member` WHERE ( `username` = 'admin' ) LIMIT 1   [ RunTime:0.000726s ]
+SQL: UPDATE `member` SET `login`=74,`last_login_ip`='0.0.0.0',`last_login_time`=1417539168 WHERE ( `uid` = 1 ) [ RunTime:0.006879s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.031327s ]
+SQL: SELECT `auth`,`status` FROM `role` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000502s ]
+SQL: SHOW COLUMNS FROM `action` [ RunTime:0.002074s ]
+SQL: SELECT * FROM `action` WHERE ( `name` = 'user_login' ) LIMIT 1   [ RunTime:0.000549s ]
+SQL: SHOW COLUMNS FROM `action_log` [ RunTime:0.020843s ]
+SQL: INSERT INTO `action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES (1,1,0,'Member',1,1417539168,'CoolHots在2014-12-03 00:52登录了后台') [ RunTime:0.006230s ]
+SQL: SELECT * FROM `action` WHERE ( `name` = 'user_login' ) LIMIT 1   [ RunTime:0.000458s ]
+NOTIC: [8] Undefined offset: 1 /Users/Boolean93/www/timetravel/Admin/Application/Common/Common/function.php 第 749 行.
+NOTIC: [2] array_key_exists() expects parameter 2 to be array, null given /Users/Boolean93/www/timetravel/Admin/Application/Common/Common/function.php 第 749 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `action_log` WHERE ( `action_id` = 1 ) AND ( `user_id` = 1 ) AND ( `create_time` > 1417452768 ) LIMIT 1   [ RunTime:0.000783s ]
+SQL: SHOW COLUMNS FROM `member` [ RunTime:0.002321s ]
+NOTIC: [8] Undefined variable: set /Users/Boolean93/www/timetravel/Admin/ThinkPHP/Library/Think/Db.class.php 第 297 行.
+NOTIC: [2] implode(): Invalid arguments passed /Users/Boolean93/www/timetravel/Admin/ThinkPHP/Library/Think/Db.class.php 第 297 行.
+SQL: UPDATE `member` SET  WHERE ( uid=1 AND status>-1 ) [ RunTime:0.000683s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE ( uid=1 AND status>-1 )' at line 1
+ [ SQL语句 ] : UPDATE `member` SET  WHERE ( uid=1 AND status>-1 )
+
+[ 2014-12-03T00:52:51+08:00 ] ::1 /timetravel/Admin/index.php?s=/Admin/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000723s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000944s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000245s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000276s ]
+SQL: SHOW COLUMNS FROM `auth` [ RunTime:0.020574s ]
+NOTIC: [8] Undefined variable: map /Users/Boolean93/www/timetravel/Admin/Application/Admin/Controller/IndexController.class.php 第 31 行.
+SQL: SELECT * FROM `auth` ORDER BY sort  [ RunTime:0.001037s ]
+SQL: SHOW COLUMNS FROM `addons` [ RunTime:0.026014s ]
+SQL: SELECT `title`,`name` FROM `addons` WHERE ( status=1 AND has_adminlist=1 )  [ RunTime:0.000705s ]
+NOTIC: [8] Undefined index: id /Users/Boolean93/www/timetravel/Admin/Application/Common/Common/function.php 第 312 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000081s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000147s ]
+NOTIC: [8] Undefined index: id /Users/Boolean93/www/timetravel/Admin/#Runtime/Cache/Admin/b595b808c2ebeeeb0478ffc30bb4e87a.php 第 107 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015829s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015907s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000190s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000223s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000488s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000556s ]
+
+[ 2014-12-03T00:52:51+08:00 ] ::1 /timetravel/Admin/index.php?s=/admin/index/center.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000899s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001197s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000473s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000533s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000044s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000100s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004665s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004709s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000120s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000150s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000618s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000653s ]
+
+[ 2014-12-03T00:58:20+08:00 ] ::1 /timetravel/Admin/index.php?s=/admin/route/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001263s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001712s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000428s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000505s ]
+ERR: 无法加载控制器:Route
+
+[ 2014-12-03T00:58:21+08:00 ] ::1 /timetravel/Admin/index.php?s=/admin/article/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000716s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000931s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000245s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000277s ]
+NOTIC: [8] Undefined variable: map /Users/Boolean93/www/timetravel/Admin/Application/Admin/Controller/ArticleController.class.php 第 34 行.
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.019542s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `article` WHERE ( `status` >= 0 ) LIMIT 1   [ RunTime:0.000934s ]
+SQL: SELECT `id`,`title`,`content`,`header_img`,`type`,`create_time`,`click`,`good`,`reply`,`status` FROM `article` WHERE ( `status` >= 0 ) ORDER BY id LIMIT 0,10   [ RunTime:0.000567s ]
+NOTIC: [8] Undefined variable: map /Users/Boolean93/www/timetravel/Admin/Application/Admin/Controller/ArticleController.class.php 第 36 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000109s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000222s ]
+NOTIC: [2] date() expects parameter 2 to be long, string given /Users/Boolean93/www/timetravel/Admin/#Runtime/Cache/Admin/7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 46 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020711s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020781s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000171s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000203s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000525s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000572s ]
+
+[ 2014-12-03T00:58:24+08:00 ] ::1 /timetravel/Admin/index.php?s=/Admin/Article/edit/id/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000715s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000933s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000243s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000275s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.002333s ]
+SQL: SELECT `id`,`title`,`content`,`header_img`,`type`,`create_time`,`click`,`good`,`reply`,`status` FROM `article` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000413s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.002077s ]
+SQL: SELECT `cid`,`title`,`ename`,`pid`,`type`,`keywords`,`description`,`content`,`status`,`sort` FROM `category`  [ RunTime:0.000417s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000064s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000118s ]
+NOTIC: [8] Undefined index: shorttitle /Users/Boolean93/www/timetravel/Admin/#Runtime/Cache/Admin/761055de2f430bef08441163fbb8bda7.php 第 47 行.
+NOTIC: [8] Undefined index: copyfrom /Users/Boolean93/www/timetravel/Admin/#Runtime/Cache/Admin/761055de2f430bef08441163fbb8bda7.php 第 54 行.
+NOTIC: [8] Undefined index: publishtime /Users/Boolean93/www/timetravel/Admin/#Runtime/Cache/Admin/761055de2f430bef08441163fbb8bda7.php 第 102 行.
+NOTIC: [8] Undefined index: keywords /Users/Boolean93/www/timetravel/Admin/#Runtime/Cache/Admin/761055de2f430bef08441163fbb8bda7.php 第 118 行.
+NOTIC: [8] Undefined index: description /Users/Boolean93/www/timetravel/Admin/#Runtime/Cache/Admin/761055de2f430bef08441163fbb8bda7.php 第 125 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011289s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011339s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000144s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000177s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000391s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000435s ]
+
+[ 2014-12-03T02:42:01+08:00 ] ::1 /timetravel/Admin/index.php?s=/Admin/Article/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.003846s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004937s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001060s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001196s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.019818s ]
+SQL: SELECT `cid`,`title`,`ename`,`pid`,`type`,`keywords`,`description`,`content`,`status`,`sort` FROM `category`  [ RunTime:0.000584s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000073s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000132s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014749s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014819s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000404s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000450s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000719s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000781s ]
+
+[ 2014-12-03T10:47:49+08:00 ] ::1 /timetravel/Admin/index.php?s=/Admin/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.005598s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008111s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000935s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001054s ]
+SQL: SHOW COLUMNS FROM `auth` [ RunTime:0.020245s ]
+NOTIC: [8] Undefined variable: map /Users/Boolean93/www/timetravel/Admin/Application/Admin/Controller/IndexController.class.php 第 31 行.
+SQL: SELECT * FROM `auth` ORDER BY sort  [ RunTime:0.028366s ]
+SQL: SHOW COLUMNS FROM `addons` [ RunTime:0.021820s ]
+SQL: SELECT `title`,`name` FROM `addons` WHERE ( status=1 AND has_adminlist=1 )  [ RunTime:0.006344s ]
+NOTIC: [8] Undefined index: id /Users/Boolean93/www/timetravel/Admin/Application/Common/Common/function.php 第 312 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000092s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000182s ]
+NOTIC: [8] Undefined index: id /Users/Boolean93/www/timetravel/Admin/#Runtime/Cache/Admin/b595b808c2ebeeeb0478ffc30bb4e87a.php 第 107 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024452s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024534s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000536s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000576s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001054s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001117s ]
+
+[ 2014-12-03T10:47:50+08:00 ] ::1 /timetravel/Admin/index.php?s=/admin/index/center.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001419s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002125s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000531s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000643s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000040s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000104s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005802s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005881s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000135s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000163s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000504s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000555s ]
+
+[ 2014-12-03T10:47:51+08:00 ] ::1 /timetravel/Admin/index.php?s=/admin/article/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001607s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002094s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000408s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000454s ]
+NOTIC: [8] Undefined variable: map /Users/Boolean93/www/timetravel/Admin/Application/Admin/Controller/ArticleController.class.php 第 34 行.
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.019963s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `article` WHERE ( `status` >= 0 ) LIMIT 1   [ RunTime:0.000716s ]
+SQL: SELECT `id`,`title`,`content`,`header_img`,`type`,`create_time`,`click`,`good`,`reply`,`status` FROM `article` WHERE ( `status` >= 0 ) ORDER BY id LIMIT 0,10   [ RunTime:0.000705s ]
+NOTIC: [8] Undefined variable: map /Users/Boolean93/www/timetravel/Admin/Application/Admin/Controller/ArticleController.class.php 第 36 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000078s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000142s ]
+NOTIC: [2] date() expects parameter 2 to be long, string given /Users/Boolean93/www/timetravel/Admin/#Runtime/Cache/Admin/7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 46 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011130s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011180s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000209s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000247s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000435s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000471s ]
+
+[ 2014-12-03T10:47:52+08:00 ] ::1 /timetravel/Admin/index.php?s=/Admin/Article/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000774s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000994s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000278s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000310s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.002883s ]
+SQL: SELECT `cid`,`title`,`ename`,`pid`,`type`,`keywords`,`description`,`content`,`status`,`sort` FROM `category`  [ RunTime:0.000368s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000054s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000096s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009188s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009238s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000111s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000138s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000323s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000351s ]
+
+[ 2014-12-03T11:08:43+08:00 ] ::1 /timetravel/Admin/index.php?s=/Admin/Article/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002151s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003034s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000682s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000785s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.002363s ]
+SQL: SELECT `id`,`title`,`content`,`header_img`,`type`,`create_time`,`click`,`good`,`reply`,`status` FROM `article`  [ RunTime:0.000523s ]
+NOTIC: [8] Undefined index: cid /Users/Boolean93/www/timetravel/Admin/Application/Common/Common/function.php 第 312 行.
+NOTIC: [8] Undefined index: cid /Users/Boolean93/www/timetravel/Admin/Application/Common/Common/function.php 第 312 行.
+NOTIC: [8] Undefined index: cid /Users/Boolean93/www/timetravel/Admin/Application/Common/Common/function.php 第 312 行.
+NOTIC: [8] Undefined index: pid /Users/Boolean93/www/timetravel/Admin/Application/Common/Common/function.php 第 316 行.
+NOTIC: [8] Undefined index: pid /Users/Boolean93/www/timetravel/Admin/Application/Common/Common/function.php 第 316 行.
+NOTIC: [8] Undefined index: pid /Users/Boolean93/www/timetravel/Admin/Application/Common/Common/function.php 第 316 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000068s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000111s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009341s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009392s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000114s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000138s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000351s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000388s ]
+
+[ 2014-12-03T21:38:19+08:00 ] ::1 /timetravel/Admin/index.php?s=/admin/article/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.004669s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005623s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000858s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000932s ]
+NOTIC: [8] Undefined variable: map /Users/Boolean93/www/timetravel/Admin/Application/Admin/Controller/ArticleController.class.php 第 34 行.
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.025669s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `article` WHERE ( `status` >= 0 ) LIMIT 1   [ RunTime:0.000427s ]
+SQL: SELECT `id`,`title`,`content`,`header_img`,`type`,`create_time`,`click`,`good`,`reply`,`status` FROM `article` WHERE ( `status` >= 0 ) ORDER BY id LIMIT 0,10   [ RunTime:0.000734s ]
+NOTIC: [8] Undefined variable: map /Users/Boolean93/www/timetravel/Admin/Application/Admin/Controller/ArticleController.class.php 第 36 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000057s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000108s ]
+NOTIC: [2] date() expects parameter 2 to be long, string given /Users/Boolean93/www/timetravel/Admin/#Runtime/Cache/Admin/7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 46 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012667s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012710s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000600s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000660s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000930s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000971s ]
+
+[ 2014-12-03T21:38:20+08:00 ] ::1 /timetravel/Admin/index.php?s=/Admin/Article/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001352s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001765s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000418s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000468s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.002574s ]
+SQL: SELECT `cid`,`title`,`ename`,`pid`,`type`,`keywords`,`description`,`content`,`status`,`sort` FROM `category`  [ RunTime:0.000373s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000126s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000253s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008999s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009067s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000175s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000221s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000530s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000577s ]
+
+[ 2014-12-03T21:41:17+08:00 ] ::1 /timetravel/Admin/index.php?s=/admin/route/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001500s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001859s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000477s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000539s ]
+ERR: 无法加载控制器:Route
+
+[ 2014-12-03T21:41:18+08:00 ] ::1 /timetravel/Admin/index.php?s=/admin/article/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000750s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001057s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000248s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000279s ]
+NOTIC: [8] Undefined variable: map /Users/Boolean93/www/timetravel/Admin/Application/Admin/Controller/ArticleController.class.php 第 34 行.
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.004411s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `article` WHERE ( `status` >= 0 ) LIMIT 1   [ RunTime:0.000502s ]
+SQL: SELECT `id`,`title`,`content`,`header_img`,`type`,`create_time`,`click`,`good`,`reply`,`status` FROM `article` WHERE ( `status` >= 0 ) ORDER BY id LIMIT 0,10   [ RunTime:0.000317s ]
+NOTIC: [8] Undefined variable: map /Users/Boolean93/www/timetravel/Admin/Application/Admin/Controller/ArticleController.class.php 第 36 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000049s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000094s ]
+NOTIC: [2] date() expects parameter 2 to be long, string given /Users/Boolean93/www/timetravel/Admin/#Runtime/Cache/Admin/7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 46 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006783s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006820s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000250s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000315s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000572s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000622s ]
+
+[ 2014-12-03T21:41:20+08:00 ] ::1 /timetravel/Admin/index.php?s=/Admin/Article/edit/id/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001356s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001778s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000356s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000403s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.002442s ]
+SQL: SELECT `id`,`title`,`content`,`header_img`,`type`,`create_time`,`click`,`good`,`reply`,`status` FROM `article` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000360s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.002303s ]
+SQL: SELECT `cid`,`title`,`ename`,`pid`,`type`,`keywords`,`description`,`content`,`status`,`sort` FROM `category`  [ RunTime:0.000326s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000070s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000129s ]
+NOTIC: [8] Undefined index: shorttitle /Users/Boolean93/www/timetravel/Admin/#Runtime/Cache/Admin/761055de2f430bef08441163fbb8bda7.php 第 47 行.
+NOTIC: [8] Undefined index: copyfrom /Users/Boolean93/www/timetravel/Admin/#Runtime/Cache/Admin/761055de2f430bef08441163fbb8bda7.php 第 54 行.
+NOTIC: [8] Undefined index: publishtime /Users/Boolean93/www/timetravel/Admin/#Runtime/Cache/Admin/761055de2f430bef08441163fbb8bda7.php 第 102 行.
+NOTIC: [8] Undefined index: keywords /Users/Boolean93/www/timetravel/Admin/#Runtime/Cache/Admin/761055de2f430bef08441163fbb8bda7.php 第 118 行.
+NOTIC: [8] Undefined index: description /Users/Boolean93/www/timetravel/Admin/#Runtime/Cache/Admin/761055de2f430bef08441163fbb8bda7.php 第 125 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010922s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010962s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000128s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000159s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000395s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000446s ]
+
+[ 2014-12-03T21:41:25+08:00 ] ::1 /timetravel/Admin/index.php?s=/admin/member/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001554s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002111s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000489s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000551s ]
+SQL: SHOW COLUMNS FROM `member` [ RunTime:0.020088s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `member` WHERE ( `status` = 1 ) LIMIT 1   [ RunTime:0.002533s ]
+SQL: SELECT `uid`,`username`,`password`,`encrypt`,`nickname`,`sex`,`birthday`,`qq`,`login`,`reg_ip`,`reg_time`,`last_login_ip`,`last_login_time`,`status`,`roleid`,`auth` FROM `member` WHERE ( `status` = 1 ) ORDER BY uid LIMIT 0,10   [ RunTime:0.000773s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000059s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000116s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008047s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008097s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000136s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000165s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000311s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000338s ]
+
+[ 2014-12-03T21:41:26+08:00 ] ::1 /timetravel/Admin/index.php?s=/admin/role/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001676s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002091s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000393s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000453s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.014527s ]
+SQL: SELECT * FROM `role`  [ RunTime:0.000658s ]
+NOTIC: [8] Undefined variable: map /Users/Boolean93/www/timetravel/Admin/Application/Admin/Controller/RoleController.class.php 第 30 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000062s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000137s ]
+NOTIC: [8] Undefined variable: _page /Users/Boolean93/www/timetravel/Admin/#Runtime/Cache/Admin/b35d77029c5f30642b30c7a996208f53.php 第 55 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010584s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010630s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000291s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000343s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000404s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000449s ]
+
+[ 2014-12-03T21:41:27+08:00 ] ::1 /timetravel/Admin/index.php?s=/admin/member/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000717s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000955s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000243s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000275s ]
+SQL: SHOW COLUMNS FROM `member` [ RunTime:0.002336s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `member` WHERE ( `status` = 1 ) LIMIT 1   [ RunTime:0.000326s ]
+SQL: SELECT `uid`,`username`,`password`,`encrypt`,`nickname`,`sex`,`birthday`,`qq`,`login`,`reg_ip`,`reg_time`,`last_login_ip`,`last_login_time`,`status`,`roleid`,`auth` FROM `member` WHERE ( `status` = 1 ) ORDER BY uid LIMIT 0,10   [ RunTime:0.000548s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000044s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000080s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004991s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005026s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000091s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000116s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000276s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000300s ]
+
+[ 2014-12-03T21:41:28+08:00 ] ::1 /timetravel/Admin/index.php?s=/Admin/Member/edit/id/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001097s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001332s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000503s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000565s ]
+SQL: SHOW COLUMNS FROM `member` [ RunTime:0.020514s ]
+SQL: SELECT `uid`,`username`,`password`,`encrypt`,`nickname`,`sex`,`birthday`,`qq`,`login`,`reg_ip`,`reg_time`,`last_login_ip`,`last_login_time`,`status`,`roleid`,`auth` FROM `member` WHERE ( `uid` = 1 ) LIMIT 1   [ RunTime:0.000592s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.003243s ]
+SQL: SELECT `id`,`title` FROM `role`  [ RunTime:0.000350s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000049s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000097s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007889s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007955s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000092s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000114s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000344s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000380s ]
+
+[ 2014-12-03T21:41:32+08:00 ] ::1 /timetravel/Admin/index.php?s=/admin/auth/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000715s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000931s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000243s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000274s ]
+SQL: SHOW COLUMNS FROM `auth` [ RunTime:0.019445s ]
+SQL: SELECT * FROM `auth`  [ RunTime:0.000622s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000057s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000105s ]
+NOTIC: [8] Undefined variable: _page /Users/Boolean93/www/timetravel/Admin/#Runtime/Cache/Admin/7037a8d5a64fd30b57d5fa54024ea286.php 第 55 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010243s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010292s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000128s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000161s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000506s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000555s ]
+
+[ 2014-12-03T21:41:32+08:00 ] ::1 /timetravel/Admin/index.php?s=/admin/config/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000775s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001002s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000343s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000386s ]
+SQL: SHOW COLUMNS FROM `config` [ RunTime:0.018365s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `config` WHERE ( `status` >= 0 ) LIMIT 1   [ RunTime:0.000555s ]
+SQL: SELECT `id`,`name`,`title`,`status`,`value`,`extra` FROM `config` WHERE ( `status` >= 0 ) ORDER BY id LIMIT 0,10   [ RunTime:0.000627s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000054s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000100s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007762s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007818s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000118s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000151s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000361s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000393s ]
+
+[ 2014-12-03T21:41:36+08:00 ] ::1 /timetravel/Admin/index.php?s=/admin/addons/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001047s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001367s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000323s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000366s ]
+SQL: SHOW COLUMNS FROM `addons` [ RunTime:0.019940s ]
+SQL: SELECT `id`,`name`,`title`,`description`,`status`,`config`,`author`,`version`,`create_time`,`has_adminlist` FROM `addons` WHERE ( `name` IN ('Attachment','DevTeam','EditorForAdmin','SiteStat','SystemInfo') )  [ RunTime:0.006418s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000065s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000116s ]
+SQL: SHOW COLUMNS FROM `addons` [ RunTime:0.020403s ]
+SQL: SELECT `config` FROM `addons` WHERE ( `name` = 'DevTeam' ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000454s ]
+SQL: SELECT `config` FROM `addons` WHERE ( `name` = 'SystemInfo' ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000521s ]
+SQL: SELECT `config` FROM `addons` WHERE ( `name` = 'SiteStat' ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000470s ]
+SQL: SELECT `config` FROM `addons` WHERE ( `name` = 'EditorForAdmin' ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000441s ]
+SQL: SELECT `config` FROM `addons` WHERE ( `name` = 'Attachment' ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000486s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.044029s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.044109s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000202s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000247s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000545s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000602s ]
+
+[ 2014-12-03T21:41:42+08:00 ] ::1 /timetravel/Admin/index.php?s=/Admin/Addons/config/id/15.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002054s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002679s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000668s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000767s ]
+SQL: SHOW COLUMNS FROM `addons` [ RunTime:0.003200s ]
+SQL: SELECT * FROM `addons` WHERE ( `id` = 15 ) LIMIT 1   [ RunTime:0.000401s ]
+NOTIC: [8] Undefined index: editor_markdownpreview /Users/Boolean93/www/timetravel/Admin/Application/Admin/Controller/AddonsController.class.php 第 92 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000090s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000137s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022624s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022692s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000148s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000181s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000624s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000666s ]
+
+[ 2014-12-03T21:41:49+08:00 ] ::1 /timetravel/Admin/index.php?s=/Admin/Addons/saveConfig.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001781s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002276s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000414s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000473s ]
+SQL: SHOW COLUMNS FROM `addons` [ RunTime:0.003165s ]
+SQL: UPDATE `addons` SET `config`='{\"editor_type\":\"2\",\"editor_wysiwyg\":\"2\",\"editor_markdownpreview\":\"1\",\"editor_height\":\"500px\",\"editor_resize_type\":\"1\"}' WHERE ( id=15 ) [ RunTime:0.008317s ]
+
+[ 2014-12-03T21:41:51+08:00 ] ::1 /timetravel/Admin/index.php?s=/admin/addons/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000808s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001055s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000278s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000314s ]
+SQL: SHOW COLUMNS FROM `addons` [ RunTime:0.002614s ]
+SQL: SELECT `id`,`name`,`title`,`description`,`status`,`config`,`author`,`version`,`create_time`,`has_adminlist` FROM `addons` WHERE ( `name` IN ('Attachment','DevTeam','EditorForAdmin','SiteStat','SystemInfo') )  [ RunTime:0.000367s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000062s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000118s ]
+SQL: SHOW COLUMNS FROM `addons` [ RunTime:0.021110s ]
+SQL: SELECT `config` FROM `addons` WHERE ( `name` = 'DevTeam' ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000521s ]
+SQL: SELECT `config` FROM `addons` WHERE ( `name` = 'SystemInfo' ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000594s ]
+SQL: SELECT `config` FROM `addons` WHERE ( `name` = 'SiteStat' ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000687s ]
+SQL: SELECT `config` FROM `addons` WHERE ( `name` = 'EditorForAdmin' ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000411s ]
+SQL: SELECT `config` FROM `addons` WHERE ( `name` = 'Attachment' ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000500s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.039871s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.039930s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000193s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000232s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000554s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000599s ]
+
+[ 2014-12-03T21:41:54+08:00 ] ::1 /timetravel/Admin/index.php?s=/admin/article/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001347s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001757s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000379s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000426s ]
+NOTIC: [8] Undefined variable: map /Users/Boolean93/www/timetravel/Admin/Application/Admin/Controller/ArticleController.class.php 第 34 行.
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.003257s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `article` WHERE ( `status` >= 0 ) LIMIT 1   [ RunTime:0.000324s ]
+SQL: SELECT `id`,`title`,`content`,`header_img`,`type`,`create_time`,`click`,`good`,`reply`,`status` FROM `article` WHERE ( `status` >= 0 ) ORDER BY id LIMIT 0,10   [ RunTime:0.000314s ]
+NOTIC: [8] Undefined variable: map /Users/Boolean93/www/timetravel/Admin/Application/Admin/Controller/ArticleController.class.php 第 36 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000042s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000071s ]
+NOTIC: [2] date() expects parameter 2 to be long, string given /Users/Boolean93/www/timetravel/Admin/#Runtime/Cache/Admin/7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 46 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004980s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005010s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000088s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000112s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000272s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000298s ]
+

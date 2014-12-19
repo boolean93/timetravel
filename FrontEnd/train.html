@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Young 训练营</title>
+<link href="./css/common.css" rel="stylesheet" type="text/css" />
+<link href="./css/train.css" rel="stylesheet" type="text/css" />
+<script src="js/move.js" type="text/javascript"></script>
+<script src="js/switch.js" type="text/javascript"></script>
+<script src="js/jquery-1.8.2.min.js" type="text/javascript"></script>
+<script>
+window.onload = function(){
+	switchImg();
+	show();
+}
+window.onscroll = function(){
+	 var oFix = document.getElementById("fixed");
+	 var oTop = getByClass(oFix,'f_t')[0];
+	 oTop.onclick = function(){	
+	 	startMove(oFix.srcollTop,{top:0});
+	 }
+	if (document.documentElement.scrollTop + document.body.scrollTop > 360) { 
+	    oFix.style.display = "block"; 
+	} 
+	else { 
+	     oFix.style.display = "none"; 
+	} 
+}
+</script>
+<script>
+$(function(){
+        showScroll();
+        function showScroll(){
+            $(window).scroll( function() { 
+                var scrollValue=$(window).scrollTop();
+                scrollValue > 100 ? $('a[class=f_t]').fadeIn():$('a[class=f_t]').fadeOut();
+            } );    
+            $('.f_t').click(function(){
+                $("html,body").animate({scrollTop:0},200);  
+            }); 
+        }
+ });
+</script>
+</head>
+<body id="main">
+	<div id="top">
+		<p>
+			<a href="#"><img src="./image/weibo.png"/></a>
+			<a href="#"><img src="./image/qq.png"/></a>
+			<a href="#" id="login">登陆</a>
+			<a href="register.html" id="register">注册</a>
+		</p>
+	</div>
+	<div id="nav">
+		<div id="nav_main">
+			<a href="#"><img src="./image/logo.png"/></a>
+			<ul>
+				<li><a href="index.html">首页</a></li>
+				<li><a href="travel.html">时光之旅</a></li>
+				<li><a href="explore.html">极致探险</a></li>
+				<li><a href="train.html">Young探险</a></li>
+				<li><a href="memory.html">时光印记</a></li>
+				<li><a href="#">时光小铺</a></li>
+			</ul>
+			<div class="search">
+				<form action="#" method="post">
+					<input type="text" class="soso" value="搜索路线/目的" onclick="this.value = ''">
+					<input type="submit" class="sub_go" value="">
+				</form>
+			</div>
+		</div>
+	</div>
+	<div id = "young-all"> 
+	<div id = "young-all-program">
+		<div class = "program-top">活动详情</div>
+		<ul>
+			<li>
+				<img class=
+				"young_pic" src = "./image/img_2.jpg" />
+				<div class = "program-text">
+					<a href="#"><span>永远的地狱天天逛</span></a>
+					<div class = "station">
+						<img src = "image/station.jpg" />
+						<p>
+						重庆-第一站-第二站-西藏
+						</p>
+					</div>
+					<dl class = "date">
+						<dt style = "float:left">最近团期：2014-10-5</dt>
+							<dt><img src = "image/date.jpg" />2014-10-25</dt>
+					</dl>
+				</div>
+				<span class="price">￥200起</span>
+			</li>
+			<li>
+				<img class=
+				"young_pic" src = "./image/img_2.jpg" />
+				<div class = "program-text">
+					<a href="#"><span>永远的地狱天天逛</span></a>
+					<div class = "station">
+						<img src = "image/station.jpg" />
+						<p>
+						重庆-第一站-重庆-第一站-重庆-第一站-重庆-第一站-重庆-第一站
+						</p>
+					</div>
+					<dl class = "date">
+						<dt style = "float:left">最近团期：2014-10-5</dt>
+							<dt><img src = "image/date.jpg" />2014-10-25</dt>
+					</dl>
+				</div>
+				<span class="price">￥200起</span>
+			</li>
+			<li>
+				<img class=
+				"young_pic" src = "./image/img_2.jpg" />
+				<div class = "program-text">
+					<a href="#"><span>永远的地狱天天逛</span></a>
+					<div class = "station">
+						<img src = "image/station.jpg" />
+						<p>
+						重庆-第一站-重庆-第一站-重庆-第一站-重庆-第一站-重庆-第一站
+						</p>
+					</div>
+					<dl class = "date">
+						<dt style = "float:left">最近团期：2014-10-5</dt>
+							<dt><img src = "image/date.jpg" />2014-10-25</dt>
+					</dl>
+				</div>
+				<span class="price">￥200起</span>
+			</li>
+			<li>
+				<img class=
+				"young_pic" src = "./image/img_2.jpg" />
+				<div class = "program-text">
+					<a href="#"><span>永远的地狱天天逛</span></a>
+					<div class = "station">
+						<img src = "image/station.jpg" />
+						<p>
+						重庆-第一站-重庆-第一站-重庆-第一站-重庆-第一站-重庆-第一站
+						</p>
+					</div>
+					<dl class = "date">
+						<dt style = "float:left">最近团期：2014-10-5</dt>
+							<dt><img src = "image/date.jpg" />2014-10-25</dt>
+					</dl>
+				</div>
+				<span class="price">￥200起</span>
+			</li>
+			<li>
+				<img class=
+				"young_pic" src = "./image/img_2.jpg" />
+				<div class = "program-text">
+					<a href="#"><span>永远的地狱天天逛</span></a>
+					<div class = "station">
+						<img src = "image/station.jpg" />
+						<p>
+						重庆-第一站-重庆-第一站-重庆-第一站-重庆-第一站-重庆-第一站
+						</p>
+					</div>
+					<dl class = "date">
+						<dt style = "float:left">最近团期：2014-10-5</dt>
+							<dt><img src = "image/date.jpg" />2014-10-25</dt>
+					</dl>
+				</div>
+				<span class="price">￥200起</span>
+			</li>
+			<li>
+				<img class=
+				"young_pic" src = "./image/img_2.jpg" />
+				<div class = "program-text">
+					<a href="#"><span>永远的地狱天天逛</span></a>
+					<div class = "station">
+						<img src = "image/station.jpg" />
+						<p>
+						重庆-第一站-重庆-第一站-重庆-第一站-重庆-第一站-重庆-第一站
+						</p>
+					</div>
+					<dl class = "date">
+						<dt style = "float:left">最近团期：2014-10-5</dt>
+							<dt><img src = "image/date.jpg" />2014-10-25</dt>
+					</dl>
+				</div>
+				<span class="price">￥200起</span>
+			</li>
+		</ul>
+		<div class = "program-top">往期活动</div>
+	</div>
+	<div id = "img">
+		<div class = "switch-img">
+			<div class = "over">
+				<div class = "over-btn">
+					<div class = "move">
+						<div class = "switch-div">
+							<ul class = "img-ul">
+								<li>
+									<img src = "image/1.jpg" />
+									<div class = "img-text">
+										<span class = "text-span">#亚马逊的极致冒险#</span>
+										<span class = "date-span">2014-10-15</span>						
+									</div>
+								</li>	
+								<li>
+									<img src = "image/2.jpg" />
+									<div class = "img-text">
+										<span class = "text-span">#亚马逊的极致冒险#</span>
+										<span class = "date-span">2014-10-15</span>						
+									</div>
+								</li>	
+							</ul>
+							<ul class = "img-ul">
+								<li>
+									<img src = "image/2.jpg" />
+									<div class = "img-text">
+										<span class = "text-span">#亚马逊的极致冒险#</span>
+										<span class = "date-span">2014-10-15</span>						
+									</div>
+								</li>	
+								<li>
+									<img src = "image/1.jpg" />
+									<div class = "img-text">
+										<span class = "text-span">#亚马逊的极致冒险#</span>
+										<span class = "date-span">2014-10-15</span>						
+									</div>
+								</li>	
+							</ul>
+						</div>
+						<div class = "switch-div">
+							<ul class = "img-ul">
+								<li>
+									<img src = "image/1.jpg" />
+									<div class = "img-text">
+										<span class = "text-span">#亚马逊的极致冒险#</span>
+										<span class = "date-span">2014-10-15</span>						
+									</div>
+								</li>	
+								<li>
+									<img src = "image/2.jpg" />
+									<div class = "img-text">
+										<span class = "text-span">#亚马逊的极致冒险#</span>
+										<span class = "date-span">2014-10-15</span>						
+									</div>
+								</li>	
+							</ul>
+							<ul class = "img-ul">
+								<li>
+									<img src = "image/1.jpg" />
+									<div class = "img-text">
+										<span class = "text-span">#亚马逊的极致冒险#</span>
+										<span class = "date-span">2014-10-15</span>						
+									</div>
+								</li>	
+								<li>
+									<img src = "image/2.jpg" />
+									<div class = "img-text">
+										<span class = "text-span">#亚马逊的极致冒险#</span>
+										<span class = "date-span">2014-10-15</span>						
+									</div>
+								</li>	
+							</ul>
+						</div>
+						<div class = "switch-div">
+							<ul class = "img-ul">
+								<li>
+									<img src = "image/1.jpg" />
+									<div class = "img-text">
+										<span class = "text-span">#亚马逊的极致冒险#</span>
+										<span class = "date-span">2014-10-15</span>						
+									</div>
+								</li>	
+								<li>
+									<img src = "image/2.jpg" />
+									<div class = "img-text">
+										<span class = "text-span">#亚马逊的极致冒险#</span>
+										<span class = "date-span">2014-10-15</span>						
+									</div>
+								</li>	
+							</ul>
+							<ul class = "img-ul">
+								<li>
+									<img src = "image/1.jpg" />
+									<div class = "img-text">
+										<span class = "text-span">#亚马逊的极致冒险#</span>
+										<span class = "date-span">2014-10-15</span>						
+									</div>
+								</li>	
+								<li>
+									<img src = "image/2.jpg" />
+									<div class = "img-text">
+										<span class = "text-span">#亚马逊的极致冒险#</span>
+										<span class = "date-span">2014-10-15</span>						
+									</div>
+								</li>	
+							</ul>
+						</div>
+						<div class = "switch-div">
+							<ul class = "img-ul">
+								<li>
+									<img src = "image/1.jpg" />
+									<div class = "img-text">
+										<span class = "text-span">#亚马逊的极致冒险#</span>
+										<span class = "date-span">2014-10-15</span>						
+									</div>
+								</li>	
+								<li>
+									<img src = "image/2.jpg" />
+									<div class = "img-text">
+										<span class = "text-span">#亚马逊的极致冒险#</span>
+										<span class = "date-span">2014-10-15</span>						
+									</div>
+								</li>	
+							</ul>
+							<ul class = "img-ul">
+								<li>
+									<img src = "image/1.jpg" />
+									<div class = "img-text">
+										<span class = "text-span">#亚马逊的极致冒险#</span>
+										<span class = "date-span">2014-10-15</span>						
+									</div>
+								</li>	
+								<li>
+									<img src = "image/2.jpg" />
+									<div class = "img-text">
+										<span class = "text-span">#亚马逊的极致冒险#</span>
+										<span class = "date-span">2014-10-15</span>						
+									</div>
+								</li>	
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<input type = "button" class = "pre" />
+		</div>
+		
+		
+		
+		
+		<div class = "switch-img">
+			<div class = "over">
+				<div class = "over-btn">
+					<div class = "move">
+						<div class = "switch-div">
+							<ul class = "img-ul">
+								<li>
+									<img src = "image/1.jpg" />
+									<div class = "img-text">
+										<span class = "text-span">#好哦煎熬的你什么的#</span>
+										<span class = "date-span">2014-10-15</span>						
+									</div>
+								</li>	
+								<li>
+									<img src = "image/2.jpg" />
+									<div class = "img-text">
+										<span class = "text-span">#好哦煎熬的你什么的#</span>
+										<span class = "date-span">2014-10-15</span>						
+									</div>
+								</li>	
+							</ul>
+							<ul class = "img-ul">
+								<li>
+									<img src = "image/2.jpg" />
+									<div class = "img-text">
+										<span class = "text-span">#好哦煎熬的你什么的#</span>
+										<span class = "date-span">2014-10-15</span>						
+									</div>
+								</li>	
+								<li>
+									<img src = "image/1.jpg" />
+									<div class = "img-text">
+										<span class = "text-span">#好哦煎熬的你什么的#</span>
+										<span class = "date-span">2014-10-15</span>						
+									</div>
+								</li>	
+							</ul>
+						</div>
+						<div class = "switch-div">
+							<ul class = "img-ul">
+								<li>
+									<img src = "image/1.jpg" />
+									<div class = "img-text">
+										<span class = "text-span">#好哦煎熬的你什么的#</span>
+										<span class = "date-span">2014-10-15</span>						
+									</div>
+								</li>	
+								<li>
+									<img src = "image/2.jpg" />
+									<div class = "img-text">
+										<span class = "text-span">#好哦煎熬的你什么的#</span>
+										<span class = "date-span">2014-10-15</span>						
+									</div>
+								</li>	
+							</ul>
+							<ul class = "img-ul">
+								<li>
+									<img src = "image/1.jpg" />
+									<div class = "img-text">
+										<span class = "text-span">#好哦煎熬的你什么的#</span>
+										<span class = "date-span">2014-10-15</span>						
+									</div>
+								</li>	
+								<li>
+									<img src = "image/2.jpg" />
+									<div class = "img-text">
+										<span class = "text-span">#好哦煎熬的你什么的#</span>
+										<span class = "date-span">2014-10-15</span>						
+									</div>
+								</li>	
+							</ul>
+						</div>
+						<div class = "switch-div">
+							<ul class = "img-ul">
+								<li>
+									<img src = "image/1.jpg" />
+									<div class = "img-text">
+										<span class = "text-span">#好哦煎熬的你什么的#</span>
+										<span class = "date-span">2014-10-15</span>						
+									</div>
+								</li>	
+								<li>
+									<img src = "image/2.jpg" />
+									<div class = "img-text">
+										<span class = "text-span">#好哦煎熬的你什么的#</span>
+										<span class = "date-span">2014-10-15</span>						
+									</div>
+								</li>	
+							</ul>
+							<ul class = "img-ul">
+								<li>
+									<img src = "image/1.jpg" />
+									<div class = "img-text">
+										<span class = "text-span">#好哦煎熬的你什么的#</span>
+										<span class = "date-span">2014-10-15</span>						
+									</div>
+								</li>	
+								<li>
+									<img src = "image/2.jpg" />
+									<div class = "img-text">
+										<span class = "text-span">#好哦煎熬的你什么的#</span>
+										<span class = "date-span">2014-10-15</span>						
+									</div>
+								</li>	
+							</ul>
+						</div>
+						<div class = "switch-div">
+							<ul class = "img-ul">
+								<li>
+									<img src = "image/1.jpg" />
+									<div class = "img-text">
+										<span class = "text-span">#好哦煎熬的你什么的#</span>
+										<span class = "date-span">2014-10-15</span>						
+									</div>
+								</li>	
+								<li>
+									<img src = "image/2.jpg" />
+									<div class = "img-text">
+										<span class = "text-span">#好哦煎熬的你什么的#</span>
+										<span class = "date-span">2014-10-15</span>						
+									</div>
+								</li>	
+							</ul>
+							<ul class = "img-ul">
+								<li>
+									<img src = "image/1.jpg" />
+									<div class = "img-text">
+										<span class = "text-span">#好哦煎熬的你什么的#</span>
+										<span class = "date-span">2014-10-15</span>						
+									</div>
+								</li>	
+								<li>
+									<img src = "image/2.jpg" />
+									<div class = "img-text">
+										<span class = "text-span">#好哦煎熬的你什么的#</span>
+										<span class = "date-span">2014-10-15</span>						
+									</div>
+								</li>	
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<input type = "button" class = "pre" />
+		</div>
+		
+		
+		
+		
+		
+		
+		<div class = "switch-img">
+			<div class = "over">
+				<div class = "over-btn">
+					<div class = "move">
+						<div class = "switch-div">
+							<ul class = "img-ul">
+								<li>
+									<img src = "image/1.jpg" />
+									<div class = "img-text">
+										<span class = "text-span">#好哦煎熬的你什么的#</span>
+										<span class = "date-span">2014-10-15</span>						
+									</div>
+								</li>	
+								<li>
+									<img src = "image/2.jpg" />
+									<div class = "img-text">
+										<span class = "text-span">#好哦煎熬的你什么的#</span>
+										<span class = "date-span">2014-10-15</span>						
+									</div>
+								</li>	
+							</ul>
+							<ul class = "img-ul">
+								<li>
+									<img src = "image/2.jpg" />
+									<div class = "img-text">
+										<span class = "text-span">#好哦煎熬的你什么的#</span>
+										<span class = "date-span">2014-10-15</span>						
+									</div>
+								</li>	
+								<li>
+									<img src = "image/1.jpg" />
+									<div class = "img-text">
+										<span class = "text-span">#好哦煎熬的你什么的#</span>
+										<span class = "date-span">2014-10-15</span>						
+									</div>
+								</li>	
+							</ul>
+						</div>
+						<div class = "switch-div">
+							<ul class = "img-ul">
+								<li>
+									<img src = "image/1.jpg" />
+									<div class = "img-text">
+										<span class = "text-span">#好哦煎熬的你什么的#</span>
+										<span class = "date-span">2014-10-15</span>						
+									</div>
+								</li>	
+								<li>
+									<img src = "image/2.jpg" />
+									<div class = "img-text">
+										<span class = "text-span">#好哦煎熬的你什么的#</span>
+										<span class = "date-span">2014-10-15</span>						
+									</div>
+								</li>	
+							</ul>
+							<ul class = "img-ul">
+								<li>
+									<img src = "image/1.jpg" />
+									<div class = "img-text">
+										<span class = "text-span">#好哦煎熬的你什么的#</span>
+										<span class = "date-span">2014-10-15</span>						
+									</div>
+								</li>	
+								<li>
+									<img src = "image/2.jpg" />
+									<div class = "img-text">
+										<span class = "text-span">#好哦煎熬的你什么的#</span>
+										<span class = "date-span">2014-10-15</span>						
+									</div>
+								</li>	
+							</ul>
+						</div>
+						<div class = "switch-div">
+							<ul class = "img-ul">
+								<li>
+									<img src = "image/1.jpg" />
+									<div class = "img-text">
+										<span class = "text-span">#好哦煎熬的你什么的#</span>
+										<span class = "date-span">2014-10-15</span>						
+									</div>
+								</li>	
+								<li>
+									<img src = "image/2.jpg" />
+									<div class = "img-text">
+										<span class = "text-span">#好哦煎熬的你什么的#</span>
+										<span class = "date-span">2014-10-15</span>						
+									</div>
+								</li>	
+							</ul>
+							<ul class = "img-ul">
+								<li>
+									<img src = "image/1.jpg" />
+									<div class = "img-text">
+										<span class = "text-span">#好哦煎熬的你什么的#</span>
+										<span class = "date-span">2014-10-15</span>						
+									</div>
+								</li>	
+								<li>
+									<img src = "image/2.jpg" />
+									<div class = "img-text">
+										<span class = "text-span">#好哦煎熬的你什么的#</span>
+										<span class = "date-span">2014-10-15</span>						
+									</div>
+								</li>	
+							</ul>
+						</div>
+						<div class = "switch-div">
+							<ul class = "img-ul">
+								<li>
+									<img src = "image/1.jpg" />
+									<div class = "img-text">
+										<span class = "text-span">#好哦煎熬的你什么的#</span>
+										<span class = "date-span">2014-10-15</span>						
+									</div>
+								</li>	
+								<li>
+									<img src = "image/2.jpg" />
+									<div class = "img-text">
+										<span class = "text-span">#好哦煎熬的你什么的#</span>
+										<span class = "date-span">2014-10-15</span>						
+									</div>
+								</li>	
+							</ul>
+							<ul class = "img-ul">
+								<li>
+									<img src = "image/1.jpg" />
+									<div class = "img-text">
+										<span class = "text-span">#好哦煎熬的你什么的#</span>
+										<span class = "date-span">2014-10-15</span>						
+									</div>
+								</li>	
+								<li>
+									<img src = "image/2.jpg" />
+									<div class = "img-text">
+										<span class = "text-span">#好哦煎熬的你什么的#</span>
+										<span class = "date-span">2014-10-15</span>						
+									</div>
+								</li>	
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<input type = "button" class = "pre" />
+		</div>
+	</div>
+</div> 
+	<div id="footer">
+		<div id="f_content">
+			<div id="f_left">
+			<img  class="f_logo" src="./image/logo.png" />
+			<span>备案J1541558436[京] </span>
+			</div>
+			<div id="f_center">
+				<p>
+					<a href="#">关于我们</a>    
+					<a href="#">联系我们</a>     
+					<a href="#">隐私条款</a>     
+					<a href="#">加入我们</a>
+				</p>
+				<p class="f_pic">
+					<a href="#">关于我们:</a>    
+					<a href="#"><img src="./image/f_web.png" /></a>   
+					<a href="#"><img src="./image/f_qq.png" /></a>     
+				</p>
+			</div>
+			<div id="f_right">
+				<img src="./image/erw.png" />
+				<span>扫一扫关注时光旅行</span>
+			</div>
+		</div>
+		<div id="f_bottom">
+			<span>友情链接</span>
+			<p>
+				<a href="#">关于我们</a>    
+				<a href="#">联系我们</a>     
+				<a href="#">隐私条款</a>     
+				<a href="#">加入我们</a>
+				<a href="#">关于我们</a>    
+				<a href="#">联系我们</a>     
+				<a href="#">隐私条款</a>     
+				<a href="#">加入我们</a>
+				<a href="#">加入我们</a>
+				<a href="#">关于我们</a>    
+			</p>
+			<p>
+				<a href="#">关于我们</a>    
+				<a href="#">联系我们</a>     
+				<a href="#">隐私条款</a>     
+				<a href="#">加入我们</a>
+				<a href="#">关于我们</a>    
+				<a href="#">联系我们</a>     
+				<a href="#">隐私条款</a>     
+				<a href="#">加入我们</a>
+				<a href="#">加入我们</a>
+				<a href="#">关于我们</a>    
+			</p>
+		</div>
+	</div>
+	<div id="fixed">
+		<ul>
+			<li><a class="f_f" href="#">在线咨询</a></li>
+			<li><a class="f_s" href="#">123456789</a></li>
+			<li><a class="f_t" href="javascript:void(0);">回到顶部</a></li>
+		</ul>
+	</div>
+	<div id="order">
+	</div>
+	<div id="login_box" style="background:#fff;z-indent:12px;opacity:1;">
+		<h4>登陆<img id="cancel" src="./image/close.png" /></h4>
+		<div class="l_left">
+			<p>使用社交网络登陆</p>
+			<span><a href="#"><img src="./image/l_web.png" /></a>新浪微博</span>
+			<span class="qq"><a href="#"><img src="./image/l_qq.png" /></a>腾讯QQ</span>
+		</div>
+		<div class="l_right">
+			<p><a class="l_first" href="#">使用本网账号登陆</a><a class="l_last" href="#">注册</a></p>
+			<form action="#" method="post">
+				<input type="text" name="username">
+				<input type="password" name="password">
+				<p class="tell">
+					<span><input type="checkbox" class="radio"/>记住我</span><a href="#">忘记密码?</a>
+				</p>
+				<input type="submit" class="l_sub" value="登陆">
+			</form>
+		</div>
+	</div>
+</body>
+</html>

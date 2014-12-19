@@ -1,0 +1,54 @@
+<extend name="Public/base" />
+<block name="body">
+<ul class="breadcrumb">
+	<li>
+		<a href="javascript:history.back(-1)">返回上一页</a>
+		<span class="divider">/</span>
+	</li>
+	<li class="active">{$meta_title}</li>
+</ul>
+<div class="row-fluid">
+	<form class="form-horizontal" action="{:U('editAction')}">
+		<input type="hidden" name="id" value="{$info.id|default=''}">
+		<div class="control-group">
+			<label class="control-label" for="name">行为名称</label>
+			<div class="controls">
+				<span>{:get_action($info['action_id'], "title")}</span>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="title">执行者</label>
+			<div class="controls">
+				<span>{:get_nickname($info['user_id'])}</span>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="remark">执行IP</label>
+			<div class="controls">
+				<span>{:long2ip($info['action_ip'])}</span>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="title">执行时间</label>
+			<div class="controls">
+				<span>{:date('Y-m-d H:i:s',$info['create_time'])}</span>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="title">备注</label>
+			<div class="controls">
+				<span>{$info.remark}</span>
+			</div>
+		</div>
+		<div class="control-group">
+			<div class="controls">
+				<button type="button" class="btn"
+					onclick="javascript:history.back(-1)">返回</button>
+			</div>
+		</div>
+	</form>
+</div>
+</block>
+<block name="script"> <script type="text/javascript">
+  setValue("status", {$info.status|default = 0});
+  </script> </block>

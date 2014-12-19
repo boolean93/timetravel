@@ -1,0 +1,53 @@
+<extend name="Public/base" />
+<block name="head">
+    <script src="__PUBLIC__/js/jquery-2.0.2.js"></script>
+    <script src="__PUBLIC__/ueditor/ueditor.config.js" ></script>
+    <script src="__PUBLIC__/ueditor/ueditor.all.min.js" ></script>
+
+    <link href="__BOOTSTRAP__/css/bootstrap-datetimepicker.min.css"
+	rel="stylesheet" type="text/css">
+
+</block>
+<block name="body">
+<ul class="breadcrumb">
+	<li>
+		<a href="javascript:history.back(-1)">返回上一页</a>
+		<span class="divider">/</span>
+	</li>
+	<li class="active">{$meta_title}</li>
+</ul>
+<div class="row-fluid">
+	<form class="form-horizontal" action="{:U('upload')}" enctype="multipart/form-data" method="post">
+
+
+		<div class="control-group">													
+			<label class="control-label" for="photo">上传图片</label>
+			<div class="controls">
+                <input type="file" name="photo" id="photo"/>
+			</div>
+		</div>
+
+        <div class="control-group">
+			<div class="controls">
+				<button type="submit" class="btn "
+					target-form="form-horizontal">保存</button>
+				<button type="button" class="btn"
+					onclick="javascript:history.back(-1)">取消</button>
+			</div>
+		</div>
+	</form>
+</div>
+</block>
+<block name="script"> <script type="text/javascript"
+	src="__BOOTSTRAP__/js/bootstrap-datetimepicker.min.js">
+</script> 
+	<script type="text/javascript">
+$('#publishtime').datetimepicker({ language:'zh-CN'}); 
+setValue("pid", {$info.pid|default=0}); 
+setValue("status", {$info.status|default = 1}); 
+
+
+
+</script>
+
+</block>

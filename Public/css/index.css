@@ -1,0 +1,90 @@
+/*
+* 图片切换
+*/
+#slider{width:1200px;height:444px;margin:0 auto;margin-top:24px;position:relative;overflow: hidden;}
+#slider ul{width:4800px;height:444px;position:absolute;top:0px;left:0px;}
+#slider ul li{width:1200px;height:444px;float:left;}
+#slider li img{width:1200px;height:444px;float:left;}
+#slider #prev{position:absolute;left:40px;top:174px;z-index:10;cursor:pointer;display:none;}
+#slider #next{position:absolute;right:40px;top:174px;z-index:2;cursor:pointer;display:none;}
+#slider #forms{width:252px;height:328px;background:url(../image/form_bg.png) no-repeat;position:absolute;top:52px;left:136px;}
+#forms form{color:#fff;font-size:14px;font-family:'宋体';}
+#forms h4{height:36px;line-height:36px;font-weight:normal;padding-left:20px;margin-bottom:20px;border-bottom:1px solid #A8A8A8;}
+#forms p{width:252px;height:25px;line-height:25px;margin-top:15px;}
+#forms span{width:62px;height:25px;display:block;float:left;margin-left:20px;}
+#forms input{width:135px;height:25px;background:#fff;color:#464646;padding-left:4px;font-size:14px;border:none;float:right;margin-right:26px;}
+#forms select{width:139px;height:25px;background:#fff;font-size:14px;border:none;float:right;margin-right:26px;}
+#forms .submit{width:204px;height:32px;line-height:32px;letter-spacing:0.1em;background:#95A501;margin-top:15px;font-size:18px;font-family:'黑体';color:#fff;cursor:pointer;}
+
+/*
+*首页-时光之旅
+ */
+#travel{width:1106px;height:486px;margin:0 auto;margin-top:60px;position:relative;}
+#travel span a{font-size:22px;margin-left:62px;font-family:'宋体';font-weight:bold;color:#2E2E2E;}
+#travel .f_prev{position:absolute;top:242px;left:0px;cursor:pointer;}
+#travel .f_next{position:absolute;top:242px;right:4px;cursor:pointer;}
+#travel #looks{width:998px;height:458px;margin:0 auto;position:relative;overflow: hidden;}
+#travel #pic_look{width:2000px;height:456px;position:absolute;top:0px;left:0px;}
+#pic_look .look{float:left;width:1000px;height:800px;}
+.look ul li{width:310px;height:210px;position:relative;overflow:hidden;float:left;margin:20px 12px 0 11px;}
+.look img{width:310px;height:210px;}
+.look a{display:block;width:310px;height:210px;position:absolute;top:166px;left:0px;z-index:3;background:url(../image/look_bg.png);color:#fff;}
+.look h4{font-size:16px;font-family:'宋体';margin:16px 0 20px 15px;color:#fff;}
+.look p{margin-left:15px;}
+.look .detal{margin-left:15px;width:76px;font-size:14px;height:26px;line-height:26px;background:#ADAD00;text-align:center;border-radius:2px;}
+
+/*
+* 首页-极致探险
+ */
+#explore{width:980px;height:430px;margin:0 auto;margin-top:54px;}
+#explore span a{font-size:22px;font-family:'宋体';font-weight:bold;color:#2E2E2E;}
+#explore #sliders{width:980px;height:389px;margin-top:16px;position:relative;overflow: hidden;}
+#sliders .s_prev{position:absolute;top:170px;left:10px;z-index:2;cursor:pointer;}
+#sliders .s_next{position:absolute;top:170px;left:660px;z-index:2;cursor:pointer;}
+#sliders .pic_side{width:282px;height:389px;background:url(../image/look_bg.png);position:absolute;top:0px;right:0px;z-index:2;color:#fff;}
+#explore .pic_side span{display:block;font-size:20px;font-family:'宋体';margin:70px 0 38px 24px;color:#fff;}
+.pic_side p{width:244px;margin:0 auto;text-indent:2em;font-size:14px;line-height:25px;}
+#sliders ul{width:3920px;position:absolute;left:0px;top:0px;}
+#sliders ul li{width:980px;height:389px;float:left;}
+#sliders ul li img{width:980px;height:389px;}
+
+/*
+* 首页--Young 训练营
+ */
+#train{width:980px;height:466px;margin:0 auto;margin-top:58px;}
+#train span a{width:980px;display:block;font-size:22px;font-family:'宋体';font-weight:bold;color:#2E2E2E;}
+#train .left_train{width:308px;height:424px;float:left;margin-top:16px;}
+.left_train h4{font-size:20px;font-family:'微软雅黑';color:#1772B8;margin-bottom:16px;}
+.left_train p{font-size:14px;font-family:'宋体';line-height:24px;}
+.left_train .special{margin-top:22px;}
+.left_train .more{display:block;width:196px;height:36px;line-height:36px;background:url(../image/more.png) no-repeat;text-align:center;font-size:20px;color:#fff;margin:12px 0 0 1px;cursor:pointer;}
+#train .right_train{width:624px;height:424px;float:right;margin-top:16px;position:relative;}
+.right_train .big_pic{width:623px;height:329px;margin:0 auto;}
+.right_train .small_pic{width:150px;height:93px;float:left;margin-right:8px;cursor:pointer;filter:alpha(opacity:40);opacity:0.4;background-color: #333;}
+.right_train #lasts{margin-right:0px;float:right;}
+.right_train .t_prev{position:absolute;top:150px;left:20px;z-index:2;cursor:pointer;}
+.right_train .t_next{position:absolute;top:150px;right:20px;z-index:2;cursor:pointer;}
+
+/*
+* 首页-时光印记
+ */
+#memory{width:1042px;height:350px;margin:0 auto;margin-top:56px;}
+#memory .m_title a{width:990px;display:block;font-size:22px;font-family:'宋体';font-weight:bold;color:#2E2E2E;margin-left:30px;}
+#memory li{width:296px;height:140px;float:left;margin:24px 20px 14px 30px;}
+#memory li .content{text-indent:2em;font-size:14px;line-height:22px;height:66px;}
+#memory li .from{color:#006AB3;margin-top:22px;height:16px;}
+#memory li .m_content{color:#000;}
+#memory li .author{font-size:12px;width:296px;height:14px;margin-top:10px;color:#8D8E8F;}
+#memory li .author span{display:inline-block;width:30px;height:14px;margin-left:10px;}
+#memory li .author b{width:40px;height:14px;margin-left:12px;font-weight:normal;padding-left:16px;}
+#memory li .author .b_first{background:url(../image/eye.png) no-repeat left center;}
+#memory li .author .b_last{background:url(../image/agree.png) no-repeat left center;}
+#memory li .author .write{width:110px;}
+#memory li .author .dates{width:68px;}
+
+/*
+* 首页-时光小铺
+ */
+#store{width:980px;height:358px;margin:0 auto;margin-top:60px;}
+#store span a{width:980px;display:block;font-size:22px;font-family:'宋体';font-weight:bold;color:#2E2E2E;}
+#store img{width:980px;height:317px;margin-top:16px;}

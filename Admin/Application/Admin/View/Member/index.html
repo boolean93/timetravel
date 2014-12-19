@@ -1,0 +1,45 @@
+<extend name="Public/base" />
+<block name="body">
+<ul class="breadcrumb">
+<li><a href="javascript:history.back(-1)">返回上一页</a> <span class="divider">/</span></li>
+  <li class="active">{$meta_title}</li>
+  <li><a class="btn btn-link" href="{:U('add')}">新增用户</a></li>
+</ul>
+
+<table class="table table-hover table-striped table-bordered">
+	<thead>
+		<tr>
+			<th>用户名</th>
+			<th>昵称</th>
+			<th>性别</th>
+			<th>上次登录时间</th>
+			<th>上次登录IP</th>
+			<th>操作</th>
+		</tr>
+	</thead>
+	<tbody>
+	<volist name="list" id="vo">
+		<tr>
+			<td>{$vo.username}</td>
+			<td>{$vo.nickname}</td>
+			<td>{$vo.sex_text}</td>
+			<td>{$vo.last_login_time|time_format}</td>
+			<td>{:long2ip($vo['last_login_ip'])}</td>
+			<td>
+			<a class="btn btn-mini" href="{:U('auth?uid='.$vo['uid'])}">授权</a>
+			<a class="btn btn-mini" href="{:U('changepassword?id='.$vo['uid'])}">修改密码</a>
+			<a class="btn btn-mini" href="{:U('edit?id='.$vo['uid'])}">编辑</a>
+			<a class="btn btn-mini ajax-get  confirm" href="{:U('delete?id='.$vo['uid'])}">删除</a>
+			</td>
+		</tr>
+		</volist>
+	</tbody>
+</table>
+<div class="pagination">
+  <ul>
+{$_page}
+  </ul>
+</div>
+</block>
+
+<block name="script"></block>

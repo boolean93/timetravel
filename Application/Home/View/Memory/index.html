@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>时光之旅</title>
+    <link href="__PUBLIC__/css/common.css" rel="stylesheet" type="text/css" />
+    <link href="__PUBLIC__/css/memory.css" rel="stylesheet" type="text/css" />
+
+    <script src="__PUBLIC__/js/jquery-2.0.2.js"></script>
+    <script src="__PUBLIC__/ueditor/ueditor.config.js" ></script>
+    <script src="__PUBLIC__/ueditor/ueditor.all.min.js" ></script>
+
+
+    <script>
+    window.onload = function(){
+        var oD = document.getElementById('order');
+        oD.style.width=document.body.clientWidth+'px';
+        oD.style.height=document.body.clientHeight+'px';
+        oD.style.filter = 'alpha(opacity=50)';
+        oD.style.opacity = 0.5;
+        oD.style.background = '#000';
+        var oDe  = document.getElementById('login_box');
+        var oY = document.getElementById('login');
+        var oN = document.getElementById('cancel');
+         var te = (document.documentElement.clientWidth-772)/2 +'px';
+        oDe.style.left = te;
+        oY.onclick =function(){
+            oD.style.display = 'block';
+            oDe.style.display = 'block';
+        }
+        oN.onclick = function(){
+            oD.style.display = 'none';
+            oDe.style.display = 'none';
+        }
+    }
+    function getByClass(oparent,sClass){
+            var aResult=[];
+            var aEle = oparent.getElementsByTagName('*');
+            for(var i=0;i<aEle.length;i++){
+                if(aEle[i].className==sClass){
+                    aResult.push(aEle[i]);
+                }
+            }
+            return aResult;
+    }
+    </script>
+</head>
+
+<include file="Public/nav" />
+	<div id="m_content">
+		<h4>精彩游记</h4>
+		<volist id="vo" name="article">
+            <div class="m_list">
+                <a href="{:U('Home/Memory/detail', array('id'=>$vo['id']))}">
+                    <img class="m_pic" src="{$vo.pic_url}" />
+                </a>
+
+                <div class="m_title">
+                    <img src="__PUBLIC__/image/d_look.png" />
+                    <a href="{:U('Memory/detail', array('id'=>$vo['id']))}">
+                        <span class="s_title">{$vo.title}</span>
+                    </a>
+                    <span>
+                        作者：{$vo.user_id|getUsernameByUserId}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$vo.create_time|date="Y-m-d",###}
+                        <a class="c_f" href="#">{$vo.click}</a>
+                        <a class="c_s" href="#">{$vo.good}</a>
+                    </span>
+                </div>
+
+                <p>{$vo.content|htmlspecialchars_decode|strip_tags|mb_substr=###,0,120}
+                    <a href="{:U('Home/Memory/detail', array('id'=>$vo['id']))}">查看全文</a>
+                </p>
+            </div>
+        </volist>
+        <p class="page">
+            <a href="#">上一页</a>
+            <volist id="vo" name="page">
+                <if condition="$vo neq '...'">
+                    <a <if condition="$vo eq $pid">class="t_active"</if> href="{:U('Home/Memory/index', array('pid' => $vo))}">{$vo}</a>
+                <else />
+                    <a href="#">...</a>
+                </if>
+            </volist>
+                <a href="#">下一页</a>
+
+        </p>
+
+        <form action="{:U('Home/Memory/submit')}" method="post" style="margin-top:20px">
+            <label for="title">标题:</label><br/>
+            <input type="text" name="title" id="title" style="
+                font-size:16px;
+                padding:8px;
+                width:400px;
+                border:1px solid grey;
+                border-radius: 2px;
+                margin-top:20px"/>
+            <br/><br/>
+            <label for="pic_url">封面图片地址:</label><br/>
+            <input type="text" name="pic_url" id="pic_url" style="
+                font-size:16px;
+                padding:8px;
+                width:400px;
+                border:1px solid grey;
+                border-radius: 2px;
+                margin-top:20px"/>
+
+            <div style="margin-top:20px">
+                <textarea name="content" id="myEditor"></textarea>
+            </div>
+
+            <script>
+                $(function(){
+                    var ue = UE.getEditor('myEditor',{
+                        serverUrl :'{:U("Home/Memory/ueditor")}'
+                    });
+                })
+            </script>
+
+            <input type="submit" value="撰写游记" class="write"/>
+        </form>
+	</div>
+<include file="Public/login"/>
+<include file="Public/footer" />

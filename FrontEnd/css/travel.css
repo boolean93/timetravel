@@ -1,0 +1,25 @@
+body{background:#F1F1F1;}
+#t_content{width:970px;min-height:900px;margin:0 auto;margin-top:38px;overflow: hidden;zoom:1;}
+#t_content .t_left{width:694px;min-height:800px;float:left;}
+#t_content .t_right{width:240px;height:500px;float:right;}
+.t_left .t_leftmain{min-height:588px;padding:22px 22px 12px 22px;background:#fff;margin-bottom:15px;position:relative;}
+.t_leftmain img{width:650px;height:320px;}
+.t_leftmain span{display:block;font-size:20px;margin:22px 0 10px 0;}
+.t_leftmain span a{color:#066CB6;}
+.t_leftmain p{line-height:22px;font-size:14px;padding-bottom:36px;border-bottom:1px solid #CDCDCD;}
+.t_leftmain p a{position:absolute;right:20px;top:444px;color:#D32105;}
+.t_leftmain .route_detail{font-size:14px;display:block;width:56px;height:20px;line-height:20px;margin-top:-12px;background:#fff;}
+.t_leftmain .route{width:650px;height:84px;position:relative;}
+.route img{width:82px;height:82px;float:left;}
+.route span{width:200px;display:block;font-size:14px;margin-top:15px;margin-left:100px;*margin-top:10px;}
+.route .t_title{color:#E32600;}
+.route .t_look{width:118px;height:44px;line-height:44px;float:right;position:absolute;top:20px;right:20px;cursor:pointer;text-align:center;color:#fff;font-size:18px;font-size:'微软雅黑';background:url(../image/routes.png);}
+.t_right .talk{width:240px;height:158px;background:url(../image/bg.png) no-repeat;padding-top:40px;text-align:center;}
+.talk span{display:block;font-size:14px;font-size:18px;font-family:'微软雅黑';color:#515151;}
+.er_code{float:left;margin-top:14px;}
+.er_code p{width:122px;height:122px;background:#fff;float:left;padding:12px;}
+.er_code img{width:116px;height:118px;}
+.er_code span{display:block;width:10px;height:118px;float:left;margin:8px 0 0 10px;font-size:14px;line-height:18px;}
+.t_left .page{width:396px;height:36px;display:block;float:right;text-align:center;color:#C7C7C7;margin-top:10px;}
+.page a{display:inline-block;height:36px;line-height:36px;text-align:center;padding:0 16px 0 16px;background:#C7C7C7;margin-left:4px;color:#fff;font-size:16px;font-family:'微软雅黑';}
+.page .t_active{background:#95A600;}

@@ -1,0 +1,15 @@
+[ 2014-12-18T17:01:11+08:00 ] 127.0.0.1 /timetravel/index.php?m=home&c=time&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000072s ]
+
+[ 2014-12-18T17:01:13+08:00 ] 127.0.0.1 /timetravel/index.php?m=home&c=time&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000039s ]
+
+[ 2014-12-18T17:01:14+08:00 ] 127.0.0.1 /timetravel/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000075s ]
+

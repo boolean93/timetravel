@@ -1,0 +1,33 @@
+<!--its in nav-->
+<body id="main">
+<div id="top">
+    <p>
+        <a href="#"><img src="__PUBLIC__/image/weibo.png"/></a>
+        <a href="#"><img src="__PUBLIC__/image/qq.png"/></a>
+        <if condition="session('userinfo')">
+            <a href="#" id="login">登陆</a>
+            <a href="{:U('Home/Index/register')}" id="register">注册</a>
+        </if>
+        <a href=""></a>
+    </p>
+</div>
+<div id="nav">
+    <div id="nav_main">
+        <a href="{:U('Home/Index/index')}"><img src="__PUBLIC__/image/logo.png"/></a>
+        <ul>
+            <li><a href="{:U('Home/Index/index')}">首页</a></li>
+            <li><a href="{:U('Home/Time/index')}">时光之旅</a></li>
+            <li><a href="{:U('Home/Explore/index')}">极致探险</a></li>
+            <li><a href="{:U('Home/Young/index')}">Young探险</a></li>
+            <li><a href="{:U('Home/Memory/index')}">时光印记</a></li>
+            <li><a href="">时光小铺</a></li>
+        </ul>
+        <div class="search">
+            <form action="#" method="post">
+                <input type="text" class="soso" value="搜索路线/目的" onclick="this.value = ''">
+                <input type="submit" class="sub_go" value="">
+            </form>
+        </div>
+    </div>
+</div>
+<!--nav ends-->

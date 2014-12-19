@@ -1,0 +1,82 @@
+<extend name="Public/base" />
+<block name="body">
+<ul class="breadcrumb">
+<li><a href="javascript:history.back(-1)">返回上一页</a> <span class="divider">/</span></li>
+  <li class="active">{$meta_title}</li>
+</ul>
+<div class="row-fluid">
+ <form class="form-horizontal" action="{:U('edit')}">
+<input type="hidden" name="uid" value="{$info.uid|default=''}">
+  <div class="control-group">
+    <label class="control-label" for="username">用户名</label>
+    <div class="controls">
+      <input type="text" id="username" name="username" class="span8" placeholder="用户名" {:isset($info['uid'])?'readonly="true"':''} value="{$info.username}">
+    </div>
+  </div>
+        <div class="control-group">
+    <label class="control-label" for="roleid">角色</label>
+    <div class="controls">
+      <select id="roleid" name="roleid" class="span8">
+      <volist name="Role" id="vo">
+          <option value="{$vo.id}">{$vo.title}</option>
+          </volist>
+      </select>
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="nickname">昵称</label>
+    <div class="controls">
+      <input type="text" name="nickname" id="nickname" class="span8" value="{$info.nickname}" placeholder="昵称">
+    </div>
+  </div>
+      <div class="control-group">
+    <label class="control-label" for="nickname">密码</label>
+    <div class="controls">
+      <input type="text" name="password" id="password" class="span8" value="" placeholder="密码">
+    </div>
+  </div>
+    <div class="control-group">
+    <label class="control-label" for="sex">性别</label>
+    <div class="controls">
+      <select id="sex" name="sex" class="span8">
+          <option value="0">男</option>
+          <option value="1">女</option>
+      </select>
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="birthday">生日</label>
+    <div class="controls">
+      <input type="text" name="birthday" id="birthday" class="span8" value="{$info.birthday}" placeholder="生日">
+    </div>
+  </div>
+    <div class="control-group">
+    <label class="control-label" for="qq">QQ号码</label>
+    <div class="controls">
+      <input type="text" name="qq" id="qq" class="span8" value="{$info.qq}" placeholder="QQ号码">
+    </div>
+  </div>
+      <div class="control-group">
+    <label class="control-label" for="status">状态</label>
+    <div class="controls">
+      <select id="status" name="status" class="span8">
+          <option value="1">启用</option>
+          <option value="0">禁用</option>
+      </select>
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="controls">
+      <button type="submit" class="btn ajax-post" target-form="form-horizontal">保存</button><button type="button" class="btn" onclick="javascript:history.back(-1)">取消</button>
+    </div>
+  </div>
+ </form>
+</div>
+</block>
+<block name="script">
+  <script type="text/javascript">
+  setValue("sex", {$info.sex|default = 0});
+  setValue("status", {$info.status|default = 1});
+  setValue("roleid", {$info.roleid});
+  </script>
+</block>
