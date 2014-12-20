@@ -141,7 +141,7 @@ function getNext($module_name, $id, $attribute){
     if($id < $temp['id']){
         $id++;
     }else{
-        return ($attribute == 'U')?'#':' 无 ';
+        return ($attribute == 'U')?'#':'无';
     }
     if($attribute == 'U')
         return U($module_name."/detail", array("id"=>$id));
@@ -193,5 +193,5 @@ function getPriceByRouteId($id){
     foreach($price as $v){
         if($v['price'] < $min) $min = $v['price'];
     }
-    return ($min == 100000)?"暂无":$min;
+    return ($min == 100000)?"暂无":$min."起";
 }
