@@ -92,6 +92,21 @@ body{position:relative;}
 
 /*
 *   老李加的, route/detail
+*/
 .totaobao{
+    padding: 10px 10px 10px 10px;
+    border: 1px solid #BD0101;
+    font-weight: bolder;
+    margin:50px 20px 20px 0px;
+    display: block;
+    width:80px;
+    font-size: 18px;
+    color: #BD0101;
+    text-align: center;
+    transition: all 0.3s;
+}
 
+.totaobao:hover{
+    color: white;
+    background: #BD0101;
 }

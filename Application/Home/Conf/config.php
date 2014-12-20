@@ -19,5 +19,5 @@ return array(
 
     'PASSWORD_SALT'         =>  "Hey,TimeTravel",
 
-    "ARTICLE_PER_PAGE"      =>  "6",                //单页显示文章数
+    "ARTICLE_PER_PAGE"      =>  "3",                //单页显示文章数
 );

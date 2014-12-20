@@ -93,7 +93,7 @@ function getByClass(oparent,sClass){
 				<div class="b_main">
 					<p class="b_title"><?php echo ($detail["title"]); ?></p>
 					<span class="b_address"><?php echo ($detail["travel_line"]); ?></span>
-					<a class="totaobao" href="<?php echo ($detail["url"]); ?>">前去下单</a>
+					<a class="totaobao" href="<?php echo ($detail["taobao"]); ?>">前去下单</a>
 					<!--<form action ="action" method="post">-->
 						<!--<div class="chose">-->
 							<!--<h4>选择出行时间</h4>-->

@@ -150,3 +150,36 @@ function getNext($module_name, $id, $attribute){
         return $res[$attribute];
     }
 }
+
+/**
+ * @param $model
+ * @param $url
+ * @param $pid
+ * @param $pidTable
+ * @return string
+ */
+function lastPageUrl($model, $url,
+                     $pid, $pidTable='pid'){
+    if($pid > 1){
+        $pid--;
+    }
+    return U($url, array($pidTable => $pid));
+}
+
+/**
+ * @param $model
+ * @param $url
+ * @param $pid
+ * @param string $pidTable
+ * @param null $condition
+ * @return string
+ */
+function nextPageUrl($model, $url,
+                     $pid, $pidTable='pid',
+                     $condition=null){
+    $pageSum = ceil(M($model)->where($condition)->count() / C("ARTICLE_PER_PAGE"));
+    if($pid < $pageSum){
+        $pid++;
+    }
+    return U($url, array($pidTable => $pid));
+}

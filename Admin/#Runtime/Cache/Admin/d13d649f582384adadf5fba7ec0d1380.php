@@ -29,15 +29,16 @@
 <table class="table table-hover table-striped table-bordered">
 	<thead>
 		<tr>
-		<th class="">编号</th>
-		<th class="">标题</th>
-        <th class="">类别</th>
-		<th class="">路线</th>
-        <th class="">开始时间</th>
-        <th class="">结束时间</th>
-		<th class="">发布时间</th>
-        <th class="">图片地址</th>
-		<th class="">操作</th>
+			<th class="">编号</th>
+			<th class="">标题</th>
+			<th class="">类别</th>
+			<th class="">路线</th>
+			<th class="">淘宝链接</th>
+			<th class="">开始时间</th>
+			<th class="">结束时间</th>
+			<th class="">发布时间</th>
+			<th class="">图片预览</th>
+			<th class="">操作</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -46,10 +47,11 @@
 			<td><?php echo ($vo["title"]); ?></td>
             <td><?php echo ($vo["type"]); ?></td>
 			<td><?php echo ($vo["travel_line"]); ?></td>
+			<td><?php echo ($vo["taobao"]); ?></td>
             <td><?php echo (date("Y-m-d h:i:s",$vo["start_time"])); ?></td>
             <td><?php echo (date("Y-m-d h:i:s",$vo["end_time"])); ?></td>
 			<td><?php echo (date("Y-m-d h:i:s",$vo["create_time"])); ?></td>
-            <td><?php echo ($vo["pic_url"]); ?></td>
+            <td><a class="btn" target="_blank" href="<?php echo ($vo["pic_url"]); ?>">预览</a></td>
 			<td>
 			<a class="btn btn-mini" href="<?php echo U('edit?id='.$vo['id']);?>">编辑</a>
 			<a class="btn btn-mini ajax-get  confirm" href="<?php echo U('delete?id='.$vo['id']);?>">删除</a>
