@@ -62,28 +62,7 @@ function getByClass(oparent,sClass){
 					<p class="b_title">{$detail.title}</p>
 					<span class="b_address">{$detail.travel_line}</span>
 					<a class="totaobao" href="{$detail.taobao}">前去下单</a>
-					<!--<form action ="action" method="post">-->
-						<!--<div class="chose">-->
-							<!--<h4>选择出行时间</h4>-->
-							<!--<span style="border:1px solid #404040;" value="222">2014-10-05&nbsp;星期五&nbsp;￥222</span>-->
-							<!--<span style="border:1px solid #404040;" value="222">2014-10-05&nbsp;星期五&nbsp;￥222</span>-->
-						<!--</div>-->
-						<!--<div class="chose">-->
-							<!--<h4>选择出行人数</h4>-->
-							<!--<span class="people">成人 x <select  name="people">-->
-									<!--<option value>1</option>-->
-									<!--<option>2</option>-->
-									<!--<option>3</option>-->
-								<!--</select>(￥400)</span>-->
-							<!--<span class="people">儿童 x <select  name="people">-->
-									<!--<option value>1</option>-->
-									<!--<option>2</option>-->
-									<!--<option>3</option>-->
-								<!--</select></span>-->
-						<!--</div>-->
-						<!--<p>费用合计：￥700</p>-->
-						<!--<input class="s_go" type="submit"value="开始预订">-->
-					<!--</form>-->
+					<p>费用：{$detail.id|getPriceByRouteId}</p>
 				</div>
 				<p class="b_share">
                     分享：

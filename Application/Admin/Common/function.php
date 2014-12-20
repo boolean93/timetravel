@@ -110,4 +110,11 @@ function check_verify($code, $id = 1){
     return $verify->check($code, $id);
 }
 
-
+/**
+ * @param $route_id
+ * @return mixed
+ */
+function getRouteTitleById($route_id){
+    $r = M("Route")->find($route_id);
+    return $r['title'];
+}

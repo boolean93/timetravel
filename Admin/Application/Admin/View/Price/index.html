@@ -1,0 +1,42 @@
+<extend name="Public/base" />
+<block name="body">
+<ul class="breadcrumb">
+<li><a href="javascript:history.back(-1)">返回上一页</a> <span class="divider">/</span></li>
+  <li class="active">{$meta_title}</li>
+  <li><a class="btn btn-link" href="{:U('add')}">添加内容</a></li>
+</ul>
+
+<table class="table table-hover table-striped table-bordered">
+	<thead>
+		<tr>
+            <th class="">编号</th>
+            <th class="">价格</th>
+            <td class="">路线编号</td>
+            <td class="">路线标题</td>
+            <th class="">操作</th>
+		</tr>
+	</thead>
+	<tbody>
+	<volist name="list" id="vo">
+		<tr>
+			<td>{$vo.id}</td>
+            <td>{$vo.price}</td>
+            <td>{$vo.route_id}</td>
+            <td>{$vo.route_id|getRouteTitleById}</td>
+			<td>
+                <a class="btn btn-mini" href="{:U('edit?id='.$vo['id'])}">编辑</a>
+                <a class="btn btn-mini ajax-get  confirm" href="{:U('delete?id='.$vo['id'])}">删除</a>
+			</td>
+		</tr>
+		</volist>
+	</tbody>
+</table>
+
+<div class="pagination">
+  <ul>
+{$_page}
+  </ul>
+</div>
+</block>
+
+<block name="script"></block>

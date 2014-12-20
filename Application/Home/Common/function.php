@@ -176,10 +176,22 @@ function lastPageUrl($model, $url,
  */
 function nextPageUrl($model, $url,
                      $pid, $pidTable='pid',
-                     $condition=null){
+                     $condition=null)
+{
     $pageSum = ceil(M($model)->where($condition)->count() / C("ARTICLE_PER_PAGE"));
-    if($pid < $pageSum){
+    if ($pid < $pageSum) {
         $pid++;
     }
     return U($url, array($pidTable => $pid));
+}
+
+function getPriceByRouteId($id){
+    $price = M("Price")
+        ->where(array("route_id"=>$id))
+        ->select();
+    $min = 100000;
+    foreach($price as $v){
+        if($v['price'] < $min) $min = $v['price'];
+    }
+    return ($min == 100000)?"暂无":$min;
 }
