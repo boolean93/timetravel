@@ -141,7 +141,7 @@ function getNext($module_name, $id, $attribute){
     if($id < $temp['id']){
         $id++;
     }else{
-        return ($attribute == 'U')?'#':'无';
+        return ($attribute == 'U')? '#' : '无';
     }
     if($attribute == 'U')
         return U($module_name."/detail", array("id"=>$id));
@@ -160,8 +160,12 @@ function getNext($module_name, $id, $attribute){
  */
 function lastPageUrl($model, $url,
                      $pid, $pidTable='pid'){
-    if($pid > 1){
-        $pid--;
+    if(is_numeric($pid)){
+        if($pid > 1){
+            $pid--;
+        }
+    }else{
+        $pid = 1;
     }
     return U($url, array($pidTable => $pid));
 }
@@ -174,13 +178,21 @@ function lastPageUrl($model, $url,
  * @param null $condition
  * @return string
  */
-function nextPageUrl($model, $url,
+function nextPageUrl($model, int $url,
                      $pid, $pidTable='pid',
                      $condition=null)
 {
-    $pageSum = ceil(M($model)->where($condition)->count() / C("ARTICLE_PER_PAGE"));
-    if ($pid < $pageSum) {
-        $pid++;
+    if($condition)
+        $pageSum = (int)ceil(M($model)->where($condition)->count() / C("ARTICLE_PER_PAGE"));
+    else
+        $pageSum = (int)ceil(M($model)->count() / C("ARTICLE_PER_PAGE"));
+    
+    if($pid > 0){
+        if ($pid < $pageSum) {
+            $pid++;
+        }
+    }else{
+        $pid = 1;
     }
     return U($url, array($pidTable => $pid));
 }

@@ -91,7 +91,18 @@ $(function(){
                     </if>
                 </div>
             </volist>
-			<p class="page"><a href="#">上一页</a><a class="t_active" href="#">1</a><a href="#">2</a><a href="#">3</a><a href="#">...</a><a href="#">6</a><a href="#">下一页</a></p>
+
+			<p class="page">
+				<a href="{:lastPageUrl('Article', 'home/time/index', $_GET['pid'], 'pid', array('type'=>'time'))}">上一页</a>
+				<volist id="vo" name="page">
+					<if condition="$vo neq '...'">
+						<a <if condition="$vo eq $pid">class="t_active"</if> href="{:U('Home/Time/index', array('pid' => $vo))}">{$vo}</a>
+						<else />
+						<a href="#">...</a>
+					</if>
+				</volist>
+				<a href="{:nextPageUrl('Article', 'home/time/index', $_GET['pid'], 'pid', array('type'=>'time'))}">下一页</a>
+			</p>
 		</div>
 		<div class="t_right">
 			<a herf="#">
