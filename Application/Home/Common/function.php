@@ -65,7 +65,7 @@ function page($pid, $model, $condition){
 function getLowestPriceByRouteId($id){
     if($result = M("Price")->where("route_id = $id")->order("price")->find())
         return $result['price'];
-    else return '暂无';
+    else return '暂无0.0';
 }
 
 /**
