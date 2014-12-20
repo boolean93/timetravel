@@ -1,5 +1,0 @@
-[ 2014-12-20T19:23:46+08:00 ] ::1 /timetravel/index.php?m=home&c=index&a=index
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000045s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001152s ]
-
