@@ -114,7 +114,7 @@ window.onload = function(){
                                     <a href="<?php echo U('Route/detail', array('id'=>$v['id']));?>" class="test">
                                         <h4><?php echo ($v["title"]); ?></h4>
                                         <p><?php echo ($v["travel_line"]); ?></p>
-                                        <h4>￥<?php echo (getlowestpricebyrouteid($v['id'])); ?>/1人</h4>
+                                        <h4>￥<?php echo (getpricebyrouteid($v['id'])); ?>/人</h4>
                                         <p class="detal">查看详情</p>
                                     </a>
                                 </li><?php endforeach; endif; else: echo "" ;endif; ?>

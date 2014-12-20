@@ -66,9 +66,9 @@
             })
         </script>
 
-                <div class="control-group">
-                    <div class="controls">
-                        <button type="submit" class="btn ajax-post"
+        <div class="control-group">
+            <div class="controls">
+                <button type="submit" class="btn ajax-post"
 					target-form="form-horizontal">保存</button>
 				<button type="button" class="btn"
 					onclick="javascript:history.back(-1)">取消</button>

@@ -86,7 +86,7 @@ window.onload = function(){
                                     <a href="{:U('Route/detail', array('id'=>$v['id']))}" class="test">
                                         <h4>{$v.title}</h4>
                                         <p>{$v.travel_line}</p>
-                                        <h4>￥{$v['id']|getLowestPriceByRouteId}/1人</h4>
+                                        <h4>￥{$v['id']|getPriceByRouteId}/人</h4>
                                         <p class="detal">查看详情</p>
                                     </a>
                                 </li>
