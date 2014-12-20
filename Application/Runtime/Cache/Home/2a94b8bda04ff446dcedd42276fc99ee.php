@@ -35,7 +35,8 @@ window.onload = function(){
     <p>
         <a href="#"><img src="/timetravel/Public/image/weibo.png"/></a>
         <a href="#"><img src="/timetravel/Public/image/qq.png"/></a>
-        <?php if(session('userinfo')): ?><a href="#" id="login">登陆</a>
+        <?php if(session('userinfo')): else: ?>
+            <a href="#" id="login">登陆</a>
             <a href="<?php echo U('Home/Index/register');?>" id="register">注册</a><?php endif; ?>
         <a href=""></a>
     </p>

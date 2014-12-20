@@ -78,7 +78,7 @@ function divideInto($arr, $singleSum){
     $res = array();
     $tot = 0;
     for($i = 0; $i < count($arr); $i++){
-        if($i % $singleSum == 0){
+        if($i % $singleSum = 0){
             $tot++;
         }
         $res[$tot][$i % $singleSum] = $arr[$i];
