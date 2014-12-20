@@ -78,7 +78,7 @@ function divideInto($arr, $singleSum){
     $res = array();
     $tot = 0;
     for($i = 0; $i < count($arr); $i++){
-        if($i % $singleSum = 0){
+        if($i % $singleSum == 0){
             $tot++;
         }
         $res[$tot][$i % $singleSum] = $arr[$i];
@@ -94,4 +94,59 @@ function divideInto($arr, $singleSum){
 function getUsernameByUserId($id){
     $res = M('User')->find($id);
     return $res['username'];
+}
+
+function getUserName(){
+    if(cookie('username')){
+        return cookie('username');
+    }
+    if($_session = session('userinfo')){
+//        dump($_session);
+        return $_session['username'];
+    }
+}
+
+/**
+ * @description 获取上一页
+ * @param $module_name
+ * @param $id
+ * @param $attribute
+ * @return string
+ */
+function getLast($module_name, $id, $attribute){
+    $_module = M($module_name);
+    if($id > 1) {
+        $id--;
+    }else{
+        return ($attribute == 'U')?'#':' 无 ';
+    }
+    if($attribute == 'U')
+        return U($module_name."/detail", array("id"=>$id));
+    else{
+        $res = $_module->field($attribute)->find($id);
+        return $res[$attribute];
+    }
+}
+
+/**
+ * @description 获取下一页
+ * @param $module_name 模型名
+ * @param $id
+ * @param $attribute U就是U函数, 否则就是字段
+ * @return string
+ */
+function getNext($module_name, $id, $attribute){
+    $_module = M($module_name);
+    $temp = $_module->order('id DESC')->find();
+    if($id < $temp['id']){
+        $id++;
+    }else{
+        return ($attribute == 'U')?'#':' 无 ';
+    }
+    if($attribute == 'U')
+        return U($module_name."/detail", array("id"=>$id));
+    else{
+        $res = $_module->field($attribute)->find($id);
+        return $res[$attribute];
+    }
 }

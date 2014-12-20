@@ -59,8 +59,11 @@ function getByClass(oparent,sClass){
     <p>
         <a href="#"><img src="/timetravel/Public/image/weibo.png"/></a>
         <a href="#"><img src="/timetravel/Public/image/qq.png"/></a>
-        <a href="#" id="login">登陆</a>
-        <a href="<?php echo U('Home/Index/register');?>" id="register">注册</a>
+        <?php if(session('userinfo')): ?><span><?php echo getUserName();?></span>
+            <a name="logout" href="<?php echo U('Index/logout');?>">注销</a>
+        <?php else: ?>
+            <a href="#" id="login">登陆</a>
+            <a href="<?php echo U('Home/Index/register');?>" id="register">注册</a><?php endif; ?>
     </p>
 </div>
 <div id="nav">
@@ -90,28 +93,29 @@ function getByClass(oparent,sClass){
 				<div class="b_main">
 					<p class="b_title"><?php echo ($detail["title"]); ?></p>
 					<span class="b_address"><?php echo ($detail["travel_line"]); ?></span>
-					<form action ="action" method="post">
-						<div class="chose">
-							<h4>选择出行时间</h4>
-							<span style="border:1px solid #404040;" value="222">2014-10-05&nbsp;星期五&nbsp;￥222</span>
-							<span style="border:1px solid #404040;" value="222">2014-10-05&nbsp;星期五&nbsp;￥222</span>
-						</div>
-						<div class="chose">
-							<h4>选择出行人数</h4>
-							<span class="people">成人 x <select  name="people">
-									<option value>1</option>
-									<option>2</option>
-									<option>3</option>
-								</select>(￥400)</span>
-							<span class="people">儿童 x <select  name="people">
-									<option value>1</option>
-									<option>2</option>
-									<option>3</option>
-								</select></span>
-						</div>
-						<p>费用合计：￥700</p>
-						<input class="s_go" type="submit"value="开始预订">
-					</form>
+					<a class="totaobao" href="<?php echo ($detail["url"]); ?>">前去下单</a>
+					<!--<form action ="action" method="post">-->
+						<!--<div class="chose">-->
+							<!--<h4>选择出行时间</h4>-->
+							<!--<span style="border:1px solid #404040;" value="222">2014-10-05&nbsp;星期五&nbsp;￥222</span>-->
+							<!--<span style="border:1px solid #404040;" value="222">2014-10-05&nbsp;星期五&nbsp;￥222</span>-->
+						<!--</div>-->
+						<!--<div class="chose">-->
+							<!--<h4>选择出行人数</h4>-->
+							<!--<span class="people">成人 x <select  name="people">-->
+									<!--<option value>1</option>-->
+									<!--<option>2</option>-->
+									<!--<option>3</option>-->
+								<!--</select>(￥400)</span>-->
+							<!--<span class="people">儿童 x <select  name="people">-->
+									<!--<option value>1</option>-->
+									<!--<option>2</option>-->
+									<!--<option>3</option>-->
+								<!--</select></span>-->
+						<!--</div>-->
+						<!--<p>费用合计：￥700</p>-->
+						<!--<input class="s_go" type="submit"value="开始预订">-->
+					<!--</form>-->
 				</div>
 				<p class="b_share">
                     分享：

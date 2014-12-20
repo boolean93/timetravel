@@ -90,7 +90,10 @@ $(function(){
 				</div>
 				{$memory.content|htmlspecialchars_decode}
 			</div>
-			<p class="page"><a class="p_prev" href="#">上一篇:农夫山泉</a><a class="p_next" href="#">下一篇：农夫山泉</a></p>
+			<p class="page">
+				<a class="p_prev" href="{:getLast('Memory', $_GET['id'], 'U')}">上一篇:{:getLast('Memory', $_GET['id'], 'title')}</a>
+				<a class="p_next" href="{:getNext('Memory', $_GET['id'], 'U')}">下一篇:{:getNext('Memory', $_GET['id'], 'title')}</a>
+			</p>
 
             <!-- 多说评论框 start -->
 

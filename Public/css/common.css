@@ -13,6 +13,7 @@ img{border:0;}
 #top p{width:272px;float:right;margin-right:100px;padding:0px;margin:0px;}
 #top p a{float:left;display:block;height:20px;line-height:40px;padding:0 14px 0 14px;font-family:'宋体';font-size:14px;color:#fff;cursor:pointer;}
 #top p a img{margin-top:10px;}
+#top p span{margin-top:12px!important; color:white; display: block; float:left;}
 /*
 *导航
  */
@@ -88,3 +89,9 @@ body{position:relative;}
 .t_left .page{width:396px;height:36px;display:block;float:right;text-align:center;color:#C7C7C7;margin-top:10px;}
 .page a{display:inline-block;height:36px;line-height:36px;text-align:center;padding:0 16px 0 16px;background:#C7C7C7;margin-left:4px;color:#fff;font-size:16px;font-family:'微软雅黑';}
 .page .t_active{background:#95A600;}
+
+/*
+*   老李加的, route/detail
+.totaobao{
+
+}

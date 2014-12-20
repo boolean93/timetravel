@@ -78,8 +78,11 @@ $(function(){
     <p>
         <a href="#"><img src="/timetravel/Public/image/weibo.png"/></a>
         <a href="#"><img src="/timetravel/Public/image/qq.png"/></a>
-        <a href="#" id="login">登陆</a>
-        <a href="<?php echo U('Home/Index/register');?>" id="register">注册</a>
+        <?php if(session('userinfo')): ?><span><?php echo getUserName();?></span>
+            <a name="logout" href="<?php echo U('Index/logout');?>">注销</a>
+        <?php else: ?>
+            <a href="#" id="login">登陆</a>
+            <a href="<?php echo U('Home/Index/register');?>" id="register">注册</a><?php endif; ?>
     </p>
 </div>
 <div id="nav">
@@ -119,7 +122,10 @@ $(function(){
 				</div>
 				<?php echo (htmlspecialchars_decode($memory["content"])); ?>
 			</div>
-			<p class="page"><a class="p_prev" href="#">上一篇:农夫山泉</a><a class="p_next" href="#">下一篇：农夫山泉</a></p>
+			<p class="page">
+				<a class="p_prev" href="<?php echo getLast('Memory', $_GET['id'], 'U');?>">上一篇:<?php echo getLast('Memory', $_GET['id'], 'title');?></a>
+				<a class="p_next" href="<?php echo getNext('Memory', $_GET['id'], 'U');?>">下一篇:<?php echo getNext('Memory', $_GET['id'], 'title');?></a>
+			</p>
 
             <!-- 多说评论框 start -->
 

@@ -2,8 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="69635a85-8873-422b-8617-0ec59409a469" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Runtime/Cache/Home/1ce9b6c71a6d8f80c727abf330cf57ab.php" afterPath="$PROJECT_DIR$/Application/Runtime/Cache/Home/1ce9b6c71a6d8f80c727abf330cf57ab.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php" afterPath="$PROJECT_DIR$/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Runtime/Cache/Home/67604a2ab3f810efdefa149a1192fece.php" afterPath="$PROJECT_DIR$/Application/Runtime/Cache/Home/67604a2ab3f810efdefa149a1192fece.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Runtime/Cache/Home/8718479a4822954efad9a5c6fa661dc4.php" afterPath="$PROJECT_DIR$/Application/Runtime/Cache/Home/8718479a4822954efad9a5c6fa661dc4.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Home/Controller/IndexController.class.php" afterPath="$PROJECT_DIR$/Application/Home/Controller/IndexController.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/css/common.css" afterPath="$PROJECT_DIR$/Public/css/common.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Home/View/Memory/detail.html" afterPath="$PROJECT_DIR$/Application/Home/View/Memory/detail.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Runtime/Cache/Home/f839d03eba6f445d95551486f663ddba.php" afterPath="$PROJECT_DIR$/Application/Runtime/Cache/Home/f839d03eba6f445d95551486f663ddba.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Home/Common/function.php" afterPath="$PROJECT_DIR$/Application/Home/Common/function.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Home/View/Route/index.html" afterPath="$PROJECT_DIR$/Application/Home/View/Route/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Home/View/Public/nav.html" afterPath="$PROJECT_DIR$/Application/Home/View/Public/nav.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -29,27 +37,17 @@
     <favorites_list name="timetravel" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
+    <splitter split-orientation="horizontal" split-proportion="0.51111114">
       <split-first>
         <leaf>
           <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Application/Home/View/Index/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="4843" max-vertical-offset="6552">
-                  <caret line="148" column="24" selection-start-line="148" selection-start-column="24" selection-end-line="148" selection-end-column="24" />
+                <state vertical-scroll-proportion="-176.12903" vertical-offset="0" max-vertical-offset="6552">
+                  <caret line="195" column="36" selection-start-line="195" selection-start-column="36" selection-end-line="195" selection-end-column="36" />
                   <folding>
                     <element signature="n#style#0;n#img#0;n#case#1;n#switch#0;n#volist#0;n#div#1;n#div#3;n#html#0;n#!!top" expanded="true" />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="common.css" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Public/css/common.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="2324" max-vertical-offset="2688">
-                  <caret line="83" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
-                  <folding />
                 </state>
               </provider>
             </entry>
@@ -77,18 +75,61 @@
           <file leaf-file-name="IndexController.class.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Application/Home/Controller/IndexController.class.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="1499" max-vertical-offset="2520">
+                <state vertical-scroll-proportion="0.0" vertical-offset="1499" max-vertical-offset="2548">
                   <caret line="81" column="34" selection-start-line="81" selection-start-column="34" selection-end-line="81" selection-end-column="34" />
+                  <folding>
+                    <marker date="1419085783000" expanded="true" signature="98:2036" placeholder="..." />
+                    <marker date="1419085783000" expanded="true" signature="2004:2036" placeholder="..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="detail.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Application/Home/View/Memory/detail.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-12.258064" vertical-offset="2308" max-vertical-offset="5964">
+                  <caret line="96" column="0" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="nav.html" pinned="false" current-in-tab="true">
+          <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Application/Home/View/Route/index.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-4.645161" vertical-offset="1620" max-vertical-offset="4284">
+                  <caret line="63" column="69" selection-start-line="63" selection-start-column="69" selection-end-line="63" selection-end-column="69" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="nav.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Application/Home/View/Public/nav.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.30166504" vertical-offset="0" max-vertical-offset="1092">
-                  <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+                <state vertical-scroll-proportion="-9.032258" vertical-offset="196" max-vertical-offset="1120">
+                  <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="config.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Application/Home/Conf/config.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-6.322581" vertical-offset="0" max-vertical-offset="812">
+                  <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="common.css" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/Public/css/common.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.8715596" vertical-offset="1900" max-vertical-offset="2856">
+                  <caret line="95" column="0" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -101,8 +142,8 @@
           <file leaf-file-name="IndexController.class.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Application/Home/Controller/IndexController.class.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-11.354838" vertical-offset="1272" max-vertical-offset="2520">
-                  <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+                <state vertical-scroll-proportion="-31.64516" vertical-offset="923" max-vertical-offset="2548">
+                  <caret line="68" column="18" selection-start-line="68" selection-start-column="18" selection-end-line="68" selection-end-column="18" />
                   <folding />
                 </state>
               </provider>
@@ -111,8 +152,8 @@
           <file leaf-file-name="function.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Application/Home/Common/function.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.8354554" vertical-offset="1695" max-vertical-offset="2716">
-                  <caret line="96" column="1" selection-start-line="96" selection-start-column="1" selection-end-line="96" selection-end-column="1" />
+                <state vertical-scroll-proportion="0.43400714" vertical-offset="3303" max-vertical-offset="4256">
+                  <caret line="136" column="3" selection-start-line="136" selection-start-column="3" selection-end-line="136" selection-end-column="3" />
                   <folding />
                 </state>
               </provider>
@@ -134,13 +175,11 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Application/Home/Controller/MemoryController.class.php" />
-        <option value="$PROJECT_DIR$/Application/Home/View/Memory/detail.html" />
         <option value="$PROJECT_DIR$/Application/Home/View/Explore/index.html" />
         <option value="$PROJECT_DIR$/Application/Home/View/Index/travel_content.html" />
         <option value="$PROJECT_DIR$/Application/Home/View/Index/register.html" />
         <option value="$PROJECT_DIR$/Application/Home/View/Memory/index.html" />
         <option value="$PROJECT_DIR$/Application/Home/View/Route/book_success.html" />
-        <option value="$PROJECT_DIR$/Application/Home/View/Route/index.html" />
         <option value="$PROJECT_DIR$/Application/Home/View/Time/index.html" />
         <option value="$PROJECT_DIR$/Application/Home/View/Young/index.html" />
         <option value="$PROJECT_DIR$/Public/js/switch.js" />
@@ -152,12 +191,15 @@
         <option value="$PROJECT_DIR$/Public/ueditor/ueditor.config.js" />
         <option value="$PROJECT_DIR$/Public/css/train.css" />
         <option value="$PROJECT_DIR$/Application/Home/View/Public/login.html" />
-        <option value="$PROJECT_DIR$/Public/css/common.css" />
         <option value="$PROJECT_DIR$/Application/Home/Controller/ExploreController.class.php" />
-        <option value="$PROJECT_DIR$/Application/Home/Controller/IndexController.class.php" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/Application/Home/Conf/config.php" />
         <option value="$PROJECT_DIR$/Application/Home/View/Public/nav.html" />
+        <option value="$PROJECT_DIR$/Application/Home/Controller/IndexController.class.php" />
+        <option value="$PROJECT_DIR$/Application/Home/View/Memory/detail.html" />
         <option value="$PROJECT_DIR$/Application/Home/Common/function.php" />
+        <option value="$PROJECT_DIR$/Application/Home/View/Route/index.html" />
+        <option value="$PROJECT_DIR$/Public/css/common.css" />
       </list>
     </option>
   </component>
@@ -166,8 +208,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="width" value="1920" />
-    <option name="height" value="1080" />
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -225,6 +267,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="timetravel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="timetravel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -390,7 +450,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
-    <property name="SearchEverywhereHistoryKey" value="common/func&#9;FILE&#9;file:///Users/Boolean93/www/timetravel/Application/Home/Common/function.php&#10;common&#9;FILE&#9;file:///Users/Boolean93/www/timetravel/Public/css/common.css&#10;common.css&#9;FILE&#9;file:///Users/Boolean93/www/timetravel/Public/css/common.css&#10;Public/login&#9;FILE&#9;file:///Users/Boolean93/www/timetravel/Application/Home/View/Public/login.html&#10;train.css&#9;FILE&#9;file:///Users/Boolean93/www/timetravel/Public/css/train.css&#10;index.css&#9;FILE&#9;file:///Users/Boolean93/www/timetravel/Public/css/index.css&#10;Index/index&#9;FILE&#9;file:///Users/Boolean93/www/timetravel/Application/Home/View/Index/index.html&#10;IndexCon&#9;FILE&#9;file:///Users/Boolean93/www/timetravel/Application/Home/Controller/IndexController.class.php&#10;train&#9;FILE&#9;file:///Users/Boolean93/www/timetravel/Public/css/train.css&#10;Yo&#9;FILE&#9;file:///Users/Boolean93/www/timetravel/Application/Home/Controller/YoungController.class.php&#10;Young&#9;FILE&#9;file:///Users/Boolean93/www/timetravel/Application/Home/Controller/YoungController.class.php&#10;switch.js&#9;FILE&#9;file:///Users/Boolean93/www/timetravel/Public/js/switch.js&#10;Young/index&#9;FILE&#9;file:///Users/Boolean93/www/timetravel/Application/Home/View/Young/index.html&#10;train.&#9;FILE&#9;file:///Users/Boolean93/www/timetravel/FrontEnd/css/train.css&#10;Young/ind&#9;FILE&#9;file:///Users/Boolean93/www/timetravel/Application/Home/View/Young/index.html&#10;Young/index.&#9;FILE&#9;file:///Users/Boolean93/www/timetravel/Application/Home/View/Young/index.html&#10;Memory/detail&#9;FILE&#9;file:///Users/Boolean93/www/timetravel/Application/Home/View/Memory/detail.html&#10;Memory&#9;FILE&#9;file:///Users/Boolean93/www/timetravel/Application/Home/Controller/MemoryController.class.php&#10;Memory/index.&#9;FILE&#9;file:///Users/Boolean93/www/timetravel/Application/Home/View/Memory/index.html&#10;chema&#9;FILE&#9;file:///Users/Boolean93/www/timetravel/Application/Home/schema.php&#10;memory/index.html&#9;FILE&#9;file:///Users/Boolean93/www/timetravel/Application/Home/View/Memory/index.html&#10;function&#9;FILE&#9;file:///Users/Boolean93/www/timetravel/Application/Home/Common/function.php&#10;f&#9;ACTION&#9;ActivateFindToolWindow&#10;time&#9;FILE&#9;file:///Users/Boolean93/www/timetravel/Application/Home/Controller/TimeController.class.php&#10;schema&#9;FILE&#9;file:///Users/Boolean93/www/timetravel/Application/Home/schema.php&#10;Price&#9;FILE&#9;file:///Users/Boolean93/www/timetravel/Application/Home/Model/PriceModel.class.php&#10;func&#9;FILE&#9;file:///Users/Boolean93/www/timetravel/Application/Home/Common/function.php&#10;priceM&#9;null&#9;null&#10;RouteMo&#9;FILE&#9;file:///Users/Boolean93/www/timetravel/Application/Admin/Model/RouteModel.class.php&#10;sche&#9;FILE&#9;file:///Users/Boolean93/www/timetravel/Application/Home/schema.php&#10;index&#9;FILE&#9;file:///Users/Boolean93/www/timetravel/Application/Home/View/Time/index.html&#10;index.html&#9;FILE&#9;file:///Users/Boolean93/www/timetravel/Application/Home/View/Time/index.html&#10;nav&#9;FILE&#9;file:///Users/Boolean93/www/timetravel/Application/Home/View/Public/nav.html&#10;Index&#9;FILE&#9;file:///Users/Boolean93/www/timetravel/Application/Home/Controller/IndexController.class.php" />
+    <property name="SearchEverywhereHistoryKey" value="common&#9;FILE&#9;file:///Users/Boolean93/www/timetravel/Public/css/common.css&#10;Route/index&#9;FILE&#9;file:///Users/Boolean93/www/timetravel/Application/Home/View/Route/index.html&#10;Memory/detail&#9;FILE&#9;file:///Users/Boolean93/www/timetravel/Application/Home/View/Memory/detail.html&#10;config&#9;FILE&#9;file:///Users/Boolean93/www/timetravel/Application/Home/Conf/config.php&#10;f&#9;FILE&#9;file:///Users/Boolean93/www/timetravel/Application/Home/Common/function.php&#10;function&#9;FILE&#9;file:///Users/Boolean93/www/timetravel/Application/Home/Common/function.php&#10;config.php&#9;FILE&#9;file:///Users/Boolean93/www/timetravel/Application/Home/Conf/config.php&#10;common/func&#9;FILE&#9;file:///Users/Boolean93/www/timetravel/Application/Home/Common/function.php&#10;common.css&#9;FILE&#9;file:///Users/Boolean93/www/timetravel/Public/css/common.css&#10;Public/login&#9;FILE&#9;file:///Users/Boolean93/www/timetravel/Application/Home/View/Public/login.html&#10;train.css&#9;FILE&#9;file:///Users/Boolean93/www/timetravel/Public/css/train.css&#10;index.css&#9;FILE&#9;file:///Users/Boolean93/www/timetravel/Public/css/index.css&#10;Index/index&#9;FILE&#9;file:///Users/Boolean93/www/timetravel/Application/Home/View/Index/index.html&#10;IndexCon&#9;FILE&#9;file:///Users/Boolean93/www/timetravel/Application/Home/Controller/IndexController.class.php&#10;train&#9;FILE&#9;file:///Users/Boolean93/www/timetravel/Public/css/train.css&#10;Yo&#9;FILE&#9;file:///Users/Boolean93/www/timetravel/Application/Home/Controller/YoungController.class.php&#10;Young&#9;FILE&#9;file:///Users/Boolean93/www/timetravel/Application/Home/Controller/YoungController.class.php&#10;switch.js&#9;FILE&#9;file:///Users/Boolean93/www/timetravel/Public/js/switch.js&#10;Young/index&#9;FILE&#9;file:///Users/Boolean93/www/timetravel/Application/Home/View/Young/index.html&#10;train.&#9;FILE&#9;file:///Users/Boolean93/www/timetravel/FrontEnd/css/train.css&#10;Young/ind&#9;FILE&#9;file:///Users/Boolean93/www/timetravel/Application/Home/View/Young/index.html&#10;Young/index.&#9;FILE&#9;file:///Users/Boolean93/www/timetravel/Application/Home/View/Young/index.html&#10;Memory&#9;FILE&#9;file:///Users/Boolean93/www/timetravel/Application/Home/Controller/MemoryController.class.php&#10;Memory/index.&#9;FILE&#9;file:///Users/Boolean93/www/timetravel/Application/Home/View/Memory/index.html&#10;chema&#9;FILE&#9;file:///Users/Boolean93/www/timetravel/Application/Home/schema.php&#10;memory/index.html&#9;FILE&#9;file:///Users/Boolean93/www/timetravel/Application/Home/View/Memory/index.html&#10;time&#9;FILE&#9;file:///Users/Boolean93/www/timetravel/Application/Home/Controller/TimeController.class.php&#10;schema&#9;FILE&#9;file:///Users/Boolean93/www/timetravel/Application/Home/schema.php&#10;Price&#9;FILE&#9;file:///Users/Boolean93/www/timetravel/Application/Home/Model/PriceModel.class.php&#10;func&#9;FILE&#9;file:///Users/Boolean93/www/timetravel/Application/Home/Common/function.php&#10;priceM&#9;null&#9;null&#10;RouteMo&#9;FILE&#9;file:///Users/Boolean93/www/timetravel/Application/Admin/Model/RouteModel.class.php&#10;sche&#9;FILE&#9;file:///Users/Boolean93/www/timetravel/Application/Home/schema.php&#10;index&#9;FILE&#9;file:///Users/Boolean93/www/timetravel/Application/Home/View/Time/index.html&#10;index.html&#9;FILE&#9;file:///Users/Boolean93/www/timetravel/Application/Home/View/Time/index.html&#10;nav&#9;FILE&#9;file:///Users/Boolean93/www/timetravel/Application/Home/View/Public/nav.html&#10;Index&#9;FILE&#9;file:///Users/Boolean93/www/timetravel/Application/Home/Controller/IndexController.class.php" />
     <property name="FullScreen" value="true" />
     <property name="options.lastSelected" value="preferences.pluginManager" />
     <property name="options.splitter.main.proportions" value="0.3" />
@@ -475,7 +535,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -485,7 +545,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.100520834" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13402778" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298611" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -524,13 +584,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Admin/Addons/EditorForAdmin/EditorForAdminAddon.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9208038" vertical-offset="101" max-vertical-offset="1012">
-          <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ThinkPHP/Library/Vin/FileStorage/Driver/File.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.24586289" vertical-offset="958" max-vertical-offset="1804">
@@ -650,13 +703,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Home/View/Memory/detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="92.09677" vertical-offset="5039" max-vertical-offset="5880">
-          <caret line="78" column="26" selection-start-line="78" selection-start-column="26" selection-end-line="78" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Home/View/Memory/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-11.137931" vertical-offset="2742" max-vertical-offset="3584">
@@ -678,24 +724,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Home/View/Route/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-21.709677" vertical-offset="3387" max-vertical-offset="4256">
-          <caret line="145" column="30" selection-start-line="145" selection-start-column="30" selection-end-line="145" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Home/View/Time/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-19.903225" vertical-offset="4339" max-vertical-offset="5208">
           <caret line="177" column="30" selection-start-line="177" selection-start-column="30" selection-end-line="177" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Home/Conf/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.967741" vertical-offset="0" max-vertical-offset="812">
-          <caret line="21" column="14" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -825,24 +857,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Home/View/Index/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4843" max-vertical-offset="6552">
-          <caret line="148" column="24" selection-start-line="148" selection-start-column="24" selection-end-line="148" selection-end-column="24" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#case#1;n#switch#0;n#volist#0;n#div#1;n#div#3;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Public/css/common.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1816" max-vertical-offset="2688">
-          <caret line="83" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Home/Controller/ExploreController.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="364" max-vertical-offset="952">
@@ -859,14 +873,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Home/Controller/IndexController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.354838" vertical-offset="1272" max-vertical-offset="2520">
-          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1022">
@@ -878,18 +884,79 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Home/View/Index/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-176.12903" vertical-offset="0" max-vertical-offset="6552">
+          <caret line="195" column="36" selection-start-line="195" selection-start-column="36" selection-end-line="195" selection-end-column="36" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#case#1;n#switch#0;n#volist#0;n#div#1;n#div#3;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Home/Conf/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.322581" vertical-offset="0" max-vertical-offset="812">
+          <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/standard_8.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34280118" vertical-offset="21182" max-vertical-offset="30856">
+          <caret line="769" column="44" selection-start-line="769" selection-start-column="44" selection-end-line="769" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Home/View/Public/nav.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30166504" vertical-offset="0" max-vertical-offset="1092">
-          <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+        <state vertical-scroll-proportion="-9.032258" vertical-offset="196" max-vertical-offset="1120">
+          <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Home/Controller/IndexController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1499" max-vertical-offset="2548">
+          <caret line="81" column="34" selection-start-line="81" selection-start-column="34" selection-end-line="81" selection-end-column="34" />
+          <folding>
+            <marker date="1419085783000" expanded="true" signature="98:2036" placeholder="..." />
+            <marker date="1419085783000" expanded="true" signature="2004:2036" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Home/View/Memory/detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.258064" vertical-offset="2308" max-vertical-offset="5964">
+          <caret line="96" column="0" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/Home/Common/function.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8354554" vertical-offset="1695" max-vertical-offset="2716">
-          <caret line="96" column="1" selection-start-line="96" selection-start-column="1" selection-end-line="96" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.43400714" vertical-offset="3303" max-vertical-offset="4256">
+          <caret line="136" column="3" selection-start-line="136" selection-start-column="3" selection-end-line="136" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Home/View/Route/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.645161" vertical-offset="1620" max-vertical-offset="4284">
+          <caret line="63" column="69" selection-start-line="63" selection-start-column="69" selection-end-line="63" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Public/css/common.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8715596" vertical-offset="1900" max-vertical-offset="2856">
+          <caret line="95" column="0" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
           <folding />
         </state>
       </provider>

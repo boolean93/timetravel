@@ -80,6 +80,7 @@ class IndexController extends Controller {
      */
     public function logout(){
     	session("userinfo", null);
-    	cookie("username", null);
-    }
+cookie("username", null);
+$this->success("注销成功!");
+}
 }
