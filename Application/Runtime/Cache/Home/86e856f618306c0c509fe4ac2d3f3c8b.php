@@ -3,10 +3,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>时光之旅</title>
-<link href="/timetravel/Public/css/common.css" rel="stylesheet" type="text/css" />
-<link href="/timetravel/Public/css/explore.css" rel="stylesheet" type="text/css" />
-<script src="/timetravel/Public/js/move.js" type="text/javascript"></script>
-<script src="/timetravel/Public/js/jquery-1.8.2.min.js" type="text/javascript"></script>
+<link href="/Public/css/common.css" rel="stylesheet" type="text/css" />
+<link href="/Public/css/explore.css" rel="stylesheet" type="text/css" />
+<script src="/Public/js/move.js" type="text/javascript"></script>
+<script src="/Public/js/jquery-1.8.2.min.js" type="text/javascript"></script>
 <script>
 window.onload = function(){
 	var oD = document.getElementById('order');
@@ -87,8 +87,13 @@ $(function(){
 <body id="main">
 <div id="top">
     <p>
+<<<<<<< HEAD
+        <a href="#"><img src="/Public/image/weibo.png"/></a>
+        <a href="#"><img src="/Public/image/qq.png"/></a>
+=======
         <a href="#"><img src="/timetravel/Public/image/weibo.png"/></a>
         <a href="#"><img src="/timetravel/Public/image/qq.png"/></a>
+>>>>>>> 9f863b7dfd1e1db90baa1d624c48f64b5fa057d6
         <?php if(session('userinfo')): ?><span><?php echo getUserName();?></span>
             <a name="logout" href="<?php echo U('Index/logout');?>">注销</a>
         <?php else: ?>
@@ -98,7 +103,7 @@ $(function(){
 </div>
 <div id="nav">
     <div id="nav_main">
-        <a href="<?php echo U('Home/Index/index');?>"><img src="/timetravel/Public/image/logo.png"/></a>
+        <a href="<?php echo U('Home/Index/index');?>"><img src="/Public/image/logo.png"/></a>
         <ul>
             <li><a href="<?php echo U('Home/Index/index');?>">首页</a></li>
             <li><a href="<?php echo U('Home/Time/index');?>">时光之旅</a></li>
@@ -149,8 +154,8 @@ $(function(){
         </div>
     </div>
     <div id="l_main_g">
-    	<img class="intro_prev" src="/timetravel/Public/image/intro_prev.png" />
-        <img class="intro_next" src="/timetravel/Public/image/intro_next.png" />
+    	<img class="intro_prev" src="/Public/image/intro_prev.png" />
+        <img class="intro_next" src="/Public/image/intro_next.png" />
     	<div class="main_center">
         	<p class="w_font">领队介绍</p>
         	<div id="f_js">
@@ -167,7 +172,7 @@ $(function(){
 	<div id="footer">
 		<div id="f_content">
 			<div id="f_left">
-			<img  class="f_logo" src="/timetravel/Public/image/logo.png" />
+			<img  class="f_logo" src="/Public/image/logo.png" />
 			<span>备案J1541558436[京] </span>
 			</div>
 			<div id="f_center">
@@ -179,12 +184,12 @@ $(function(){
 				</p>
 				<p class="f_pic">
 					<a href="#">关于我们:</a>    
-					<a href="#"><img src="/timetravel/Public/image/f_web.png" /></a>
-					<a href="#"><img src="/timetravel/Public/image/f_qq.png" /></a>
+					<a href="#"><img src="/Public/image/f_web.png" /></a>
+					<a href="#"><img src="/Public/image/f_qq.png" /></a>
 				</p>
 			</div>
 			<div id="f_right">
-				<img src="/timetravel/Public/image/erw.png" />
+				<img src="/Public/image/erw.png" />
 				<span>扫一扫关注时光旅行</span>
 			</div>
 		</div>
@@ -226,11 +231,11 @@ $(function(){
 	<div id="order">
 	</div>
 	<div id="login_box" style="background:#fff;z-indent:12px;opacity:1;">
-    <h4>登陆<img id="cancel" src="/timetravel/Public/image/close.png" /></h4>
+    <h4>登陆<img id="cancel" src="/Public/image/close.png" /></h4>
     <div class="l_left">
         <p>使用社交网络登陆</p>
-        <span><a href="#"><img src="/timetravel/Public/image/l_web.png" /></a>新浪微博</span>
-        <span class="qq"><a href="#"><img src="/timetravel/Public/image/l_qq.png" /></a><br />腾讯QQ</span>
+        <span><a href="#"><img src="/Public/image/l_web.png" /></a>新浪微博</span>
+        <span class="qq"><a href="#"><img src="/Public/image/l_qq.png" /></a><br />腾讯QQ</span>
     </div>
     <div class="l_right">
         <p><a class="l_first" href="#">使用本网账号登陆</a><a class="l_last" href="#">注册</a></p>

@@ -3,11 +3,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>时光旅行</title>
-<link href="/timetravel/Public/css/common.css" rel="stylesheet" type="text/css" />
-<link href="/timetravel/Public/css/index.css" rel="stylesheet" type="text/css" />
-<script src="/timetravel/Public/js/move.js" text="javascript/text"></script>
-<script src="/timetravel/Public/js/index.js" text="javascript/text"></script>
-<script src="/timetravel/Public/js/jquery-1.8.2.min.js"></script>
+<link href="/Public/css/common.css" rel="stylesheet" type="text/css" />
+<link href="/Public/css/index.css" rel="stylesheet" type="text/css" />
+<script src="/Public/js/move.js" text="javascript/text"></script>
+<script src="/Public/js/index.js" text="javascript/text"></script>
+<script src="/Public/js/jquery-1.8.2.min.js"></script>
 <script>
 $(function(){
         showScroll();
@@ -33,8 +33,8 @@ window.onload = function(){
 <body id="main">
 <div id="top">
     <p>
-        <a href="#"><img src="/timetravel/Public/image/weibo.png"/></a>
-        <a href="#"><img src="/timetravel/Public/image/qq.png"/></a>
+        <a href="#"><img src="/Public/image/weibo.png"/></a>
+        <a href="#"><img src="/Public/image/qq.png"/></a>
         <?php if(session('userinfo')): ?><span><?php echo getUserName();?></span>
             <a name="logout" href="<?php echo U('Index/logout');?>">注销</a>
         <?php else: ?>
@@ -44,7 +44,7 @@ window.onload = function(){
 </div>
 <div id="nav">
     <div id="nav_main">
-        <a href="<?php echo U('Home/Index/index');?>"><img src="/timetravel/Public/image/logo.png"/></a>
+        <a href="<?php echo U('Home/Index/index');?>"><img src="/Public/image/logo.png"/></a>
         <ul>
             <li><a href="<?php echo U('Home/Index/index');?>">首页</a></li>
             <li><a href="<?php echo U('Home/Time/index');?>">时光之旅</a></li>
@@ -63,8 +63,8 @@ window.onload = function(){
 </div>
 <!--nav ends-->
 	<div id="slider">
-		<img id="prev" src="/timetravel/Public/image/prev.png"/>
-		<img id="next" src="/timetravel/Public/image/next.png"/>
+		<img id="prev" src="/Public/image/prev.png"/>
+		<img id="next" src="/Public/image/next.png"/>
 		<ul>
             <?php if(is_array($slider)): $i = 0; $__LIST__ = $slider;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li><a href="#"><img src="<?php echo ($vo["img_url"]); ?>"></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
 		</ul>
@@ -103,8 +103,8 @@ window.onload = function(){
 
 	<div id="travel">
 		<span><a href="#">时光之旅</a></span>
-		<img class="f_prev" src="/timetravel/Public/image/tprev.png"/>
-		<img class="f_next" src="/timetravel/Public/image/f_prev.png"/>
+		<img class="f_prev" src="/Public/image/tprev.png"/>
+		<img class="f_next" src="/Public/image/f_prev.png"/>
 		<div id="looks">
 			<div id="pic_look">
                 <?php if(is_array($time)): $i = 0; $__LIST__ = $time;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><div class="look">
@@ -127,8 +127,8 @@ window.onload = function(){
 	<div id="explore">
 		<span><a href="<?php echo U('Explore/index');?>">极致探险</a></span>
 		<div id="sliders">
-			<img class="s_prev" src="/timetravel/Public/image/s_prev.png" />
-			<img class="s_next" src="/timetravel/Public/image/s_next.png" />
+			<img class="s_prev" src="/Public/image/s_prev.png" />
+			<img class="s_next" src="/Public/image/s_next.png" />
 			<div class="pic_side">
 				<span>极致探险</span>
 				<p>生命是一段美好的旅程，我们在生活中紧紧相拥，我们用认真的态度的对待每一天，经费噶接法界个二哥，生活美好，认真对待。</p>
@@ -151,8 +151,8 @@ window.onload = function(){
 			<a href="<?php echo U('Young/index');?>" class="more">了解更多详情</a>
 		</div>
 		<div class="right_train">
-			<img class="t_prev" src="/timetravel/Public/image/s_prev.png" />
-			<img class="t_next" src="/timetravel/Public/image/s_next.png" />
+			<img class="t_prev" src="/Public/image/s_prev.png" />
+			<img class="t_next" src="/Public/image/s_next.png" />
             <?php if(is_array($youngImg)): $k = 0; $__LIST__ = $youngImg;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($k % 2 );++$k; switch($k): case "1": ?><img class="big_pic"<?php break;?>
                     <?php case "2": ?><img class="small_pic" style="filter:alpha(opacity:100);opacity:1;"<?php break;?>
                     <?php case $youngCount: ?><img class="small_pic" id="lasts"<?php break;?>
@@ -176,12 +176,12 @@ window.onload = function(){
 	</div>
 	<div id="store">
 		<span><a href="#">时光小铺</a></span>
-		<a href="#"><img src="/timetravel/Public/image/store.gif" /></a>
+		<a href="#"><img src="/Public/image/store.gif" /></a>
 	</div>
 	<div id="footer">
 		<div id="f_content">
 			<div id="f_left">
-			<img  class="f_logo" src="/timetravel/Public/image/logo.png" />
+			<img  class="f_logo" src="/Public/image/logo.png" />
 			<span>备案J1541558436[京] </span>
 			</div>
 			<div id="f_center">
@@ -193,12 +193,12 @@ window.onload = function(){
 				</p>
 				<p class="f_pic">
 					<a href="#">关于我们:</a>
-					<a href="#"><img src="/timetravel/Public/image/f_web.png" /></a>
-					<a href="#"><img src="/timetravel/Public/image/f_qq.png" /></a>
+					<a href="#"><img src="/Public/image/f_web.png" /></a>
+					<a href="#"><img src="/Public/image/f_qq.png" /></a>
 				</p>
 			</div>
 			<div id="f_right">
-				<img src="/timetravel/Public/image/erw.png" />
+				<img src="/Public/image/erw.png" />
 				<span>扫一扫关注时光旅行</span>
 			</div>
 		</div>
@@ -240,11 +240,11 @@ window.onload = function(){
 	<div id="order">
 	</div>
 	<div id="login_box" style="background:#fff;z-indent:12px;opacity:1;">
-    <h4>登陆<img id="cancel" src="/timetravel/Public/image/close.png" /></h4>
+    <h4>登陆<img id="cancel" src="/Public/image/close.png" /></h4>
     <div class="l_left">
         <p>使用社交网络登陆</p>
-        <span><a href="#"><img src="/timetravel/Public/image/l_web.png" /></a>新浪微博</span>
-        <span class="qq"><a href="#"><img src="/timetravel/Public/image/l_qq.png" /></a><br />腾讯QQ</span>
+        <span><a href="#"><img src="/Public/image/l_web.png" /></a>新浪微博</span>
+        <span class="qq"><a href="#"><img src="/Public/image/l_qq.png" /></a><br />腾讯QQ</span>
     </div>
     <div class="l_right">
         <p><a class="l_first" href="#">使用本网账号登陆</a><a class="l_last" href="#">注册</a></p>

@@ -1,3 +1,14 @@
+.bash_history
+.bash_logout
+.bashrc
+.cache/
+.profile
+.ssh/
+.viminfo
+.idea
+Application/Runtime/
+Admin/#Runtime
+.gitconfig
 *.log
 .idea
 Cache/*
