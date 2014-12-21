@@ -96,7 +96,7 @@ class IndexController extends Controller {
                 return ;
             }
 
-            if()
+//            if()
         }else{
             $this->display();
         }
