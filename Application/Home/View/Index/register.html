@@ -48,7 +48,17 @@
             <span class="code">验证码<b></b></span>
 
             <p>
-                <input class="code_box" type="text" name="verify"/><span class="code_pic"><img src="{:U('Index/verify')}" alt=""/></span>
+                <input class="code_box" type="text" name="verify"/>
+                <span class="code_pic">
+                    <img src="{:U('Index/verify', array('token'=>time()))}" id="verify"/>
+                </span>
+                <script type="text/javascript">
+                    var img = document.getElementById('verify');
+                    img.addEventListener("click", function(){
+                        var time = parseInt(new Date() / 1000);
+                        var url = {:U('Index/verify')} + '&token=' + time;
+                    });
+                </script>
             </p>
 
             <p class="f_agree"><input class="agree" type="checkbox">我同意 时光旅行《服务条款》及《隐私权政策》</p>
