@@ -87,8 +87,13 @@ $(function(){
 <body id="main">
 <div id="top">
     <p>
+<<<<<<< HEAD
         <a href="#"><img src="/Public/image/weibo.png"/></a>
         <a href="#"><img src="/Public/image/qq.png"/></a>
+=======
+        <a href="#"><img src="/timetravel/Public/image/weibo.png"/></a>
+        <a href="#"><img src="/timetravel/Public/image/qq.png"/></a>
+>>>>>>> 9f863b7dfd1e1db90baa1d624c48f64b5fa057d6
         <?php if(session('userinfo')): ?><span><?php echo getUserName();?></span>
             <a name="logout" href="<?php echo U('Index/logout');?>">注销</a>
         <?php else: ?>
@@ -156,7 +161,7 @@ $(function(){
         	<div id="f_js">
         		<span>王牌领队</span>
         		<ul>
-                    <?php if(is_array($leader)): $i = 0; $__LIST__ = $leader;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li><a href="<?php echo U('Article/detail', array('id'=>$vo['id']));?>">
+                    <?php if(is_array($leader)): $i = 0; $__LIST__ = $leader;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li><a href="<?php echo U('leader', array('id'=>$vo['id']));?>">
                             <img src="<?php echo ($vo["header_img"]); ?>" />
                         </a></li><?php endforeach; endif; else: echo "" ;endif; ?>
         		</ul>

@@ -131,7 +131,7 @@ $(function(){
         		<span>王牌领队</span>
         		<ul>
                     <volist id="vo" name="leader">
-                        <li><a href="{:U('Article/detail', array('id'=>$vo['id']))}">
+                        <li><a href="{:U('leader', array('id'=>$vo['id']))}">
                             <img src="{$vo.header_img}" />
                         </a></li>
                     </volist>

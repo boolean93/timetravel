@@ -94,7 +94,7 @@ $(function(){
                             <dt><img src="/Public/image/date.jpg" /><?php echo (date("Y-m-d",$vo["end_time"])); ?></dt>
                         </dl>
                     </div>
-                    <span class="price">￥200起</span>
+                    <span class="price">￥<?php echo (getpricebyrouteid($vo["route"])); ?></span>
                 </li><?php endforeach; endif; else: echo "" ;endif; ?>
 		</ul>
 		<div class = "program-top">往期活动</div>
@@ -107,7 +107,7 @@ $(function(){
 					<div class="move">
                         <?php if(is_array($vo)): $i = 0; $__LIST__ = $vo;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?><div class="switch-div">
                             	<?php if(is_array($v)): $k = 0; $__LIST__ = $v;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$o): $mod = ($k % 2 );++$k; if(($k == 1) or ($k == 3)): ?><ul class="img-ul"><?php endif; ?>
-									<li>
+									<li onclick="window.location.href='<?php echo U('Route/detail', array('id'=>$o['id']));?>'">
 										<img src="<?php echo ($o["pic_url"]); ?>" />
 										<div class = "img-text">
 											<span class = "text-span"><?php echo ($o["title"]); ?></span>

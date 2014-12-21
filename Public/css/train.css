@@ -145,6 +145,7 @@ ul,li,html,body,p,dl{
 .img-ul li{
 	float:left;
 	margin-left:20px;
+	cursor: pointer;
 }
 .img-ul li:first-child img{
 	width:415px;
@@ -154,10 +155,12 @@ ul,li,html,body,p,dl{
 	width:474px;
 	height:296px;
 }
+
 .img-ul{
 	width:1000px;
 	height:370px;
 }
+
 .margin{
 	margin-top:45px;
 }

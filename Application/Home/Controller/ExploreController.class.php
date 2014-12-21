@@ -17,7 +17,7 @@ class ExploreController extends Controller {
             ->order("id DESC")
             ->where(array("type"=>"leader"))
             ->limit(6)
-            ->field("header_img")
+            ->field("header_img, id")
             ->select();
 
         $this->assign("stuff", array($extreme_1, $extreme_2));
@@ -25,5 +25,10 @@ class ExploreController extends Controller {
         $this->assign("leader", $leader);
 
         $this->display();
+    }
+
+    public function leader($id){
+        $this->assign('article', M("Article")->find($id));
+        $this->display('Memory/detail');
     }
 }

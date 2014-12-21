@@ -63,7 +63,7 @@ $(function(){
                             <dt><img src="__PUBLIC__/image/date.jpg" />{$vo.end_time|date="Y-m-d",###}</dt>
                         </dl>
                     </div>
-                    <span class="price">￥200起</span>
+                    <span class="price">￥{$vo.route|getPriceByRouteId}</span>
                 </li>
             </volist>
 		</ul>
@@ -82,7 +82,7 @@ $(function(){
 									<if condition="($k eq 1) or ($k eq 3)">
 										<ul class="img-ul">
 									</if>
-									<li>
+									<li onclick="window.location.href='{:U('Route/detail', array('id'=>$o['id']))}'">
 										<img src="{$o.pic_url}" />
 										<div class = "img-text">
 											<span class = "text-span">{$o.title}</span>

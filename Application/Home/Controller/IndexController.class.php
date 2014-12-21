@@ -80,7 +80,30 @@ class IndexController extends Controller {
      */
     public function logout(){
     	session("userinfo", null);
-cookie("username", null);
-$this->success("注销成功!");
-}
+        cookie("username", null);
+        $this->success("注销成功!");
+    }
+
+    public function register(){
+        if(IS_POST){
+            if(check_verify(I('post.verify'))||
+                I('post.password') != I('post.repassword') ||
+                I('post.password') ||
+                I('post.username')
+            )
+            {
+                $this->error("验证码错误!");
+                return ;
+            }
+
+//            if()
+        }else{
+            $this->display();
+        }
+    }
+
+    public function verify(){
+        $Verify = new \Think\Verify();
+        $Verify->entry();
+    }
 }

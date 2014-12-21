@@ -9,3 +9,5 @@
 Application/Runtime/
 Admin/#Runtime
 .gitconfig
+*.log
+.idea

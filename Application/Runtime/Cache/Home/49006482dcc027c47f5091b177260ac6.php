@@ -117,7 +117,14 @@ $(function(){
                                 <a href="<?php echo U('Route/detail', array('id'=>$r['id']));?>" class="t_look">查看路线</a>
                             </div><?php endforeach; endif; else: echo "" ;endif; endif; ?>
                 </div><?php endforeach; endif; else: echo "" ;endif; ?>
-			<p class="page"><a href="#">上一页</a><a class="t_active" href="#">1</a><a href="#">2</a><a href="#">3</a><a href="#">...</a><a href="#">6</a><a href="#">下一页</a></p>
+
+			<p class="page">
+				<a href="<?php echo lastPageUrl('Article', 'home/time/index', $_GET['pid'], 'pid', array('type'=>'time'));?>">上一页</a>
+				<?php if(is_array($page)): $i = 0; $__LIST__ = $page;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo != '...'): ?><a <?php if($vo == $pid): ?>class="t_active"<?php endif; ?> href="<?php echo U('Home/Time/index', array('pid' => $vo));?>"><?php echo ($vo); ?></a>
+						<?php else: ?>
+						<a href="#">...</a><?php endif; endforeach; endif; else: echo "" ;endif; ?>
+				<a href="<?php echo nextPageUrl('Article', 'home/time/index', $_GET['pid'], 'pid', array('type'=>'time'));?>">下一页</a>
+			</p>
 		</div>
 		<div class="t_right">
 			<a herf="#">
