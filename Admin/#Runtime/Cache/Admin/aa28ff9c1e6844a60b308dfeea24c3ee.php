@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8" content="text/html" http-equiv="content-type" />
 <title>OneDream管理平台</title>
-<script type="text/javascript" src="/timetravel/Admin/Public/static/jquery-1.10.2.min.js"></script>
-<link href="/timetravel/Admin/Public/Admin/css/default/style.css" rel="stylesheet" type="text/css">
-<link href="/timetravel/Admin/Public/static/bootstrap2/css/bootstrap.min.css" rel="stylesheet"
+<script type="text/javascript" src="/Admin/Public/static/jquery-1.10.2.min.js"></script>
+<link href="/Admin/Public/Admin/css/default/style.css" rel="stylesheet" type="text/css">
+<link href="/Admin/Public/static/bootstrap2/css/bootstrap.min.css" rel="stylesheet"
 	type="text/css">
-<link href="/timetravel/Admin/Public/static/bootstrap2/css/bootstrap-responsive.min.css"
+<link href="/Admin/Public/static/bootstrap2/css/bootstrap-responsive.min.css"
 	rel="stylesheet" type="text/css">
 	
 </head>
@@ -58,10 +58,10 @@
 
 	</div>
 	
-	<script type="text/javascript" src="/timetravel/Admin/Public/static/jquery.nicescroll.js"></script>
-	<script type="text/javascript" src="/timetravel/Admin/Public/static/bootstrap2/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="/timetravel/Admin/Public/Admin/js/common.js"></script>
-	<script type="text/javascript" src="/timetravel/Admin/Public/Admin/js/layout.js"></script>
+	<script type="text/javascript" src="/Admin/Public/static/jquery.nicescroll.js"></script>
+	<script type="text/javascript" src="/Admin/Public/static/bootstrap2/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/Admin/Public/Admin/js/common.js"></script>
+	<script type="text/javascript" src="/Admin/Public/Admin/js/layout.js"></script>
 	<script type="text/javascript">
         /* 设置表单的值 */
     function setValue(name, value){

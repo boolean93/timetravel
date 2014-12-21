@@ -87,13 +87,8 @@ $(function(){
 <body id="main">
 <div id="top">
     <p>
-<<<<<<< HEAD
         <a href="#"><img src="/Public/image/weibo.png"/></a>
         <a href="#"><img src="/Public/image/qq.png"/></a>
-=======
-        <a href="#"><img src="/timetravel/Public/image/weibo.png"/></a>
-        <a href="#"><img src="/timetravel/Public/image/qq.png"/></a>
->>>>>>> 9f863b7dfd1e1db90baa1d624c48f64b5fa057d6
         <?php if(session('userinfo')): ?><span><?php echo getUserName();?></span>
             <a name="logout" href="<?php echo U('Index/logout');?>">注销</a>
         <?php else: ?>
