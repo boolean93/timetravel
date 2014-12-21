@@ -186,7 +186,7 @@ function nextPageUrl($model, int $url,
         $pageSum = (int)ceil(M($model)->where($condition)->count() / C("ARTICLE_PER_PAGE"));
     else
         $pageSum = (int)ceil(M($model)->count() / C("ARTICLE_PER_PAGE"));
-    
+
     if($pid > 0){
         if ($pid < $pageSum) {
             $pid++;
@@ -206,4 +206,9 @@ function getPriceByRouteId($id){
         if($v['price'] < $min) $min = $v['price'];
     }
     return ($min == 100000)?"暂无":$min."起";
+}
+
+function check_verify($code, $id = ''){
+    $verify = new \Think\Verify();
+    return $verify->check($code, $id);
 }
