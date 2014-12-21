@@ -12,3 +12,5 @@ Admin/#Runtime/*
 *.log
 .idea
 Cache/*
+Application/Home/Conf/config.php
+Admin/Application/Common/Conf/config.php
