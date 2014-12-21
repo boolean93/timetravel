@@ -3,11 +3,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Young 训练营</title>
-<link href="/timetravel/Public/css/common.css" rel="stylesheet" type="text/css" />
-<link href="/timetravel/Public/css/train.css" rel="stylesheet" type="text/css" />
-<script src="/timetravel/Public/js/move.js" type="text/javascript"></script>
-<script src="/timetravel/Public/js/switch.js" type="text/javascript"></script>
-<script src="/timetravel/Public/js/jquery-1.8.2.min.js" type="text/javascript"></script>
+<link href="/Public/css/common.css" rel="stylesheet" type="text/css" />
+<link href="/Public/css/train.css" rel="stylesheet" type="text/css" />
+<script src="/Public/js/move.js" type="text/javascript"></script>
+<script src="/Public/js/switch.js" type="text/javascript"></script>
+<script src="/Public/js/jquery-1.8.2.min.js" type="text/javascript"></script>
 <script>
 window.onload = function(){
 	switchImg();
@@ -46,8 +46,8 @@ $(function(){
 <body id="main">
 <div id="top">
     <p>
-        <a href="#"><img src="/timetravel/Public/image/weibo.png"/></a>
-        <a href="#"><img src="/timetravel/Public/image/qq.png"/></a>
+        <a href="#"><img src="/Public/image/weibo.png"/></a>
+        <a href="#"><img src="/Public/image/qq.png"/></a>
         <?php if(session('userinfo')): ?><span><?php echo getUserName();?></span>
             <a name="logout" href="<?php echo U('Index/logout');?>">注销</a>
         <?php else: ?>
@@ -57,7 +57,7 @@ $(function(){
 </div>
 <div id="nav">
     <div id="nav_main">
-        <a href="<?php echo U('Home/Index/index');?>"><img src="/timetravel/Public/image/logo.png"/></a>
+        <a href="<?php echo U('Home/Index/index');?>"><img src="/Public/image/logo.png"/></a>
         <ul>
             <li><a href="<?php echo U('Home/Index/index');?>">首页</a></li>
             <li><a href="<?php echo U('Home/Time/index');?>">时光之旅</a></li>
@@ -84,14 +84,14 @@ $(function(){
                     <div class = "program-text">
                         <a href="<?php echo U('Route/detail', array('id'=>$vo['id']));?>"><span><?php echo ($vo["title"]); ?></span></a>
                         <div class="station">
-                            <img src="/timetravel/Public/image/station.jpg" />
+                            <img src="/Public/image/station.jpg" />
                             <p>
                                 <?php echo ($vo["travel_line"]); ?>
                             </p>
                         </div>
                         <dl class="date">
                             <dt style="float:left">最近团期：<?php echo (date("Y-m-d",$vo["start_time"])); ?></dt>
-                            <dt><img src="/timetravel/Public/image/date.jpg" /><?php echo (date("Y-m-d",$vo["end_time"])); ?></dt>
+                            <dt><img src="/Public/image/date.jpg" /><?php echo (date("Y-m-d",$vo["end_time"])); ?></dt>
                         </dl>
                     </div>
                     <span class="price">￥200起</span>
@@ -130,48 +130,14 @@ $(function(){
 						<!--<div class = "switch-div">-->
 							<!--<ul class = "img-ul">-->
 								<!--<li>-->
-									<!--<img src = "/timetravel/Public/image/1.jpg" />-->
+									<!--<img src = "/Public/image/1.jpg" />-->
 									<!--<div class = "img-text">-->
 										<!--<span class = "text-span">#好哦煎熬的你什么的#</span>-->
 										<!--<span class = "date-span">2014-10-15</span>-->
 									<!--</div>-->
 								<!--</li>-->
 								<!--<li>-->
-									<!--<img src = "/timetravel/Public/image/2.jpg" />-->
-									<!--<div class = "img-text">-->
-										<!--<span class = "text-span">#好哦煎熬的你什么的#</span>-->
-										<!--<span class = "date-span">2014-10-15</span>-->
-									<!--</div>-->
-								<!--</li>-->
-							<!--</ul>-->
-							<!--<ul class = "img-ul">-->
-								<!--<li>-->
-									<!--<img src = "/timetravel/Public/image/2.jpg" />-->
-									<!--<div class = "img-text">-->
-										<!--<span class = "text-span">#好哦煎熬的你什么的#</span>-->
-										<!--<span class = "date-span">2014-10-15</span>-->
-									<!--</div>-->
-								<!--</li>-->
-								<!--<li>-->
-									<!--<img src = "/timetravel/Public/image/1.jpg" />-->
-									<!--<div class = "img-text">-->
-										<!--<span class = "text-span">#好哦煎熬的你什么的#</span>-->
-										<!--<span class = "date-span">2014-10-15</span>-->
-									<!--</div>-->
-								<!--</li>-->
-							<!--</ul>-->
-						<!--</div>-->
-						<!--<div class = "switch-div">-->
-							<!--<ul class = "img-ul">-->
-								<!--<li>-->
-									<!--<img src = "/timetravel/Public/image/1.jpg" />-->
-									<!--<div class = "img-text">-->
-										<!--<span class = "text-span">#好哦煎熬的你什么的#</span>-->
-										<!--<span class = "date-span">2014-10-15</span>-->
-									<!--</div>-->
-								<!--</li>-->
-								<!--<li>-->
-									<!--<img src = "/timetravel/Public/image/2.jpg" />-->
+									<!--<img src = "/Public/image/2.jpg" />-->
 									<!--<div class = "img-text">-->
 										<!--<span class = "text-span">#好哦煎熬的你什么的#</span>-->
 										<!--<span class = "date-span">2014-10-15</span>-->
@@ -180,14 +146,14 @@ $(function(){
 							<!--</ul>-->
 							<!--<ul class = "img-ul">-->
 								<!--<li>-->
-									<!--<img src = "/timetravel/Public/image/1.jpg" />-->
+									<!--<img src = "/Public/image/2.jpg" />-->
 									<!--<div class = "img-text">-->
 										<!--<span class = "text-span">#好哦煎熬的你什么的#</span>-->
 										<!--<span class = "date-span">2014-10-15</span>-->
 									<!--</div>-->
 								<!--</li>-->
 								<!--<li>-->
-									<!--<img src = "/timetravel/Public/image/2.jpg" />-->
+									<!--<img src = "/Public/image/1.jpg" />-->
 									<!--<div class = "img-text">-->
 										<!--<span class = "text-span">#好哦煎熬的你什么的#</span>-->
 										<!--<span class = "date-span">2014-10-15</span>-->
@@ -198,14 +164,14 @@ $(function(){
 						<!--<div class = "switch-div">-->
 							<!--<ul class = "img-ul">-->
 								<!--<li>-->
-									<!--<img src = "/timetravel/Public/image/1.jpg" />-->
+									<!--<img src = "/Public/image/1.jpg" />-->
 									<!--<div class = "img-text">-->
 										<!--<span class = "text-span">#好哦煎熬的你什么的#</span>-->
 										<!--<span class = "date-span">2014-10-15</span>-->
 									<!--</div>-->
 								<!--</li>-->
 								<!--<li>-->
-									<!--<img src = "/timetravel/Public/image/2.jpg" />-->
+									<!--<img src = "/Public/image/2.jpg" />-->
 									<!--<div class = "img-text">-->
 										<!--<span class = "text-span">#好哦煎熬的你什么的#</span>-->
 										<!--<span class = "date-span">2014-10-15</span>-->
@@ -214,14 +180,14 @@ $(function(){
 							<!--</ul>-->
 							<!--<ul class = "img-ul">-->
 								<!--<li>-->
-									<!--<img src = "/timetravel/Public/image/1.jpg" />-->
+									<!--<img src = "/Public/image/1.jpg" />-->
 									<!--<div class = "img-text">-->
 										<!--<span class = "text-span">#好哦煎熬的你什么的#</span>-->
 										<!--<span class = "date-span">2014-10-15</span>-->
 									<!--</div>-->
 								<!--</li>-->
 								<!--<li>-->
-									<!--<img src = "/timetravel/Public/image/2.jpg" />-->
+									<!--<img src = "/Public/image/2.jpg" />-->
 									<!--<div class = "img-text">-->
 										<!--<span class = "text-span">#好哦煎熬的你什么的#</span>-->
 										<!--<span class = "date-span">2014-10-15</span>-->
@@ -232,14 +198,14 @@ $(function(){
 						<!--<div class = "switch-div">-->
 							<!--<ul class = "img-ul">-->
 								<!--<li>-->
-									<!--<img src = "/timetravel/Public/image/1.jpg" />-->
+									<!--<img src = "/Public/image/1.jpg" />-->
 									<!--<div class = "img-text">-->
 										<!--<span class = "text-span">#好哦煎熬的你什么的#</span>-->
 										<!--<span class = "date-span">2014-10-15</span>-->
 									<!--</div>-->
 								<!--</li>-->
 								<!--<li>-->
-									<!--<img src = "/timetravel/Public/image/2.jpg" />-->
+									<!--<img src = "/Public/image/2.jpg" />-->
 									<!--<div class = "img-text">-->
 										<!--<span class = "text-span">#好哦煎熬的你什么的#</span>-->
 										<!--<span class = "date-span">2014-10-15</span>-->
@@ -248,14 +214,48 @@ $(function(){
 							<!--</ul>-->
 							<!--<ul class = "img-ul">-->
 								<!--<li>-->
-									<!--<img src = "/timetravel/Public/image/1.jpg" />-->
+									<!--<img src = "/Public/image/1.jpg" />-->
 									<!--<div class = "img-text">-->
 										<!--<span class = "text-span">#好哦煎熬的你什么的#</span>-->
 										<!--<span class = "date-span">2014-10-15</span>-->
 									<!--</div>-->
 								<!--</li>-->
 								<!--<li>-->
-									<!--<img src = "/timetravel/Public/image/2.jpg" />-->
+									<!--<img src = "/Public/image/2.jpg" />-->
+									<!--<div class = "img-text">-->
+										<!--<span class = "text-span">#好哦煎熬的你什么的#</span>-->
+										<!--<span class = "date-span">2014-10-15</span>-->
+									<!--</div>-->
+								<!--</li>-->
+							<!--</ul>-->
+						<!--</div>-->
+						<!--<div class = "switch-div">-->
+							<!--<ul class = "img-ul">-->
+								<!--<li>-->
+									<!--<img src = "/Public/image/1.jpg" />-->
+									<!--<div class = "img-text">-->
+										<!--<span class = "text-span">#好哦煎熬的你什么的#</span>-->
+										<!--<span class = "date-span">2014-10-15</span>-->
+									<!--</div>-->
+								<!--</li>-->
+								<!--<li>-->
+									<!--<img src = "/Public/image/2.jpg" />-->
+									<!--<div class = "img-text">-->
+										<!--<span class = "text-span">#好哦煎熬的你什么的#</span>-->
+										<!--<span class = "date-span">2014-10-15</span>-->
+									<!--</div>-->
+								<!--</li>-->
+							<!--</ul>-->
+							<!--<ul class = "img-ul">-->
+								<!--<li>-->
+									<!--<img src = "/Public/image/1.jpg" />-->
+									<!--<div class = "img-text">-->
+										<!--<span class = "text-span">#好哦煎熬的你什么的#</span>-->
+										<!--<span class = "date-span">2014-10-15</span>-->
+									<!--</div>-->
+								<!--</li>-->
+								<!--<li>-->
+									<!--<img src = "/Public/image/2.jpg" />-->
 									<!--<div class = "img-text">-->
 										<!--<span class = "text-span">#好哦煎熬的你什么的#</span>-->
 										<!--<span class = "date-span">2014-10-15</span>-->
@@ -277,48 +277,14 @@ $(function(){
 						<!--<div class = "switch-div">-->
 							<!--<ul class = "img-ul">-->
 								<!--<li>-->
-									<!--<img src = "/timetravel/Public/image/1.jpg" />-->
+									<!--<img src = "/Public/image/1.jpg" />-->
 									<!--<div class = "img-text">-->
 										<!--<span class = "text-span">#好哦煎熬的你什么的#</span>-->
 										<!--<span class = "date-span">2014-10-15</span>-->
 									<!--</div>-->
 								<!--</li>-->
 								<!--<li>-->
-									<!--<img src = "/timetravel/Public/image/2.jpg" />-->
-									<!--<div class = "img-text">-->
-										<!--<span class = "text-span">#好哦煎熬的你什么的#</span>-->
-										<!--<span class = "date-span">2014-10-15</span>-->
-									<!--</div>-->
-								<!--</li>-->
-							<!--</ul>-->
-							<!--<ul class = "img-ul">-->
-								<!--<li>-->
-									<!--<img src = "/timetravel/Public/image/2.jpg" />-->
-									<!--<div class = "img-text">-->
-										<!--<span class = "text-span">#好哦煎熬的你什么的#</span>-->
-										<!--<span class = "date-span">2014-10-15</span>-->
-									<!--</div>-->
-								<!--</li>-->
-								<!--<li>-->
-									<!--<img src = "/timetravel/Public/image/1.jpg" />-->
-									<!--<div class = "img-text">-->
-										<!--<span class = "text-span">#好哦煎熬的你什么的#</span>-->
-										<!--<span class = "date-span">2014-10-15</span>-->
-									<!--</div>-->
-								<!--</li>-->
-							<!--</ul>-->
-						<!--</div>-->
-						<!--<div class = "switch-div">-->
-							<!--<ul class = "img-ul">-->
-								<!--<li>-->
-									<!--<img src = "/timetravel/Public/image/1.jpg" />-->
-									<!--<div class = "img-text">-->
-										<!--<span class = "text-span">#好哦煎熬的你什么的#</span>-->
-										<!--<span class = "date-span">2014-10-15</span>-->
-									<!--</div>-->
-								<!--</li>-->
-								<!--<li>-->
-									<!--<img src = "/timetravel/Public/image/2.jpg" />-->
+									<!--<img src = "/Public/image/2.jpg" />-->
 									<!--<div class = "img-text">-->
 										<!--<span class = "text-span">#好哦煎熬的你什么的#</span>-->
 										<!--<span class = "date-span">2014-10-15</span>-->
@@ -327,14 +293,14 @@ $(function(){
 							<!--</ul>-->
 							<!--<ul class = "img-ul">-->
 								<!--<li>-->
-									<!--<img src = "/timetravel/Public/image/1.jpg" />-->
+									<!--<img src = "/Public/image/2.jpg" />-->
 									<!--<div class = "img-text">-->
 										<!--<span class = "text-span">#好哦煎熬的你什么的#</span>-->
 										<!--<span class = "date-span">2014-10-15</span>-->
 									<!--</div>-->
 								<!--</li>-->
 								<!--<li>-->
-									<!--<img src = "/timetravel/Public/image/2.jpg" />-->
+									<!--<img src = "/Public/image/1.jpg" />-->
 									<!--<div class = "img-text">-->
 										<!--<span class = "text-span">#好哦煎熬的你什么的#</span>-->
 										<!--<span class = "date-span">2014-10-15</span>-->
@@ -345,14 +311,14 @@ $(function(){
 						<!--<div class = "switch-div">-->
 							<!--<ul class = "img-ul">-->
 								<!--<li>-->
-									<!--<img src = "/timetravel/Public/image/1.jpg" />-->
+									<!--<img src = "/Public/image/1.jpg" />-->
 									<!--<div class = "img-text">-->
 										<!--<span class = "text-span">#好哦煎熬的你什么的#</span>-->
 										<!--<span class = "date-span">2014-10-15</span>-->
 									<!--</div>-->
 								<!--</li>-->
 								<!--<li>-->
-									<!--<img src = "/timetravel/Public/image/2.jpg" />-->
+									<!--<img src = "/Public/image/2.jpg" />-->
 									<!--<div class = "img-text">-->
 										<!--<span class = "text-span">#好哦煎熬的你什么的#</span>-->
 										<!--<span class = "date-span">2014-10-15</span>-->
@@ -361,14 +327,14 @@ $(function(){
 							<!--</ul>-->
 							<!--<ul class = "img-ul">-->
 								<!--<li>-->
-									<!--<img src = "/timetravel/Public/image/1.jpg" />-->
+									<!--<img src = "/Public/image/1.jpg" />-->
 									<!--<div class = "img-text">-->
 										<!--<span class = "text-span">#好哦煎熬的你什么的#</span>-->
 										<!--<span class = "date-span">2014-10-15</span>-->
 									<!--</div>-->
 								<!--</li>-->
 								<!--<li>-->
-									<!--<img src = "/timetravel/Public/image/2.jpg" />-->
+									<!--<img src = "/Public/image/2.jpg" />-->
 									<!--<div class = "img-text">-->
 										<!--<span class = "text-span">#好哦煎熬的你什么的#</span>-->
 										<!--<span class = "date-span">2014-10-15</span>-->
@@ -379,14 +345,14 @@ $(function(){
 						<!--<div class = "switch-div">-->
 							<!--<ul class = "img-ul">-->
 								<!--<li>-->
-									<!--<img src = "/timetravel/Public/image/1.jpg" />-->
+									<!--<img src = "/Public/image/1.jpg" />-->
 									<!--<div class = "img-text">-->
 										<!--<span class = "text-span">#好哦煎熬的你什么的#</span>-->
 										<!--<span class = "date-span">2014-10-15</span>-->
 									<!--</div>-->
 								<!--</li>-->
 								<!--<li>-->
-									<!--<img src = "/timetravel/Public/image/2.jpg" />-->
+									<!--<img src = "/Public/image/2.jpg" />-->
 									<!--<div class = "img-text">-->
 										<!--<span class = "text-span">#好哦煎熬的你什么的#</span>-->
 										<!--<span class = "date-span">2014-10-15</span>-->
@@ -395,14 +361,48 @@ $(function(){
 							<!--</ul>-->
 							<!--<ul class = "img-ul">-->
 								<!--<li>-->
-									<!--<img src = "/timetravel/Public/image/1.jpg" />-->
+									<!--<img src = "/Public/image/1.jpg" />-->
 									<!--<div class = "img-text">-->
 										<!--<span class = "text-span">#好哦煎熬的你什么的#</span>-->
 										<!--<span class = "date-span">2014-10-15</span>-->
 									<!--</div>-->
 								<!--</li>-->
 								<!--<li>-->
-									<!--<img src = "/timetravel/Public/image/2.jpg" />-->
+									<!--<img src = "/Public/image/2.jpg" />-->
+									<!--<div class = "img-text">-->
+										<!--<span class = "text-span">#好哦煎熬的你什么的#</span>-->
+										<!--<span class = "date-span">2014-10-15</span>-->
+									<!--</div>-->
+								<!--</li>-->
+							<!--</ul>-->
+						<!--</div>-->
+						<!--<div class = "switch-div">-->
+							<!--<ul class = "img-ul">-->
+								<!--<li>-->
+									<!--<img src = "/Public/image/1.jpg" />-->
+									<!--<div class = "img-text">-->
+										<!--<span class = "text-span">#好哦煎熬的你什么的#</span>-->
+										<!--<span class = "date-span">2014-10-15</span>-->
+									<!--</div>-->
+								<!--</li>-->
+								<!--<li>-->
+									<!--<img src = "/Public/image/2.jpg" />-->
+									<!--<div class = "img-text">-->
+										<!--<span class = "text-span">#好哦煎熬的你什么的#</span>-->
+										<!--<span class = "date-span">2014-10-15</span>-->
+									<!--</div>-->
+								<!--</li>-->
+							<!--</ul>-->
+							<!--<ul class = "img-ul">-->
+								<!--<li>-->
+									<!--<img src = "/Public/image/1.jpg" />-->
+									<!--<div class = "img-text">-->
+										<!--<span class = "text-span">#好哦煎熬的你什么的#</span>-->
+										<!--<span class = "date-span">2014-10-15</span>-->
+									<!--</div>-->
+								<!--</li>-->
+								<!--<li>-->
+									<!--<img src = "/Public/image/2.jpg" />-->
 									<!--<div class = "img-text">-->
 										<!--<span class = "text-span">#好哦煎熬的你什么的#</span>-->
 										<!--<span class = "date-span">2014-10-15</span>-->
@@ -417,11 +417,11 @@ $(function(){
 		<!--</div>-->
 	</div>
 </div><div id="login_box" style="background:#fff;z-indent:12px;opacity:1;">
-    <h4>登陆<img id="cancel" src="/timetravel/Public/image/close.png" /></h4>
+    <h4>登陆<img id="cancel" src="/Public/image/close.png" /></h4>
     <div class="l_left">
         <p>使用社交网络登陆</p>
-        <span><a href="#"><img src="/timetravel/Public/image/l_web.png" /></a>新浪微博</span>
-        <span class="qq"><a href="#"><img src="/timetravel/Public/image/l_qq.png" /></a><br />腾讯QQ</span>
+        <span><a href="#"><img src="/Public/image/l_web.png" /></a>新浪微博</span>
+        <span class="qq"><a href="#"><img src="/Public/image/l_qq.png" /></a><br />腾讯QQ</span>
     </div>
     <div class="l_right">
         <p><a class="l_first" href="#">使用本网账号登陆</a><a class="l_last" href="#">注册</a></p>
@@ -438,7 +438,7 @@ $(function(){
 <div id="footer">
     <div id="f_content">
         <div id="f_left">
-            <img  class="f_logo" src="/timetravel/Public/image/logo.png" />
+            <img  class="f_logo" src="/Public/image/logo.png" />
             <span>备案J1541558436[京] </span>
         </div>
         <div id="f_center">
@@ -450,12 +450,12 @@ $(function(){
             </p>
             <p class="f_pic">
                 <a href="#">关于我们:</a>
-                <a href="#"><img src="/timetravel/Public/image/f_web.png" /></a>
-                <a href="#"><img src="/timetravel/Public/image/f_qq.png" /></a>
+                <a href="#"><img src="/Public/image/f_web.png" /></a>
+                <a href="#"><img src="/Public/image/f_qq.png" /></a>
             </p>
         </div>
         <div id="f_right">
-            <img src="/timetravel/Public/image/erw.png" />
+            <img src="/Public/image/erw.png" />
             <span>扫一扫关注时光旅行</span>
         </div>
     </div>
@@ -497,11 +497,11 @@ $(function(){
 <div id="order">
 </div>
 <div id="login_box" style="background:#fff;z-indent:12px;opacity:1;">
-    <h4>登陆<img id="cancel" src="/timetravel/Public/image/close.png" /></h4>
+    <h4>登陆<img id="cancel" src="/Public/image/close.png" /></h4>
     <div class="l_left">
         <p>使用社交网络登陆</p>
-        <span><a href="#"><img src="/timetravel/Public/image/l_web.png" /></a>新浪微博</span>
-        <span class="qq"><a href="#"><img src="/timetravel/Public/image/l_qq.png" /></a>腾讯QQ</span>
+        <span><a href="#"><img src="/Public/image/l_web.png" /></a>新浪微博</span>
+        <span class="qq"><a href="#"><img src="/Public/image/l_qq.png" /></a>腾讯QQ</span>
     </div>
     <div class="l_right">
         <p><a class="l_first" href="#">使用本网账号登陆</a><a class="l_last" href="#">注册</a></p>

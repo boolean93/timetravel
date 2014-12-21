@@ -17,15 +17,18 @@ window.onload = function(){
 <body id="main">
 <div id="top">
     <p>
-        <a href="#"><img src="/timetravel/Public/image/weibo.png"/></a>
-        <a href="#"><img src="/timetravel/Public/image/qq.png"/></a>
-        <a href="#" id="login">登陆</a>
-        <a href="<?php echo U('Home/Index/register');?>" id="register">注册</a>
+        <a href="#"><img src="/Public/image/weibo.png"/></a>
+        <a href="#"><img src="/Public/image/qq.png"/></a>
+        <?php if(session('userinfo')): ?><span><?php echo getUserName();?></span>
+            <a name="logout" href="<?php echo U('Index/logout');?>">注销</a>
+        <?php else: ?>
+            <a href="#" id="login">登陆</a>
+            <a href="<?php echo U('Home/Index/register');?>" id="register">注册</a><?php endif; ?>
     </p>
 </div>
 <div id="nav">
     <div id="nav_main">
-        <a href="<?php echo U('Home/Index/index');?>"><img src="/timetravel/Public/image/logo.png"/></a>
+        <a href="<?php echo U('Home/Index/index');?>"><img src="/Public/image/logo.png"/></a>
         <ul>
             <li><a href="<?php echo U('Home/Index/index');?>">首页</a></li>
             <li><a href="<?php echo U('Home/Time/index');?>">时光之旅</a></li>
@@ -133,11 +136,11 @@ window.onload = function(){
 	<div id="order">
 	</div>
 <div id="login_box" style="background:#fff;z-indent:12px;opacity:1;">
-    <h4>登陆<img id="cancel" src="/timetravel/Public/image/close.png" /></h4>
+    <h4>登陆<img id="cancel" src="/Public/image/close.png" /></h4>
     <div class="l_left">
         <p>使用社交网络登陆</p>
-        <span><a href="#"><img src="/timetravel/Public/image/l_web.png" /></a>新浪微博</span>
-        <span class="qq"><a href="#"><img src="/timetravel/Public/image/l_qq.png" /></a>腾讯QQ</span>
+        <span><a href="#"><img src="/Public/image/l_web.png" /></a>新浪微博</span>
+        <span class="qq"><a href="#"><img src="/Public/image/l_qq.png" /></a><br />腾讯QQ</span>
     </div>
     <div class="l_right">
         <p><a class="l_first" href="#">使用本网账号登陆</a><a class="l_last" href="#">注册</a></p>

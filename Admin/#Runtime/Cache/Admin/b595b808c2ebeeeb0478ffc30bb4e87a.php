@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" content="text/html" http-equiv="content-type" />
 <title>OneDream管理平台</title>
-<link href="/timetravel/Admin/Public/Admin/css/default/style.css" rel="stylesheet" type="text/css">
+<link href="/Admin/Public/Admin/css/default/style.css" rel="stylesheet" type="text/css">
 </head>
 <body class="indexbody">
 	<div class=""
@@ -118,9 +118,9 @@
 		<iframe id="mainframe" name="mainframe"
 			src="<?php echo U('admin/index/center');?>" frameborder="0"></iframe>
 	</div>
-	<script type="text/javascript" src="/timetravel/Admin/Public/static/jquery-1.10.2.min.js"></script>
-	<script type="text/javascript" src="/timetravel/Admin/Public/static/jquery.nicescroll.js"></script>
-	<script type="text/javascript" src="/timetravel/Admin/Public/Admin/js/layout.js"></script>
-	<script type="text/javascript" src="/timetravel/Admin/Public/Admin/js/index.js"></script>
+	<script type="text/javascript" src="/Admin/Public/static/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="/Admin/Public/static/jquery.nicescroll.js"></script>
+	<script type="text/javascript" src="/Admin/Public/Admin/js/layout.js"></script>
+	<script type="text/javascript" src="/Admin/Public/Admin/js/index.js"></script>
 </body>
 </html>

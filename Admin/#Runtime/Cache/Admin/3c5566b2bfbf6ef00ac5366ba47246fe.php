@@ -4,8 +4,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>系统登录 - OneDream管理平台</title>
-<link href="/timetravel/Admin/Public/Admin/css/default/style.css" rel="stylesheet" type="text/css" />
-<link href="/timetravel/Admin/Public/Admin/css/base.css" rel="stylesheet" type="text/css" />
+<link href="/Admin/Public/Admin/css/default/style.css" rel="stylesheet" type="text/css" />
+<link href="/Admin/Public/Admin/css/base.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body class="loginbody">
@@ -39,8 +39,8 @@
 			</div>
 		</div>
 	</form>
-	<script type="text/javascript" src="/timetravel/Admin/Public/static/jquery-1.10.2.min.js"></script>
-<script type="text/javascript" src="/timetravel/Admin/Public/Admin/js/common.js"></script>
+	<script type="text/javascript" src="/Admin/Public/static/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="/Admin/Public/Admin/js/common.js"></script>
 	<script type="text/javascript">
 		$(function() {
 			//检测IE
