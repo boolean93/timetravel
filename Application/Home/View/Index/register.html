@@ -57,6 +57,7 @@
                     img.addEventListener("click", function(){
                         var time = parseInt(new Date() / 1000);
                         var url = '{:U('Index/verify')}' + '&token=' + time;
+                        img.src = url;
                     });
                 </script>
             </p>
