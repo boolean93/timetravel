@@ -3,9 +3,15 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>注册</title>
+<<<<<<< HEAD
     <link href="/Public/css/common.css" rel="stylesheet" type="text/css"/>
     <link href="/Public/css/register.css" rel="stylesheet" type="text/css"/>
     <script src="/Public/js/form.js" type="text/javascript"></script>
+=======
+    <link href="/timetravel/Public/css/common.css" rel="stylesheet" type="text/css"/>
+    <link href="/timetravel/Public/css/register.css" rel="stylesheet" type="text/css"/>
+    <script src="/timetravel/Public/js/form.js" type="text/javascript"></script>
+>>>>>>> c75d96ffcc501182f62288019a6aa568c66b2d73
     <script>
         window.onload = function () {
             form_check();
@@ -94,7 +100,11 @@
 <div id="footer">
     <div id="f_content">
         <div id="f_left">
+<<<<<<< HEAD
             <img class="f_logo" src="/Public/image/logo.png"/>
+=======
+            <img class="f_logo" src="/timetravel/Public/image/logo.png"/>
+>>>>>>> c75d96ffcc501182f62288019a6aa568c66b2d73
             <span>备案J1541558436[京] </span>
         </div>
         <div id="f_center">
@@ -107,12 +117,21 @@
 
             <p class="f_pic">
                 <a href="#">关于我们:</a>
+<<<<<<< HEAD
                 <a href="#"><img src="/Public/image/f_web.png"/></a>
                 <a href="#"><img src="/Public/image/f_qq.png"/></a>
             </p>
         </div>
         <div id="f_right">
             <img src="/Public/image/erw.png"/>
+=======
+                <a href="#"><img src="/timetravel/Public/image/f_web.png"/></a>
+                <a href="#"><img src="/timetravel/Public/image/f_qq.png"/></a>
+            </p>
+        </div>
+        <div id="f_right">
+            <img src="/timetravel/Public/image/erw.png"/>
+>>>>>>> c75d96ffcc501182f62288019a6aa568c66b2d73
             <span>扫一扫关注时光旅行</span>
         </div>
     </div>

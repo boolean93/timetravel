@@ -7,7 +7,8 @@
 .viminfo
 .idea
 Application/Runtime/
-Admin/#Runtime
+Admin/#Runtime/*
 .gitconfig
 *.log
 .idea
+Cache/*

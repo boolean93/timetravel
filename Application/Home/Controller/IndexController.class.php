@@ -86,17 +86,18 @@ class IndexController extends Controller {
 
     public function register(){
         if(IS_POST){
-            if(check_verify(I('post.verify'))||
-                I('post.password') != I('post.repassword') ||
-                I('post.password') ||
-                I('post.username')
-            )
-            {
+            if(!check_verify(I('post.verify'))){
                 $this->error("验证码错误!");
                 return ;
+            }else{
+                $_model = M("User");
+                if($_model->create()){
+                    $_model->add();
+                    $this->success("注册成功!", U("Index/index"));
+                }else{
+                    $this->error($_model->getError());
+                }
             }
-
-//            if()
         }else{
             $this->display();
         }
