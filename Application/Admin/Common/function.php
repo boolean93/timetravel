@@ -118,3 +118,8 @@ function getRouteTitleById($route_id){
     $r = M("Route")->find($route_id);
     return $r['title'];
 }
+
+function getMemoryPreviewUrl($id){
+    $res = explode('Admin', __ROOT__);
+    return $res[0];
+}

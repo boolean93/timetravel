@@ -156,4 +156,5 @@ class MemoryController extends AdminController {
             $this->error("参数错误");
         }
     }
+
 }
