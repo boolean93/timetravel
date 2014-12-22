@@ -205,10 +205,20 @@ function getPriceByRouteId($id){
     foreach($price as $v){
         if($v['price'] < $min) $min = $v['price'];
     }
-    return ($min == 100000)?"暂无":$min."起";
+    return ($min == 100000)? "暂无" : $min."起";
 }
 
 function check_verify($code, $id = ''){
-    $verify = new \Think\Verify();
-    return $verify->check($code, $id);
+$verify = new \Think\Verify();
+return $verify->check($code, $id);
+}
+
+function checkPwd($password){
+    if(strlen($password) < 6){
+        return false;
+    }
+    if(strlen($password) > 15){
+        return false;
+    }
+    return true;
 }
