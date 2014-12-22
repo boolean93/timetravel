@@ -205,7 +205,7 @@ function getPriceByRouteId($id){
     foreach($price as $v){
         if($v['price'] < $min) $min = $v['price'];
     }
-    return ($min == 100000)? "暂无" : $min."起";
+    return ($min == 100000)? "暂无" : $min." 元起";
 }
 
 function check_verify($code, $id = ''){
