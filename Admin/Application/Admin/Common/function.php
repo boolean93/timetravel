@@ -172,3 +172,9 @@ function getRouteTitleById($id){
     $res = D("Route")->field("title")->find($id);
     return $res['title'];
 }
+
+function getMemoryPreviewUrl($id){
+	$res = explode('Admin', __ROOT__);
+	$res = $res[0]."index.php?m=home&c=memory&a=preview&id=$id";
+	return $res;
+}

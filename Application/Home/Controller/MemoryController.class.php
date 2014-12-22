@@ -31,8 +31,15 @@ class MemoryController extends Controller {
      * 发布游记
      */
     public function submit(){
+        if(!is_login()){
+            $this->error("请先登录!");
+            return ;
+        }
+
+        $userInfo = session("user_info");
+
         $data = array(
-            "user_id"   =>  session("user_id"),
+            "user_id"   =>  $userInfo['id'],
             "title"     =>  I("post.title"),
             "content"   =>  I('post.content'),
             "create_time"   =>  time(),
@@ -86,5 +93,17 @@ class MemoryController extends Controller {
     public function ueditor(){
         $data = new \Org\Util\Ueditor();
         echo $data->output();
+    }
+
+    /**
+     * @description 用于预览
+     * @param $id
+     */
+    public function preview($id)
+    {
+        $result = M("Memory")->find($id);
+
+        $this->assign("memory", $result);
+        $this->display("Memory:detail");
     }
 }

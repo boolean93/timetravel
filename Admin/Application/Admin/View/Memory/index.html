@@ -29,6 +29,7 @@
 			<td>{$vo.create_time|date="Y-m-d h:i:s",###}</td>
             <td>{$vo.readable|get_my_readable_title}</td>
 			<td>
+                <a class="btn btn-mini" href="{:getMemoryPreviewUrl($vo['id'])}">预览</a>
                 <a class="btn btn-mini" href="{:U('edit?id='.$vo['id'])}">编辑</a>
                 <a class="btn btn-mini ajax-get  confirm" href="{:U('delete?id='.$vo['id'])}">删除</a>
 
