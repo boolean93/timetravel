@@ -12,6 +12,7 @@ class IndexController extends Controller {
         $Route = M("Route");
         $Stuff = M("Stuff");
         $Memory = M("Memory");
+        $Taobao = M("Taobao");
 
         //图片轮播
         $slider = $Slider->order("id DESC")->select();
@@ -37,6 +38,9 @@ class IndexController extends Controller {
         //时光印记
         $memory = $Memory->limit(6)->select();
 
+        //淘宝店绑定
+        $taobao = $Taobao->find(1);
+
         $this->assign("slider", $slider);
         $this->assign("time", $time);
         $this->assign("extreme", $extreme);
@@ -44,6 +48,7 @@ class IndexController extends Controller {
 		$this->assign("youngCount", count($youngImg));
         $this->assign("youngIntro", $youngIntro);
         $this->assign("memory", $memory);
+        $this->assign("taobao", $taobao);
         $this->display();
     }
 
