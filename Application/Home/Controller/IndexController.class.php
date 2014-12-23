@@ -112,4 +112,34 @@ class IndexController extends Controller {
         $Verify = new \Think\Verify();
         $Verify->entry();
     }
+
+    /**
+     * @description 基于字符串出现次数排序的Tiny Searching
+     * @param $keyword 搜索用的关键字
+     */
+    public function search(){
+        $keyword = I("get.keyword");
+
+        $Memory = M("Memory");
+        $Article = M("Article");
+        $Route = M("Route");
+
+        $map = array(
+            "content"   =>  array("LIKE", "%{$keyword}%"),
+            "title"     =>  array("LIKE", "%{$keyword}%"),
+            "_logic"    =>  "or",
+        );
+
+        $res = array_merge(
+            $Memory->where($map)->select(),
+            $Article->where($map)->select(),
+            $Route->where($map)->select()
+        );
+
+        usort($res, array("CompareFunc", $keyword));
+
+        $this->assign("result", $res);
+        $this->assign("keyword", $keyword);
+        $this->display();
+    }
 }
