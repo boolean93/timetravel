@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>搜索结果:{$keyword}</title>
+<link href="__PUBLIC__/css/common.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/css/travel.css" rel="stylesheet" type="text/css" />
+<script src="__PUBLIC__/js/jquery-1.8.2.min.js"></script>
+<script>
+window.onload = function(){
+	var oD = document.getElementById('order');
+	oD.style.width=document.body.clientWidth+'px';
+    oD.style.height=document.body.clientHeight+'px';
+    oD.style.filter = 'alpha(opacity=50)';
+    oD.style.opacity = 0.5;
+    oD.style.background = '#000';
+    var oDe  = document.getElementById('login_box');
+    var oY = document.getElementById('login');
+    var oN = document.getElementById('cancel');
+     var te = (document.documentElement.clientWidth-772)/2 +'px';
+    oDe.style.left = te;
+    oY.onclick =function(){
+         oD.style.display = 'block';
+          oDe.style.display = 'block';
+    }
+    oN.onclick = function(){
+    	oD.style.display = 'none';
+        oDe.style.display = 'none';
+    }
+}
+function getByClass(oparent,sClass){
+		var aResult=[];
+		var aEle = oparent.getElementsByTagName('*');
+		for(var i=0;i<aEle.length;i++){
+			if(aEle[i].className==sClass){
+				aResult.push(aEle[i]);
+			}
+		}
+		return aResult;
+}
+window.onscroll = function(){
+	 var oFix = document.getElementById("fixed");
+	 var oTop = getByClass(oFix,'f_t')[0];
+	 oTop.onclick = function(){	
+	 	startMove(oFix.srcollTop,{top:0});
+	 }
+	if (document.documentElement.scrollTop + document.body.scrollTop > 360) { 
+	    oFix.style.display = "block"; 
+	} 
+	else { 
+	     oFix.style.display = "none"; 
+	} 
+}
+</script>
+<script>
+$(function(){
+        showScroll();
+        function showScroll(){
+            $(window).scroll( function() { 
+                var scrollValue=$(window).scrollTop();
+                scrollValue > 100 ? $('a[class=f_t]').fadeIn():$('a[class=f_t]').fadeOut();
+            } );    
+            $('.f_t').click(function(){
+                $("html,body").animate({scrollTop:0},200);  
+            }); 
+        }
+ });
+</script>
+</head>
+<include file="Public/nav" />
+	<div id="t_content">
+		<div class="t_left">
+            <volist id="vo" name="result">
+                <div class="t_leftmain">
+                    <img src="{$vo|getImgUrl=###}">
+                    <span><a href="{:U('Home/Time/Detail', array('id'=>$vo['id']))}">{$vo.title}</a></span>
+                    <div class="t_content">
+                    <p>{$vo.content|htmlspecialchars_decode|strip_tags|mb_substr=###,0,250}<a href="{:U('Article/detail', array('id'=>$vo['id']))}">查看全文</a></p>
+                	</div>
+                </div>
+            </volist>
+		</div>
+		<div class="t_right">
+			<a herf="#">
+				<div class="talk">
+					<span>在线支付</span>
+					<span>123456789</span>
+				</div>
+				<div class="er_code">
+					<p>
+						<img src="__PUBLIC__/image/er_code.png" />
+					</p>
+					<span>关注微信二维码</span>
+				</div>
+				<div class="er_code">
+					<p>
+						<img src="__PUBLIC__/image/er_code.png" />
+					</p>
+					<span>关注微博二维码</span>
+				</div>
+			</a>
+		</div>
+	</div>
+	<div id="footer">
+		<div id="f_content">
+			<div id="f_left">
+			<img  class="f_logo" src="__PUBLIC__/image/logo.png" />
+			<span>备案J1541558436[京] </span>
+			</div>
+			<div id="f_center">
+				<p>
+					<a href="#">关于我们</a>    
+					<a href="#">联系我们</a>     
+					<a href="#">隐私条款</a>     
+					<a href="#">加入我们</a>
+				</p>
+				<p class="f_pic">
+					<a href="#">关于我们:</a>    
+					<a href="#"><img src="__PUBLIC__/image/f_web.png" /></a>
+					<a href="#"><img src="__PUBLIC__/image/f_qq.png" /></a>
+				</p>
+			</div>
+			<div id="f_right">
+				<img src="__PUBLIC__/image/erw.png" />
+				<span>扫一扫关注时光旅行</span>
+			</div>
+		</div>
+		<div id="f_bottom">
+			<span>友情链接</span>
+			<p>
+				<a href="#">关于我们</a>    
+				<a href="#">联系我们</a>     
+				<a href="#">隐私条款</a>     
+				<a href="#">加入我们</a>
+				<a href="#">关于我们</a>    
+				<a href="#">联系我们</a>     
+				<a href="#">隐私条款</a>     
+				<a href="#">加入我们</a>
+				<a href="#">加入我们</a>
+				<a href="#">关于我们</a>    
+			</p>
+			<p>
+				<a href="#">关于我们</a>    
+				<a href="#">联系我们</a>     
+				<a href="#">隐私条款</a>     
+				<a href="#">加入我们</a>
+				<a href="#">关于我们</a>    
+				<a href="#">联系我们</a>     
+				<a href="#">隐私条款</a>     
+				<a href="#">加入我们</a>
+				<a href="#">加入我们</a>
+				<a href="#">关于我们</a>    
+			</p>
+		</div>
+	</div>
+	<div id="fixed">
+		<ul>
+			<li><a class="f_f" href="#">在线咨询</a></li>
+			<li><a class="f_s" href="#">123456789</a></li>
+			<li><a class="f_t" href="javascript:void(0);">回到顶部</a></li>
+		</ul>
+	</div>
+	<div id="order">
+	</div>
+<include file="Public/login"/>
+</body>
+</html>

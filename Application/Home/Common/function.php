@@ -222,3 +222,31 @@ function checkPwd($password){
     }
     return true;
 }
+
+function CompareFunc($keyword){
+    return function($a, $b) use ($keyword){
+        return CompareFuncForSearch($a, $b, $keyword);
+    };
+}
+
+function CompareFuncForSearch($a, $b, $keyword){
+    $sumA = 0;
+    $sumB = 0;
+    $sumA += mb_substr_count($a['title'], $keyword);
+    $sumA += mb_substr_count($a['content'], $keyword);
+    $sumB += mb_substr_count($b['title'], $keyword);
+    $sumB += mb_substr_count($b['content'], $keyword);
+    return ($sumA > $sumB)? -1 : 1;
+}
+
+function getImgUrl($obj){
+    if($obj['img_url']){
+        return $obj['img_url'];
+    }
+    if($obj['header_img']){
+        return $obj['header_img'];
+    }
+    if($obj['pic_url']){
+        return $obj['pic_url'];
+    }
+}
