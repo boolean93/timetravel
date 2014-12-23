@@ -178,3 +178,11 @@ function getMemoryPreviewUrl($id){
 	$res = $res[0]."index.php?m=home&c=memory&a=preview&id=$id";
 	return $res;
 }
+
+/**
+ * 获取网站地址
+ */
+function getIndexUrl(){
+	$res = explode('Admin', __ROOT__);
+	return $res[0];
+}
