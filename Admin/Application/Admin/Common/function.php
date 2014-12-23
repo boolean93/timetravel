@@ -186,3 +186,39 @@ function getIndexUrl(){
 	$res = explode('Admin', __ROOT__);
 	return $res[0];
 }
+
+/**
+ * @param string $category 类别(article , route)
+ * @param string $typeName 英文类别名
+ * @return string 返回中文类别名
+ */
+function getTypeRealName($category, $typeName){
+	$real = "暂无分类";
+	if(strtolower($category) == 'article'){
+		switch ($typeName) {
+			case "time":
+				$real = "时光之旅";
+				break;
+			case "leader":
+				$real = "王牌领队";
+				break;
+		}
+		return $real;
+	}
+
+	if(strtolower($category) == 'route'){
+		switch ($typeName){
+			case "time":
+				$real = "时光之旅";
+				break;
+			case "young":
+				$real = "Young探险";
+				break;
+			case "extreme":
+				$real = "极致探险";
+				break;
+		}
+		return $real;
+	}
+	return "参数错误";
+}

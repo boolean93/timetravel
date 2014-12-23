@@ -23,7 +23,7 @@
 			<td>{$vo.id}</td>
 			<td>{$vo.title}</td>
 			<td>{$vo.click}</td>
-            <td>{$vo.type}</td>
+            <td>{$vo.type|getTypeRealName='article',###}</td>
 			<td>{$vo.create_time|date="Y-m-d h:i:s",###}</td>
 			<td>
 			<a class="btn btn-mini" href="{:U('edit?id='.$vo['id'])}">编辑</a>
