@@ -60,7 +60,7 @@ class IndexController extends Controller {
     		"username" => I("post.username"),
     		"password" => md5( I("post.password").C("PASSWORD_SALT") ),
     	);
-    	if(count($res = M("user")->where($data)->select()) == 1){
+    	if(count($res = D("User")->where($data)->select()) == 1){
 
     		$session = array(
     			"username" => $data["username"],
@@ -68,6 +68,10 @@ class IndexController extends Controller {
     		);
 
     		session("userinfo", $session);
+            $_data = array(
+                "login_time"=>time(),
+            );
+            M("User")->where($data)->update($_data);
 
 	    	if(I("post.remember") == 'on'){
 	    		cookie("username", $data["username"], 3600 * 2);
@@ -97,6 +101,7 @@ class IndexController extends Controller {
             }else{
                 $_model = D("User");
                 if($_model->create()){
+                    $_model->register_time = time();
                     $_model->add();
                     $this->success("注册成功!", U("Index/index"));
                 }else{
