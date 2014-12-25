@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>时光之旅</title>
+    <style>
+        .ds-meta {
+            display: none;
+        }
+    </style>
+<link href="__PUBLIC__/css/common.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/css/travel_content.css" rel="stylesheet" type="text/css" />
+<script src="__PUBLIC__/js/jquery-1.8.2.min.js"></script>
+<script>
+window.onload = function(){
+	var oD = document.getElementById('order');
+	oD.style.width=document.body.clientWidth+'px';
+    oD.style.height=document.body.clientHeight+'px';
+    oD.style.filter = 'alpha(opacity=50)';
+    oD.style.opacity = 0.5;
+    oD.style.background = '#000';
+    var oDe  = document.getElementById('login_box');
+    var oY = document.getElementById('login');
+    var oN = document.getElementById('cancel');
+     var te = (document.documentElement.clientWidth-772)/2 +'px';
+    oDe.style.left = te;
+    oY.onclick =function(){
+         oD.style.display = 'block';
+          oDe.style.display = 'block';
+    }
+    oN.onclick = function(){
+    	oD.style.display = 'none';
+        oDe.style.display = 'none';
+    }
+}
+function getByClass(oparent,sClass){
+		var aResult=[];
+		var aEle = oparent.getElementsByTagName('*');
+		for(var i=0;i<aEle.length;i++){
+			if(aEle[i].className==sClass){
+				aResult.push(aEle[i]);
+			}
+		}
+		return aResult;
+}
+window.onscroll = function(){
+	 var oFix = document.getElementById("fixed");
+	 var oTop = getByClass(oFix,'f_t')[0];
+	 oTop.onclick = function(){	
+	 	startMove(oFix.srcollTop,{top:0});
+	 }
+	if (document.documentElement.scrollTop + document.body.scrollTop > 360) { 
+	    oFix.style.display = "block"; 
+	} 
+	else { 
+	     oFix.style.display = "none"; 
+	} 
+}
+</script>
+<script>
+$(function(){
+        showScroll();
+        function showScroll(){
+            $(window).scroll( function() { 
+                var scrollValue=$(window).scrollTop();
+                scrollValue > 100 ? $('a[class=f_t]').fadeIn():$('a[class=f_t]').fadeOut();
+            } );    
+            $('.f_t').click(function(){
+                $("html,body").animate({scrollTop:0},200);  
+            }); 
+        }
+ });
+</script>
+</head>
+<include file="Public/nav" />
+	<div id="c_content">
+		<div class="c_left">
+			<div class="c_leftmain">
+				<img src="{$article.pic_url}" />
+				<div class="share">
+					<img src="__PUBLIC__/image/d_look.png" />
+					<span class="s_title">{$article.title}</span>
+					<span>作者：{$article.user_id|getUsernameByUserId}
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        {$article.create_time|date="Y.m.d",###}
+                        <a class="c_f" href="#">{$article.click}</a>
+                        <a class="c_s" href="{:U('Time/good',array('id'=>$article['id']))}">{$article.good}</a>
+                        <!--<a class="c_t" href="#">113</a>-->
+                    </span>
+					<!--<span class="sh">分享：</span>-->
+				</div>
+				{$article.content|htmlspecialchars_decode}
+			</div>
+			<p class="page">
+				<a class="p_prev" href="{:getLast('Article', $_GET['id'], 'U')}">上一篇:{:getLast('Article', $_GET['id'], 'title')}</a>
+				<a class="p_next" href="{:getNext('Article', $_GET['id'], 'U')}">下一篇:{:getNext('Article', $_GET['id'], 'title')}</a>
+			</p>
+
+            <!-- 多说评论框 start -->
+
+            <div class="ds-thread"
+                 data-thread-key="article{$article.id}"
+                 data-title="{$article.title}"
+                 data-url="{:U('Time/detail',array('id'=>$article['id']))}"></div>
+
+            <!-- 多说评论框 end -->
+
+            <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+
+            <script type="text/javascript">
+                var duoshuoQuery = {short_name:"timetravel"};
+                (function() {
+                    var ds = document.createElement('script');
+                    ds.type = 'text/javascript';ds.async = true;
+                    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+                    ds.charset = 'UTF-8';
+                    (document.getElementsByTagName('head')[0]
+                    || document.getElementsByTagName('body')[0]).appendChild(ds);
+                })();
+            </script>
+
+            <!-- 多说公共JS代码 end -->
+        </div><include file="Public/RightBar"/>
+	</div><include file="Public/footer"/>
