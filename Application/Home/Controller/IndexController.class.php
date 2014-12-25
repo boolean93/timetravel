@@ -106,7 +106,8 @@ class IndexController extends Controller {
                     if($_model->add()){
                         $this->success("注册成功!", U("Index/index"));
                     }else{
-                        $this->error($_model->getError());
+//                        $this->error($_model->getError());
+                        dump($_model);
                     }
                 }else{
                     $this->error($_model->getError());
