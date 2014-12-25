@@ -71,6 +71,7 @@ class IndexController extends Controller {
             $_data = array(
                 "login_time"=>time(),
             );
+
             M("User")->where($data)->update($_data);
 
 	    	if(I("post.remember") == 'on'){
@@ -100,10 +101,13 @@ class IndexController extends Controller {
                 return ;
             }else{
                 $_model = D("User");
+                $_model->register_time = time();
                 if($_model->create()){
-                    $_model->register_time = time();
-                    $_model->add();
-                    $this->success("注册成功!", U("Index/index"));
+                    if($_model->add()){
+                        $this->success("注册成功!", U("Index/index"));
+                    }else{
+                        $this->error($_model->getError());
+                    }
                 }else{
                     $this->error($_model->getError());
                 }
