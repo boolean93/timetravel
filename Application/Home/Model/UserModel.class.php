@@ -14,6 +14,6 @@ Class UserModel extends RelationModel{
         array("password", "md5", 3, 'function'),
         array("status", "1"),
         array("register_time", "time", MODEL_INSERT, 'function'),
-        array("login_time", "time", MODEL_BOTH),
+        array("login_time", "time", MODEL_BOTH, 'function'),
     );
 }
