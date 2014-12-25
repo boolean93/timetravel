@@ -25,8 +25,8 @@
             <li><a href="">时光小铺</a></li>
         </ul>
         <div class="search">
-            <form action="#" method="post">
-                <input type="text" class="soso" value="搜索路线/目的" onclick="this.value = ''">
+            <form action="{:U('Home/Index/search')}" method="post">
+                <input type="text" class="soso" value="搜索路线/目的" name="keyword" onclick="this.value = ''">
                 <input type="submit" class="sub_go" value="">
             </form>
         </div>

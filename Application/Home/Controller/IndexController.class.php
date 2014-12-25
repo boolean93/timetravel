@@ -118,7 +118,7 @@ class IndexController extends Controller {
      * @param $keyword 搜索用的关键字
      */
     public function search(){
-        $keyword = I("get.keyword");
+        $keyword = I("post.keyword");
 
         $Memory = M("Memory");
         $Article = M("Article");
