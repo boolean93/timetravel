@@ -101,7 +101,7 @@ class IndexController extends Controller {
                 return ;
             }else{
                 $_model = D("User");
-                $_model->register_time = time();
+//                $_model->register_time = time();
                 if($_model->create()){
                     if($_model->add()){
                         $this->success("注册成功!", U("Index/index"));
