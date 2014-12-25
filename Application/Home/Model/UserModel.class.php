@@ -13,7 +13,7 @@ Class UserModel extends RelationModel{
     protected $_auto = array(
         array("password", "md5", 3, 'function'),
         array("status", "1"),
-        array("register_time", "time", MODEL_INSERT, 'function'),
-        array("login_time", "time", MODEL_BOTH, 'function'),
+        array("register_time", "time", 1, 'function'),
+        array("login_time", "time", 3, 'function'),
     );
 }
