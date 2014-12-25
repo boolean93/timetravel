@@ -69,7 +69,7 @@ class IndexController extends Controller {
 
     		session("userinfo", $session);
             $_data = array(
-                "login_time"=>time(),
+                "last_login_time"=>time(),
             );
 
             M("User")->where($data)->update($_data);
@@ -106,7 +106,7 @@ class IndexController extends Controller {
                     if($_model->add()){
                         $this->success("注册成功!", U("Index/index"));
                     }else{
-//                        $this->error($_model->getError());
+                        $this->error($_model->getError());
                         dump($_model);
                     }
                 }else{
