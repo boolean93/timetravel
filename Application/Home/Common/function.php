@@ -250,3 +250,7 @@ function getImgUrl($obj){
         return $obj['pic_url'];
     }
 }
+
+function myMd5($pwd){
+    return (md5( I("post.password").C("PASSWORD_SALT") ));
+}

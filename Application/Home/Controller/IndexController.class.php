@@ -58,7 +58,7 @@ class IndexController extends Controller {
     public function login(){
     	$data = array(
     		"username" => I("post.username"),
-    		"password" => md5( I("post.password").C("PASSWORD_SALT") ),
+    		"password" => myMd5(I("post.password")),
     	);
     	if(count($res = D("User")->where($data)->select()) == 1){
 
@@ -72,7 +72,7 @@ class IndexController extends Controller {
                 "last_login_time"=>time(),
             );
 
-            M("User")->where($data)->update($_data);
+            M("User")->where($data)->save($_data);
 
 	    	if(I("post.remember") == 'on'){
 	    		cookie("username", $data["username"], 3600 * 2);
