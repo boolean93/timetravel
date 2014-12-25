@@ -95,7 +95,7 @@ class IndexController extends Controller {
                 $this->error("验证码错误!");
                 return ;
             }else{
-                $_model = M("User");
+                $_model = D("User");
                 if($_model->create()){
                     $_model->add();
                     $this->success("注册成功!", U("Index/index"));
