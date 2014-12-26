@@ -96,18 +96,20 @@ class IndexController extends Controller {
 
     public function register(){
         if(IS_POST){
+            if(I("post.agree")!='on'){
+                $this->error("请您同意 时光旅行《服务条款》及《隐私权政策》,谢谢");
+                return ;
+            }
             if(!check_verify(I('post.verify'))){
                 $this->error("验证码错误!");
                 return ;
             }else{
                 $_model = D("User");
-//                $_model->register_time = time();
                 if($_model->create()){
                     if($_model->add()){
                         $this->success("注册成功!", U("Index/index"));
                     }else{
                         $this->error($_model->getError());
-                        dump($_model);
                     }
                 }else{
                     $this->error($_model->getError());
