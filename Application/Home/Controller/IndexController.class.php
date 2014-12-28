@@ -53,8 +53,8 @@ class IndexController extends Controller {
             $access_token = $qc->get_access_token();
             echo $openid."-".$access_token;
 //            $qc = new QC($access_token, $openid);
-//            $userInfo = $qc->get_info();
-//            dump($userInfo);
+            $userInfo = $qc->get_user_info();
+            dump($userInfo);
         }
 
 
