@@ -47,9 +47,13 @@ class IndexController extends Controller {
 
         //QQ登陆
         $callback = $qc->qq_callback();
+        //判断callback是否合法
         if(mb_substr($callback, 0, 2) != '<h'){
-            $openId = $qc->get_openid();
-            echo $qc->get_access_token();
+            $openid = $qc->get_openid();
+            $access_token = $qc->get_access_token();
+            $qc = new QC($access_token, $openid);
+            $userInfo = $qc->get_info();
+            dump($userInfo);
         }
 
 
