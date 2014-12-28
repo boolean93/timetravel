@@ -50,11 +50,17 @@ class IndexController extends Controller {
         //判断callback是否合法
         if(mb_substr($callback, 0, 2) != '<h'){
             $openid = $qc->get_openid();
-            $access_token = $qc->get_access_token();
+            $access_token = $callback;
+            $userInfo = "https://graph.qq.com/user/get_user_info?oauth_consumer_key=101181780&"
+                ."access_token=$access_token*"
+                ."openid=$openid"
+                ."format=json";
+            echo json_decode(file_get_contents($userInfo));
+
 //            echo $openid."-".$access_token;
-            $userInfo = $qc->get_user_info();
+//            $userInfo = $qc->get_user_info();
 //            $userInfo['nickname'];
-            dump($userInfo);
+//            dump($userInfo);
         }
 
 
