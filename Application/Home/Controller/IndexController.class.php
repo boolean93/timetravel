@@ -45,9 +45,11 @@ class IndexController extends Controller {
         //淘宝店绑定
         $taobao = $Taobao->find(1);
 
+        //QQ登陆
         $callback = $qc->qq_callback();
-        if(mb_substr($callback, 0, 4) != '<h4>'){
-            echo $qc->get_openid();
+        if(mb_substr($callback, 0, 2) != '<h'){
+            $openId = $qc->get_openid();
+            echo $qc->get_access_token();
         }
 
 
