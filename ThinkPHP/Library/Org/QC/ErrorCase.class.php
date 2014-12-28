@@ -35,7 +35,8 @@ class ErrorCase{
 
         echo "<meta charset=\"UTF-8\">";
         if($description == "$"){
-            die($this->errorMsg[$code]);
+//            die($this->errorMsg[$code]);
+            echo $this->errorMsg[$code];
         }else{
             echo "<h3>error:</h3>$code";
             echo "<h3>msg  :</h3>$description";
