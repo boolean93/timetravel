@@ -1,12 +1,16 @@
 <?php
 namespace Home\Controller;
+use Org\QC\QC;
 use Think\Controller;
 
 class IndexController extends Controller {
+
     /**
      *
      */
     public function index(){
+        $qc = new QC();
+
         $Slider = M("Slider");
         $Article = M("Article");
         $Route = M("Route");
@@ -41,6 +45,12 @@ class IndexController extends Controller {
         //淘宝店绑定
         $taobao = $Taobao->find(1);
 
+        $callback = $qc->qq_callback();
+        if(mb_substr($callback, 0, 4) != '<h4>'){
+            echo $qc->get_openid();
+        }
+
+
         $this->assign("slider", $slider);
         $this->assign("time", $time);
         $this->assign("extreme", $extreme);
@@ -50,6 +60,7 @@ class IndexController extends Controller {
         $this->assign("memory", $memory);
         $this->assign("taobao", $taobao);
         $this->display();
+
     }
 
     /**
@@ -154,4 +165,5 @@ class IndexController extends Controller {
         $this->assign("keyword", $keyword);
         $this->display();
     }
+
 }

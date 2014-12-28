@@ -34,7 +34,7 @@ if($_POST){
     $incFile = fopen("../API/comm/inc.php","w+") or die("请设置API\comm\inc.php的权限为777");
     if(fwrite($incFile, $setting)){
         echo "<meta charset='utf-8' />";
-        echo "配置成功,<a href='../example/'>查看example</a><br /><span style='color:red'>如果已配置成功并发布到外网，请只保留API目录下文件，删除intall目录下和其他文件</span>";
+        echo "配置成功,<a href='../example'>查看example</a><br /><span style='color:red'>如果已配置成功并发布到外网，请只保留API目录下文件，删除intall目录下和其他文件</span>";
 
         fclose($incFile);
         fclose(fopen("setted.inc", "w"));
