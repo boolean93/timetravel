@@ -36,11 +36,12 @@ class ErrorCase{
         echo "<meta charset=\"UTF-8\">";
         if($description == "$"){
 //            die($this->errorMsg[$code]);
-            echo $this->errorMsg[$code];
+            return $this->errorMsg[$code];
         }else{
-            echo "<h3>error:</h3>$code";
-            echo "<h3>msg  :</h3>$description";
-            exit(); 
+            $temp = "<h3>error:</h3>$code"."<h3>msg  :</h3>$description";
+//            echo "<h3>error:</h3>$code";
+//            echo "<h3>msg  :</h3>$description";
+//            exit();
         }
     }
     public function showTips($code, $description = '$'){
