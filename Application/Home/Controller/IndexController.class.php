@@ -51,9 +51,10 @@ class IndexController extends Controller {
         if(mb_substr($callback, 0, 2) != '<h'){
             $openid = $qc->get_openid();
             $access_token = $qc->get_access_token();
+            echo $openid."-".$access_token;
 //            $qc = new QC($access_token, $openid);
-            $userInfo = $qc->get_info();
-            dump($userInfo);
+//            $userInfo = $qc->get_info();
+//            dump($userInfo);
         }
 
 
