@@ -56,9 +56,8 @@ class IndexController extends Controller {
                 ."openid=$openid&"
                 ."format=json";
             $userInfo = json_decode(file_get_contents($userInfo));
-            echo $nickname = $userInfo.nickname;
+//            echo $nickname = $userInfo.nickname;
         }
-
 
         $this->assign("slider", $slider);
         $this->assign("time", $time);
