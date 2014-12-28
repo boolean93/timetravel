@@ -52,8 +52,8 @@ class IndexController extends Controller {
             $openid = $qc->get_openid();
             $access_token = $callback;
             $userInfo = "https://graph.qq.com/user/get_user_info?oauth_consumer_key=101181780&"
-                ."access_token=$access_token*"
-                ."openid=$openid"
+                ."access_token=$access_token&"
+                ."openid=$openid&"
                 ."format=json";
             echo $userInfo;
 //            echo json_decode(file_get_contents($userInfo));
