@@ -55,13 +55,8 @@ class IndexController extends Controller {
                 ."access_token=$access_token&"
                 ."openid=$openid&"
                 ."format=json";
-            echo $userInfo;
-//            echo json_decode(file_get_contents($userInfo));
-
-//            echo $openid."-".$access_token;
-//            $userInfo = $qc->get_user_info();
-//            $userInfo['nickname'];
-//            dump($userInfo);
+            $userInfo = json_decode(file_get_contents($userInfo));
+            echo $nickname = $userInfo.nickname;
         }
 
 
