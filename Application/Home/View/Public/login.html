@@ -3,7 +3,7 @@
     <div class="l_left">
         <p>使用社交网络登陆</p>
         <span><a href="#"><img src="__PUBLIC__/image/l_web.png" /></a>新浪微博</span>
-        <span class="qq"><a href="#"><img src="__PUBLIC__/image/l_qq.png" /></a><br />腾讯QQ</span>
+        <span class="qq" id="qq"><a href="#"><img src="__PUBLIC__/image/l_qq.png" /></a><br />腾讯QQ</span>
     </div>
     <div class="l_right">
         <p><a class="l_first" href="#">使用本网账号登陆</a><a class="l_last" href="#">注册</a></p>
@@ -17,3 +17,9 @@
         </form>
     </div>
 </div>
+<script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="101181780" data-redirecturi="http://sglx16.com" charset="utf-8"></script>
+<script type="text/javascript">
+    QC.Login({
+        btnId:"qq"    //插入按钮的节点id
+    });
+</script>
