@@ -21,7 +21,8 @@
     var childWindow;
     function toQzoneLogin()
     {
-        childWindow = window.open("{:U('Home/Public/oauth')}","TencentLogin","width=450,height=320,menubar=0,scrollbars=1, resizable=1,status=1,titlebar=0,toolbar=0,location=1");
+//        childWindow = window.open("{:U('Home/Public/oauth')}","TencentLogin","width=450,height=320,menubar=0,scrollbars=1, resizable=1,status=1,titlebar=0,toolbar=0,location=1");
+          window.location.href = "{:U('Home/Public/oauth')}";
     }
 
     function closeChildWindow()

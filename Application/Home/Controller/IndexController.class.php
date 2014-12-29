@@ -27,7 +27,7 @@ class IndexController extends Controller {
             }else{
                 echo "<script>alert('参数错误')</script>";
             }
-            echo "<script>window.close();</script>";
+            echo "<script>window.location.href=\"".U('Index/index')."\" </script>";
         }
 
         $Slider = M("Slider");
