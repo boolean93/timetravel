@@ -3,7 +3,7 @@ namespace Home\Controller;
 
 use Think\Controller;
 
-class TimeController extends Controller
+class TimeController extends BaseController
 {
 
     public function index($pid = 1)

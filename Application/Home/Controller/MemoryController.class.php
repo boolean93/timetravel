@@ -1,7 +1,7 @@
 <?php
 namespace Home\Controller;
 use Think\Controller;
-class MemoryController extends Controller {
+class MemoryController extends BaseController {
     public function _before_submit(){
         if(!is_login()){
 //            $this->error("您还没有登陆呢~请先登陆", U("Home/Index/login"));
@@ -38,15 +38,16 @@ class MemoryController extends Controller {
 
         $userInfo = session("user_info");
 
+        $userId = $userInfo['id'];
+//        $userId = ( $userInfo['id'] > 0 )? $userInfo['id'] : $userInfo['username'];
+
         $data = array(
-            "user_id"   =>  $userInfo['id'],
+            "user_id"   =>  $userId,
             "title"     =>  I("post.title"),
             "content"   =>  I('post.content'),
             "create_time"   =>  time(),
             "click"     => 0,
             "good"      => 0,
-
-			"user_id"   => 1,
             "pic_url"   => I("post.pic_url"),
             "readable"  => 0,
         );
@@ -79,7 +80,7 @@ class MemoryController extends Controller {
         M("Memory")->where("id=$id")->setInc("click");
 
         //如果可读, 就显示出来
-        $result = M("Memory")->where("readable = 1")->find($id);
+        $result = M("Memory")->order('id DESC')->where("readable = 1")->find($id);
 //        dump($result);
         $this->assign("memory", $result);
         $this->display("Memory:detail");

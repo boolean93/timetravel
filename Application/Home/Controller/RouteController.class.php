@@ -9,7 +9,7 @@
 namespace Home\Controller;
 use Think\Controller;
 
-class RouteController extends Controller{
+class RouteController extends BaseController{
     /*
      * Shows the Detail
      */

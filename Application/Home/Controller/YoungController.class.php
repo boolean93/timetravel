@@ -1,7 +1,7 @@
 <?php
 namespace Home\Controller;
 use Think\Controller;
-class YoungController extends Controller {
+class YoungController extends BaseController {
     public function index()
     {
         $latest = M("Route")

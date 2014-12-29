@@ -1,7 +1,7 @@
 <?php
 namespace Home\Controller;
 use Think\Controller;
-class ExploreController extends Controller {
+class ExploreController extends BaseController {
     public function index()
     {
         $Stuff = M("Stuff");

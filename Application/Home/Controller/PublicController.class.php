@@ -15,7 +15,7 @@ use Think\Controller;
 //
 //include_once(CLASS_PATH."QC.class.php");
 
-class PublicController extends Controller{
+class PublicController extends BaseController{
     public function oauth(){
         $qc = new \Org\QC\QC();
         $qc->qq_login();

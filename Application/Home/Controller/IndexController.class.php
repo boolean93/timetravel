@@ -3,7 +3,7 @@ namespace Home\Controller;
 use Org\QC\QC;
 use Think\Controller;
 
-class IndexController extends Controller {
+class IndexController extends BaseController {
 
     /**
      *
@@ -28,6 +28,7 @@ class IndexController extends Controller {
                 echo "<script>alert('参数错误')</script>";
             }
             echo "<script>window.location.href=\"".U('Index/index')."\" </script>";
+            return;
         }
 
         $Slider = M("Slider");
@@ -72,7 +73,7 @@ class IndexController extends Controller {
 		$this->assign("youngCount", count($youngImg));
         $this->assign("youngIntro", $youngIntro);
         $this->assign("memory", $memory);
-        $this->assign("taobao", $taobao);
+//        $this->assign("taobao", $taobao);
         $this->display();
 
     }
