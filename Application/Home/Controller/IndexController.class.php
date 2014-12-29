@@ -9,7 +9,26 @@ class IndexController extends Controller {
      *
      */
     public function index(){
-        $qc = new QC();
+        if(checkIsQQCallback()){
+            $qc = new QC();
+            $access_token = $qc->qq_callback();
+            if($access_token){
+                $openid = $qc->get_openid();
+
+                $URL = "https://graph.qq.com/user/get_user_info?oauth_consumer_key=101181780&"
+                    ."access_token=$access_token&"
+                    ."openid=$openid&"
+                    ."format=json";
+                $userInfo = json_decode(http_request($URL));
+                cookie("username", $userInfo->nickname);
+                $session = array("username" => $userInfo->nickname);
+                session("userinfo", $session);
+
+            }else{
+                echo "<script>alert('参数错误')</script>";
+            }
+            echo "<script>window.close();</script>";
+        }
 
         $Slider = M("Slider");
         $Article = M("Article");
@@ -45,20 +64,6 @@ class IndexController extends Controller {
         //淘宝店绑定
         $taobao = $Taobao->find(1);
 
-        //QQ登陆
-        $callback = $qc->qq_callback();
-        //判断callback是否合法
-        if(mb_substr($callback, 0, 2) != '<h'){
-            $openid = $qc->get_openid();
-            $access_token = $callback;
-            $userInfo = "https://graph.qq.com/user/get_user_info?oauth_consumer_key=101181780&"
-                ."access_token=$access_token&"
-                ."openid=$openid&"
-                ."format=json";
-            $userInfo = json_decode(http_request($userInfo));
-//            echo $nickname = $userInfo.nickname;
-            dump($userInfo);
-        }
 
         $this->assign("slider", $slider);
         $this->assign("time", $time);

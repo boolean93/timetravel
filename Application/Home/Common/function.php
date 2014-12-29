@@ -282,6 +282,14 @@ function get_url_contents($url)
     return $result;
 }
 
+/**
+ * @description 服务器的file_get_contents有问题, 不能抓https, 故用此替代
+ * @param $url
+ * @param int $timeout
+ * @param array $header
+ * @return mixed
+ * @throws Exception
+ */
 function http_request($url,$timeout=30,$header=array()){
     if (!function_exists('curl_init')) {
         throw new Exception('server not install curl');
@@ -311,4 +319,18 @@ function http_request($url,$timeout=30,$header=array()){
     }
     @curl_close($ch);
     return $data;
+}
+
+
+/**
+ * @description 粗略判断是否是QQ登陆的回调链接.
+ * @return bool
+ */
+function checkIsQQCallback(){
+    $state = I("get.state");
+    $code = I("get.code");
+    if(strlen($state) < 8 || strlen($code) < 8){
+        return false;
+    }
+    return true;
 }
