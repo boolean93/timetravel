@@ -37,4 +37,4 @@ use Common\Controller\Addon;
             if($config['display'])
                 $this->display('widget');
         }
-    }
+}
