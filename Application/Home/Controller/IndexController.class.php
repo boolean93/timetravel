@@ -185,4 +185,41 @@ class IndexController extends BaseController {
         $this->display();
     }
 
+    public function privateOrder(){
+        $keywords = I("post.keywords");
+        $place = I("post.place");
+
+        $map1 = array(
+            "content"   =>  array("LIKE", "%{$keywords}%"),
+            "title"     =>  array("LIKE", "%{$keywords}%"),
+            "_logic"    =>  "or",
+        );
+
+        $map2 = array(
+            "content"   =>  array("LIKE", "%{$place}%"),
+            "title"     =>  array("LIKE", "%{$place}%"),
+            "_logic"    =>  "or",
+        );
+
+        $res1 = array_merge(
+            $Memory->where($map1)->select(),
+            $Article->where($map1)->select(),
+            $Route->where($map1)->select()
+        );
+
+        $res2 = array_merge(
+            $Memory->where($map2)->select(),
+            $Article->where($map2)->select(),
+            $Route->where($map2)->select()
+        );
+
+        usort($res1, array("CompareFunc", $keywords));
+        usort($res2, array("CompareFunc", $place));
+
+        $res = array_interInsert($res1, $res2);
+
+        $this->assign("result", $res);
+        $this->assign("keyword", $keywords . " " . $place);
+        $this->display('Index:search');
+    }
 }

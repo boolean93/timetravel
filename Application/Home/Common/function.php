@@ -239,6 +239,21 @@ function CompareFuncForSearch($a, $b, $keyword){
     return ($sumA > $sumB)? -1 : 1;
 }
 
+function array_interInsert($a, $b){
+    $result = array();
+    if(count($a) > count($b)){
+        $c = $a; $a = $b; $b = $c;  //swap
+    }
+    for($i = 0; $i < count($a); $i++){
+        $result[] = $a[$i];
+        $result[] = $b[$i];
+    }
+    for($i = 0; $i < count($b) - count($a); $i++){
+        $result[] = $b[$i + count($a)];
+    }
+    return $result;
+}
+
 function getImgUrl($obj){
     if($obj['img_url']){
         return $obj['img_url'];
