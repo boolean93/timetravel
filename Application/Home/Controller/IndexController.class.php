@@ -120,7 +120,10 @@ class IndexController extends BaseController {
         $this->success("注销成功!");
     }
 
-    public function register(){
+    /**
+     * 注册
+     */
+    public function register() {
         if(IS_POST){
             if(I("post.agree")!='on'){
                 $this->error("请您同意 时光旅行《服务条款》及《隐私权政策》,谢谢");
@@ -142,6 +145,7 @@ class IndexController extends BaseController {
                 }
             }
         }else{
+            //渲染页面
             $this->display();
         }
     }

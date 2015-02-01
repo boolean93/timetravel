@@ -53,7 +53,7 @@
  */
 #train{width:980px;height:466px;margin:0 auto;margin-top:58px;}
 #train span a{width:980px;display:block;font-size:22px;font-family:'宋体';font-weight:bold;color:#2E2E2E;}
-#train .left_train{width:308px;height:424px;float:left;margin-top:16px;}
+#train .left_train{width:308px;height:424px;float:left;margin-top:16px;word-wrap: break-word;}
 .left_train h4{font-size:20px;font-family:'微软雅黑';color:#1772B8;margin-bottom:16px;}
 .left_train p{font-size:14px;font-family:'宋体';line-height:24px;}
 .left_train .special{margin-top:22px;}
