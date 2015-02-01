@@ -189,6 +189,10 @@ class IndexController extends BaseController {
         $keywords = I("post.keywords");
         $place = I("post.place");
 
+        $Memory = M("Memory");
+        $Article = M("Article");
+        $Route = M("Route");
+
         $map1 = array(
             "content"   =>  array("LIKE", "%{$keywords}%"),
             "title"     =>  array("LIKE", "%{$keywords}%"),
