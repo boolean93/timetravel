@@ -189,36 +189,46 @@ class IndexController extends BaseController {
         $keywords = I("post.keywords");
         $place = I("post.place");
 
+        $map1 = array();
+        $map2 = array();
+        $res1 = array();
+        $res2 = array();
+
         $Memory = M("Memory");
         $Article = M("Article");
         $Route = M("Route");
 
-        $map1 = array(
-            "content"   =>  array("LIKE", "%{$keywords}%"),
-            "title"     =>  array("LIKE", "%{$keywords}%"),
-            "_logic"    =>  "or",
-        );
+        if($keywords) {
+            $map1 = array(
+                "content" => array("LIKE", "%{$keywords}%"),
+                "title" => array("LIKE", "%{$keywords}%"),
+                "_logic" => "or",
+            );
 
-        $map2 = array(
-            "content"   =>  array("LIKE", "%{$place}%"),
-            "title"     =>  array("LIKE", "%{$place}%"),
-            "_logic"    =>  "or",
-        );
+            $res1 = array_merge(
+                $Memory->where($map1)->select(),
+                $Article->where($map1)->select(),
+                $Route->where($map1)->select()
+            );
 
-        $res1 = array_merge(
-            $Memory->where($map1)->select(),
-            $Article->where($map1)->select(),
-            $Route->where($map1)->select()
-        );
+            usort($res1, array("CompareFunc", $keywords));
+        }
 
-        $res2 = array_merge(
-            $Memory->where($map2)->select(),
-            $Article->where($map2)->select(),
-            $Route->where($map2)->select()
-        );
+        if($place) {
+            $map2 = array(
+                "content" => array("LIKE", "%{$place}%"),
+                "title" => array("LIKE", "%{$place}%"),
+                "_logic" => "or",
+            );
 
-        usort($res1, array("CompareFunc", $keywords));
-        usort($res2, array("CompareFunc", $place));
+            $res2 = array_merge(
+                $Memory->where($map2)->select(),
+                $Article->where($map2)->select(),
+                $Route->where($map2)->select()
+            );
+
+            usort($res2, array("CompareFunc", $place));
+        }
 
         $res = array_interInsert($res1, $res2);
 
