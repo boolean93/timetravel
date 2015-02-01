@@ -230,7 +230,7 @@ class IndexController extends BaseController {
             usort($res2, array("CompareFunc", $place));
         }
 
-        $res = array_interInsert($res1, $res2);
+        $res = array_unique(array_interInsert($res1, $res2));
 
         $this->assign("result", $res);
         $this->assign("keyword", $keywords . " " . $place);
