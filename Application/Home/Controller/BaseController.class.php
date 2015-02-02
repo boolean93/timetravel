@@ -14,6 +14,10 @@ class BaseController extends Controller{
     public function _initialize(){
         //淘宝店绑定
         $taobao = M("Taobao")->find(1);
+        $ercode = M("Ercode")->find(1);
+
         $this->assign('taobao', $taobao);
+        $this->assign('er1', $ercode['url1']);
+        $this->assign('er2', $ercode['url2']);
     }
 }

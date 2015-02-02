@@ -4,17 +4,22 @@
             <!--<span>在线支付</span>-->
             <!--<span>123456789</span>-->
         <!--</div>-->
-        <div class="er_code">
-            <p>
-                <img src="__PUBLIC__/image/er_code.png" />
-            </p>
-            <span>关注微信二维码</span>
-        </div>
-        <div class="er_code">
-            <p>
-                <img src="__PUBLIC__/image/er_code.png" />
-            </p>
-            <span>关注微博二维码</span>
-        </div>
+        <if condition="$er1">
+            <div class="er_code">
+                <p>
+                    <img src="{$er1}" />
+                </p>
+                <span>关注微信二维码</span>
+            </div>
+        </if>
+        <if condition="$er2">
+            <div class="er_code">
+                <p>
+                    <!--__PUBLIC__/image/er_code.png-->
+                    <img src="{$er2}" />
+                </p>
+                <span>关注微博二维码</span>
+            </div>
+        </if>
     </a>
 </div>
