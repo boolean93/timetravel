@@ -28,16 +28,6 @@
             }
 
             var oDiv = document.getElementById('b_content');
-            var oChose = getByClass(oDiv, 'chose')[0];
-            var aSpan = oChose.getElementsByTagName('span');
-            for (var i = 0, len = aSpan.length; i < len; i++) {
-                aSpan[i].onclick = function () {
-                    for (var i = 0, len = aSpan.length; i < len; i++) {
-                        aSpan[i].style.cssText = 'border:1px solid #404040;';
-                    }
-                    this.style.cssText = 'border:1px solid red;';
-                }
-            }
             var Img = getByClass(oDiv,'img_slider')[0];
             var Img_l = getByClass(oDiv,'img_l')[0];
             var Img_detail = Img.getElementsByTagName('img')[0];
