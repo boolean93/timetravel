@@ -38,7 +38,22 @@
                     this.style.cssText = 'border:1px solid red;';
                 }
             }
-
+            var Img = getByClass(oDiv,'img_slider')[0];
+            var Img_l = getByClass(oDiv,'img_l')[0];
+            var Img_detail = Img.getElementsByTagName('img')[0];
+            var Img_width= Img.offsetWidth/2;
+            var timers = Img.onmousemove = function(ev){
+            var event = ev||window.event;
+            var x = event.clientX;
+            var y = event.clientY;
+            var divX = Img.offsetLeft;
+            var left = x-divX;
+            if(left>Img_width){
+                startMove(Img_l,{left:-400});
+            }else{
+                startMove(Img_l,{left:0});
+            }
+            }
 
         }
         function getByClass(oparent, sClass) {
@@ -57,8 +72,11 @@
 <div id="b_content">
     <div class="b_left">
         <div class="b_leftmain">
-            <img src="__PUBLIC__/image/book.png"/>
-
+            <div class="img_slider">
+                    <div class="img_l">
+                        <img src="__PUBLIC__/image/book.png"/>
+                    </div>
+            </div>
             <div class="b_main">
                 <p class="b_title">{$detail.title}</p>
                 <span class="b_address">{$detail.travel_line}</span>
