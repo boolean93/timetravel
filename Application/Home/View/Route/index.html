@@ -35,8 +35,10 @@
             var Img_dwidth = Img_detail.offsetWidth;
             var Img_dheight = Img_detail.offsetHeight;
             var Img_width= Img.offsetWidth/2;
-            if(Img_dwidth>=278&&Img_dheight>=352){
+            if((Img_dwidth>=278&&Img_dheight>=352)||(Img_dwidth>=278&&Img_dheight<352)){
                 Img_detail.style.height = 352 +'px';
+                Img_l.style.left = 0 + 'px';
+                Img_l.style.top = 0 + 'px';
                 var timers = Img.onmousemove = function(ev){
                     var event = ev||window.event;
                     var x = event.clientX;
