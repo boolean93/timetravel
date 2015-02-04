@@ -29,42 +29,68 @@
             }
 
             var oDiv = document.getElementById('b_content');
+            var oChose = getByClass(oDiv,'chose')[0];
+            var aSpan = oChose.getElementsByTagName('span');
+            for(var i =0,len = aSpan.length;i<len;i++){
+                aSpan[i].onclick = function(){
+                    for(var i =0,len = aSpan.length;i<len;i++){
+                        aSpan[i].style.cssText= 'border:1px solid #404040;';
+                    }
+                    this.style.cssText= 'border:1px solid red;';
+                }
+            }
             var Img = getByClass(oDiv,'img_slider')[0];
             var Img_l = getByClass(oDiv,'img_l')[0];
             var Img_detail = Img.getElementsByTagName('img')[0];
             var Img_dwidth = Img_detail.offsetWidth;
             var Img_dheight = Img_detail.offsetHeight;
             var Img_width= Img.offsetWidth/2;
+            var Timer = null;
             if((Img_dwidth>=278&&Img_dheight>=352)||(Img_dwidth>=278&&Img_dheight<352)){
                 Img_detail.style.height = 352 +'px';
                 Img_l.style.left = 0 + 'px';
                 Img_l.style.top = 0 + 'px';
-                var timers = Img.onmousemove = function(ev){
-                    var event = ev||window.event;
-                    var x = event.clientX;
-                    var y = event.clientY;
-                    var divX = Img.offsetLeft;
-                    var left = x-divX;
-                    var Img_dwidth = Img_detail.offsetWidth;
-                    if(Img_dwidth >=278){
-                        var Img_cwidth = Img_dwidth-280;
-                        if(left>Img_width){
-                            startMove(Img_l,{left:-Img_cwidth});
+                Img.onmousemove = function(ev){
+                    clearInterval(Timer);
+                    Timer = setInterval(function(){
+                        var event = ev||window.event;
+                        var x = event.clientX;
+                        var y = event.clientY;
+                        var divX = Img.offsetLeft;
+                        var left = x-divX;
+                        var Img_dwidth = Img_detail.offsetWidth;
+                        if(Img_dwidth >=278){
+                            var speed = 4;
+                            var Img_cwidth = Img_dwidth-280;
+                            if(left>Img_width){
+                                if(Img_l.offsetLeft <= -Img_cwidth){
+                                    clearInterval(Timer);
+                                }else{
+                                    Img_l.style.left = Img_l.offsetLeft-speed+'px';
+                                }
+                            }else{
+                                if(Img_l.offsetLeft==0){
+                                    clearInterval(Timer);
+                                }else{
+                                    Img_l.style.left = Img_l.offsetLeft+speed+'px';
+                                }
+                            }
                         }else{
-                            startMove(Img_l,{left:0});
+                            Img_detail.style.width = 278 +'px';
+                            Img_detail.style.height = 352 +'px';
+                            Img_l.style.left = 0 + 'px';
+                            Img_l.style.top = 0 + 'px';
                         }
-                    }else{
-                        Img_detail.style.width = 278 +'px';
-                        Img_detail.style.height = 352 +'px';
-                        Img_l.style.left = 0 + 'px';
-                        Img_l.style.top = 0 + 'px';
-                    }
+                    },30);
                 }
             }else{
                 Img_detail.style.width = 278 +'px';
                 Img_detail.style.height = 352 +'px';
                 Img_l.style.left = 0 + 'px';
                 Img_l.style.top = 0 + 'px';
+            }
+            Img.onmouseout = function(){
+                clearInterval(Timer);
             }
         }
         function getByClass(oparent, sClass) {
