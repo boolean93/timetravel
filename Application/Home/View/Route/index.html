@@ -5,7 +5,7 @@
     <title>{$detail.title}</title>
     <link href="__PUBLIC__/css/common.css" rel="stylesheet" type="text/css"/>
     <link href="__PUBLIC__/css/book.css" rel="stylesheet" type="text/css"/>
-    <script src="__PUBLIC__/js/move.js" text="javascript/text"></script>
+    <script src="__PUBLIC__/js/showPic.js" text="javascript/text"></script>
     <script>
         window.onload = function () {
             var oD = document.getElementById('order');
@@ -32,48 +32,7 @@
             var Img = getByClass(oDiv,'img_slider')[0];
             var Img_l = getByClass(oDiv,'img_l')[0];
             var Img_detail = Img.getElementsByTagName('img')[0];
-            var Img_dwidth = Img_detail.offsetWidth;
-            var Img_dheight = Img_detail.offsetHeight;
-            var Img_width= Img.offsetWidth/2;
-            if(Img_dwidth>=278&&Img_dheight>=352){
-                Img_detail.style.height = 352 +'px';
-                var timers = Img.onmousemove = function(ev){
-                    var event = ev||window.event;
-                    var x = event.clientX;
-                    var y = event.clientY;
-                    var divX = Img.offsetLeft;
-                    var left = x-divX;
-                    var Img_dwidth = Img_detail.offsetWidth;
-                    if(Img_dwidth >=278){
-                        var Img_cwidth = Img_dwidth-280;
-                        if(left>Img_width){
-                            startMove(Img_l,{left:-Img_cwidth});
-                        }else{
-                            startMove(Img_l,{left:0});
-                        }
-                    }else{
-                        Img_detail.style.width = 278 +'px';
-                        Img_detail.style.height = 352 +'px';
-                        Img_l.style.left = 0 + 'px';
-                        Img_l.style.top = 0 + 'px';
-                    }
-                }
-            }else{
-                Img_detail.style.width = 278 +'px';
-                Img_detail.style.height = 352 +'px';
-                Img_l.style.left = 0 + 'px';
-                Img_l.style.top = 0 + 'px';
-            }
-        }
-        function getByClass(oparent, sClass) {
-            var aResult = [];
-            var aEle = oparent.getElementsByTagName('*');
-            for (var i = 0; i < aEle.length; i++) {
-                if (aEle[i].className == sClass) {
-                    aResult.push(aEle[i]);
-                }
-            }
-            return aResult;
+            showPic(Img,Img_l,Img_detail);
         }
     </script>
 </head>
