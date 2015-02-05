@@ -33,7 +33,7 @@ class YoungController extends BaseController {
 
         $res = array_reverse($res);
         $resYear = array_reverse($resYear);
-        dump($res);
+//        dump($res);
 
         $this->assign("older", $res);
         $this->assign("year", $resYear);
