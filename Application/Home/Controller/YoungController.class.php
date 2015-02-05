@@ -43,7 +43,7 @@ class YoungController extends BaseController {
         $this->assign("latest", $latest);
 
         $this->display();
-        dump($res);
+//        dump($res);
 
     }
 }
