@@ -24,16 +24,19 @@ class YoungController extends BaseController {
 
         foreach($temp as $k => $v){
             $res[$k] = divideInto($v, 4);
+            $resYear[] = $k;
         }
 
         foreach($res as $k => $v){
             $res[$k] = array_reverse($res[$k]);
         }
 
-//        dump($res);
         $res = array_reverse($res);
+        $resYear = array_reverse($resYear);
+        dump($res);
 
         $this->assign("older", $res);
+        $this->assign("year", $resYear);
         $this->assign("latest", $latest);
 
         $this->display();
