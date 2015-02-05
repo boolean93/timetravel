@@ -48,7 +48,18 @@ ul,li,html,body,p,dl{
 	overflow: hidden;
 }
 #young-all-program li img{
+}
+#young-all-program li .Img_title{
+	width:169px;
+	height:141px;
 	float:left;
+	overflow:hidden;
+	position:relative;
+}
+#young-all-program li .Img_title .Img_detail{
+	position:absolute;
+	left:0px;
+	top:0px;
 }
 .program-text{
 	width:290px;

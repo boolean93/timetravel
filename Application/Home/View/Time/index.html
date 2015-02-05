@@ -6,6 +6,7 @@
 <link href="__PUBLIC__/css/common.css" rel="stylesheet" type="text/css" />
 <link href="__PUBLIC__/css/travel.css" rel="stylesheet" type="text/css" />
 <script src="__PUBLIC__/js/jquery-1.8.2.min.js"></script>
+<script src="js/showPic.js" type="text/javascript"></script>
 <script>
 window.onload = function(){
 	var oD = document.getElementById('order');
@@ -26,6 +27,14 @@ window.onload = function(){
     oN.onclick = function(){
     	oD.style.display = 'none';
         oDe.style.display = 'none';
+    }
+    var title = document.getElementById('t_content');
+    var Img_title = getByClass(title,'Img_title');
+    var Img_detail = getByClass(title,'Img_detail');
+    var Img_l = [];
+    for(var i = 0;i<Img_title.length;i++){
+        Img_l[i] = Img_detail[i].getElementsByTagName('img')[0];
+        showPi(Img_title[i],Img_detail[i],Img_l[i]);
     }
 }
 function getByClass(oparent,sClass){
@@ -72,7 +81,11 @@ $(function(){
 		<div class="t_left">
             <volist id="vo" name="list">
                 <div class="t_leftmain">
-                    <img src="{$vo.header_img}">
+                    <div class="Img_title">
+                        <div class="Img_detail">
+                            <img src="{$vo.header_img}">
+                        </div>
+                    </div>
                     <span><a href="{:U('Home/Time/Detail', array('id'=>$vo['id']))}">{$vo.title}</a></span>
                     <div class="t_content">
                     <p>{$vo.content|htmlspecialchars_decode|strip_tags|mb_substr=###,0,250}<a href="{:U('Article/detail', array('id'=>$vo['id']))}">查看全文</a></p>
