@@ -103,7 +103,7 @@ $(function(){
 												<span class = "date-span">{$o.end_time|date='Y-m-d',###}</span>
 											</div>
 										</li>
-										<if condition="($k eq 2) or ($k eq 4) or ($k eq (count($v)-1))">
+										<if condition="($k eq 2) or ($k eq 4) or ($k eq count($v))">
 											</ul>
 										</if>
 									</volist>
