@@ -85,35 +85,36 @@ $(function(){
 	</div>
 	<div id = "img">
         <volist id="vo" name="older" key="key">
-		<div class = "switch-img">
-			<span class="dates">{$key}</span>
-			<div class="over">
-				<div class="over-btn">
-					<div class="move">
-                        <volist id="v" name="vo">
-							<div class="switch-div">
-                            	<volist id="o" name="v" key="k">
-									<if condition="($k eq 1) or ($k eq 3)">
-										<ul class="img-ul">
-									</if>
-									<li onclick="window.location.href='{:U('Route/detail', array('id'=>$o['id']))}'">
-										<img src="{$o.pic_url}" />
-										<div class = "img-text">
-											<span class = "text-span">{$o.title}</span>
-											<span class = "date-span">{$o.end_time|date='Y-m-d',###}</span>
-										</div>
-									</li>
-									<if condition="($k eq 2) or ($k eq 4) or ($k eq count($v))">
-										</ul>
-									</if>
-                            	</volist>
-							</div>
-                        </volist>
+			<div class = "switch-img">
+				<span class="dates">{$year[$key-1]}</span>
+				<div class="over">
+					<div class="over-btn">
+						<div class="move">
+							<volist id="v" name="vo" key="kk">
+								<div class="switch-div">
+									<volist id="o" name="v" key="k">
+										<if condition="($k eq 1) or ($k eq 3)">
+											<ul class="img-ul">
+										</if>
+										<li onclick="window.location.href='{:U('Route/detail', array('id'=>$o['id']))}'">
+											<img src="{$o.pic_url}" />
+											<div class = "img-text">
+												<span class = "text-span">{$o.title}</span>
+												<span class = "date-span">{$o.end_time|date='Y-m-d',###}</span>
+											</div>
+										</li>
+										<if condition="($k eq 2) or ($k eq 4) or ($k eq count($v))">
+											</ul>
+										</if>
+									</volist>
+								</div>
+							</volist>
+						</div>
 					</div>
 				</div>
+				<input type = "button" class = "pre" />
 			</div>
-			<input type = "button" class = "pre" />
-		</div></volist>
+		</volist>
 	</div>
 </div><include file="Public/login"/>
 <include file="Public/footer" />
