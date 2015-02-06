@@ -113,16 +113,19 @@ function getUserName(){
  * @param $attribute
  * @return string
  */
-function getLast($module_name, $id, $attribute){
+function getLast($module_name, $id, $attribute, $real_name=null){
     $_module = M($module_name);
     if($id > 1) {
         $id--;
     }else{
-        return ($attribute == 'U')?'#':' 无 ';
+        if(!$real_name)
+            return ($attribute == 'U')?'#':' 无 ';
     }
-    if($attribute == 'U')
+    if($attribute == 'U'){
+        if($real_name)
+            $module_name = $real_name;
         return U($module_name."/detail", array("id"=>$id));
-    else{
+    }else{
         $res = $_module->field($attribute)->find($id);
         return $res[$attribute];
     }
@@ -135,17 +138,20 @@ function getLast($module_name, $id, $attribute){
  * @param $attribute U就是U函数, 否则就是字段
  * @return string
  */
-function getNext($module_name, $id, $attribute){
+function getNext($module_name, $id, $attribute, $real_name=null){
     $_module = M($module_name);
     $temp = $_module->order('id DESC')->find();
     if($id < $temp['id']){
         $id++;
     }else{
-        return ($attribute == 'U')? '#' : '无';
+        if(!$real_name)
+            return ($attribute == 'U')? '#' : '无';
     }
-    if($attribute == 'U')
+    if($attribute == 'U'){
+        if($real_name)
+            $module_name = $real_name;
         return U($module_name."/detail", array("id"=>$id));
-    else{
+    }else{
         $res = $_module->field($attribute)->find($id);
         return $res[$attribute];
     }
@@ -239,6 +245,12 @@ function CompareFuncForSearch($a, $b, $keyword){
     return ($sumA > $sumB)? -1 : 1;
 }
 
+/**
+ * @description 数组互相插入
+ * @param $a
+ * @param $b
+ * @return array
+ */
 function array_interInsert($a, $b){
     $result = array();
     if(count($a) > count($b)){

@@ -92,8 +92,8 @@ $(function(){
 				{$article.content|htmlspecialchars_decode}
 			</div>
 			<p class="page">
-				<a class="p_prev" href="{:getLast('Article', $_GET['id'], 'U')}">上一篇:{:getLast('Article', $_GET['id'], 'title')}</a>
-				<a class="p_next" href="{:getNext('Article', $_GET['id'], 'U')}">下一篇:{:getNext('Article', $_GET['id'], 'title')}</a>
+				<a class="p_prev" href="{:getLast('Article', $_GET['id'], 'U', 'Time')}">上一篇:{:getLast('Article', $_GET['id'], 'title')}</a>
+				<a class="p_next" href="{:getNext('Article', $_GET['id'], 'U', 'Time')}">下一篇:{:getNext('Article', $_GET['id'], 'title')}</a>
 			</p>
 
             <!-- 多说评论框 start -->

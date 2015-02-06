@@ -38,7 +38,7 @@ class TimeController extends BaseController
         }else{
             $this->error("您可能进入了一个无人区啊喵0.0");
         }
-        dump($res);
+//        dump($res);
     }
 
     public function good($id){
