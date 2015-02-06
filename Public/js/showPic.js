@@ -17,7 +17,6 @@ function showPic(Img,Img_l,Img_detail){
 					var y = event.clientY;
 					var divX = Img.offsetLeft;
 					var left = x-divX;
-					console.log(divX);
 					var Img_dwidth = Img_detail.offsetWidth;
 					if(Img_dwidth >=Img_width){
 						var speed = 7;
@@ -29,7 +28,6 @@ function showPic(Img,Img_l,Img_detail){
 								Img_l.style.left = Img_l.offsetLeft-speed+'px';
 							}
 						}else{
-							console.log("ff");
 							if(Img_l.offsetLeft>=0){
 								clearInterval(Timer);
 							}else{

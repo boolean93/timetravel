@@ -47,17 +47,19 @@ function switchImg()
 		{
 			aBtn[i].onclick = function()
 			{
+				myDiv = aMove[i].getElementsByClassName("switch-div");
 				aBtn[i].disabled = true;
-				if(aMove[i].offsetLeft < 0)
+				if(aMove[i].offsetLeft < 0){
 				Move(aMove[i],{left:aMove[i].offsetLeft + aDiv[0].offsetWidth},function()
 				{
 					aBtn[i].disabled = false;
 				});
-				else
-				Move(aMove[i],{left:-(myDiv.length) * aDiv[0].offsetWidth},function()
+				}else{
+				Move(aMove[i],{left:-(myDiv.length-1) * aDiv[0].offsetWidth},function()
 				{
 					aBtn[i].disabled = false;
 				});
+				}
 				return;
 			}
 		})(i);
