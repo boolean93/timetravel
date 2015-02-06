@@ -81,10 +81,17 @@ function login_box(){
     oD.style.background = '#000';
     var oDe  = document.getElementById('login_box');
     var oY = document.getElementById('login');
+    var oYs = document.getElementById('logins');
     var oN = document.getElementById('cancel');
+    var te = (document.documentElement.clientWidth-772)/2 +'px';
+    oDe.style.left = te;
     oY.onclick =function(){
-         oD.style.display = 'block';
-          oDe.style.display = 'block';
+        oD.style.display = 'block';
+        oDe.style.display = 'block';
+    }
+    oYs.onclick =function(){
+        oD.style.display = 'block';
+        oDe.style.display = 'block';
     }
     oN.onclick = function(){
     	oD.style.display = 'none';
