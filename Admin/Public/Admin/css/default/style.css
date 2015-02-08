@@ -717,8 +717,3 @@ a:active {
 	text-overflow: ellipsis;
 }
 /* =========================管理首页样式.结束======================= */
-
-.add_picture{
-	border : 1px solid lightblue;
-	text-decoration: none;
-}
