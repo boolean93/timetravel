@@ -6,7 +6,14 @@
 
     <link href="__BOOTSTRAP__/css/bootstrap-datetimepicker.min.css"
 	rel="stylesheet" type="text/css">
-
+	<style>
+		.add_picture{
+			border : 2px solid black;
+			color : black !important;
+			text-decoration: none;
+			padding: 5px 10px 5px 10px;
+		}
+	</style>
 </block>
 <block name="body">
 <ul class="breadcrumb">
@@ -26,14 +33,16 @@
 					placeholder="内容标题" value="{$info.title}">
 			</div>
 		</div>
-
-		<a class="add_picture" href="/Admin/index.php?s=/admin/image/index.html">>>去添加图片>></a>
-
+		<div class="control-group">
+			<div class="controls">
+				<a class="add_picture" href="{:U('admin/image/index')}" target="_blank">>>去添加图片>></a>
+			</div>
+		</div>
         <div class="control-group">
             <label class="control-label" for="header_img">封面图片地址</label>
             <div class="controls">
                 <input type="text" id="header_img" name="header_img" class="span8"
-                       placeholder="图片地址" value="{$info.img_url}">
+                       placeholder="将上传后的图片地址复制至此处" value="{$info.img_url}">
             </div>
         </div>
 
