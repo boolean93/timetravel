@@ -88,7 +88,7 @@ $(function(){
                     </div>
                     <span><a href="{:U('Home/Time/Detail', array('id'=>$vo['id']))}">{$vo.title}</a></span>
                     <div class="t_content">
-                    <p>{$vo.content|htmlspecialchars_decode|strip_tags|mb_substr=###,0,250}<a href="{:U('Home/Time/detail', array('id'=>$vo['id']))}">查看全文</a></p>
+                    <p>{$vo.content|htmlspecialchars_decode|strip_tags|mb_substr=###,0,250,'UTF-8'}<a href="{:U('Home/Time/detail', array('id'=>$vo['id']))}">查看全文</a></p>
                 	</div>
                     <if condition="count($vo['route']) gt 0">
                         <span class="route_detail">相关路线</span>
