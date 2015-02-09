@@ -3,6 +3,8 @@ body{background:#fff;}
 #c_content .c_left{width:690px;min-height:800px;float:left;}
 #c_content .c_right{width:240px;height:500px;float:right;}
 .c_left .c_leftmain{min-height:588px;margin-bottom:34px;padding-bottom:20px;border-bottom:1px solid #F5F5F5;}
+.t_leftmain .Img_title{width:650px;height:320px;overflow:hidden;position:relative;}
+.t_leftmain .Img_detail{position:absolute;left:0px;top:0px;}
 .c_leftmain .share{width:690px;height:66px;margin:16px 0 10px 0;border-bottom:1px solid #F5F5F5;}
 .c_leftmain .share img{width:50px;height:50px;float:left;}
 .share span{width:324px;height:18px;display:block;font-size:12px;float:left;margin:8px 0 6px 10px;color:#4B4A4A;}
