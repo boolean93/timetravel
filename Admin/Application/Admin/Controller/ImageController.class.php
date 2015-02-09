@@ -102,7 +102,7 @@ class ImageController extends AdminController {
             if ($id = D("Image")->data($data)->add()){
                 // 记录行为
                 action_log ( 'add_image', 'Image', $id, UID );
-                $this->success('上传成功！');
+                $this->success('上传成功！', U("admin/image/index"));
             }else{
                 $this->error("上传失败!");
             }

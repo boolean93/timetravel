@@ -6,7 +6,14 @@
 
     <link href="__BOOTSTRAP__/css/bootstrap-datetimepicker.min.css"
 	rel="stylesheet" type="text/css">
-
+	<style>
+		.add_picture{
+			border : 2px solid black;
+			color : black !important;
+			text-decoration: none;
+			padding: 5px 10px 5px 10px;
+		}
+	</style>
 </block>
 <block name="body">
 <ul class="breadcrumb">
@@ -35,11 +42,17 @@
             </div>
         </div>
 
+		<div class="control-group">
+			<div class="controls">
+				<a class="add_picture" href="{:U('admin/image/index')}" target="_blank">>>去添加图片>></a>
+			</div>
+		</div>
+
         <div class="control-group">
             <label class="control-label" for="pic_url">封面图片地址</label>
             <div class="controls">
                 <input type="text" id="pic_url" name="pic_url" class="span8"
-                       placeholder="图片地址" value="{$info.pic_url}">
+                       placeholder="将上传后的图片地址填写在这里" value="{$info.pic_url}">
             </div>
         </div>
 
@@ -55,7 +68,7 @@
             <label class="control-label" for="start">开始时间</label>
             <div class="controls">
                 <input type="text" id="start" name="start_time" class="span8"
-                       placeholder="如:2012.08.12 12:00:00" value="{$info.start_time}">
+                       placeholder="如:2012.08.12 12:00:00">
             </div>
         </div>
 
@@ -63,7 +76,7 @@
             <label class="control-label" for="end">结束时间</label>
             <div class="controls">
                 <input type="text" id="end" name="end_time" class="span8"
-                       placeholder="如:2012.08.12 12:00:00" value="{$info.end_time}">
+                       placeholder="如:2012.08.12 12:00:00">
             </div>
         </div>
 

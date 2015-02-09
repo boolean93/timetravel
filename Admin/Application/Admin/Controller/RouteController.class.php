@@ -49,6 +49,8 @@ class RouteController extends AdminController {
             $Route->create_time = time();
 			//$this->error (json_encode($data));
 			if ($data) {
+				$Route->start_time = strtotime($Route->start_time);
+				$Route->end_time = strtotime($Route->end_time);
 				$id = $Route->add ();
 				if ($id) {
 					// 记录行为
@@ -79,6 +81,9 @@ class RouteController extends AdminController {
 			$Route = D ( 'Route' );
 			$data = $Route->create ();
 			if ($data) {
+				$Route->start_time = strtotime($Route->start_time);
+				$Route->end_time = strtotime($Route->end_time);
+
 				if ($Route->save ()) {
 					// 记录行为
 					action_log ( 'edit_route', 'Route', $data ['id'], UID );
