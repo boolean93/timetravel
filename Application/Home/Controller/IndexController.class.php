@@ -9,6 +9,7 @@ class IndexController extends BaseController {
      *
      */
     public function index(){
+        echo $_SESSION['userinfo']['username'];
         if(checkIsQQCallback()){
             $qc = new QC();
             $access_token = $qc->qq_callback();
