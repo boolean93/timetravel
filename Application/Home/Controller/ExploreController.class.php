@@ -29,6 +29,6 @@ class ExploreController extends BaseController {
 
     public function leader($id){
         $this->assign('article', M("Article")->find($id));
-        $this->display('Memory/detail');
+        $this->display('Time/detail');
     }
 }
