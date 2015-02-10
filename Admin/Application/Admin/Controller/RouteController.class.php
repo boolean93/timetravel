@@ -90,8 +90,8 @@ class RouteController extends AdminController {
 					action_log ( 'edit_route', 'Route', $data ['id'], UID );
 					$this->success ( '更新成功', Cookie ( '__forward__' ) );
 				} else {
-//					$this->error ( '更新失败' );
-					$this->error ( $Route->getError () );
+					$this->error ( '更新失败' );
+//					$this->error ( $Route->getError () );
 				}
 			} else {
 				$this->error ( $Route->getError () );
