@@ -77,7 +77,7 @@ $(function(){
                             <dt><img src="__PUBLIC__/image/date.jpg" />{$vo.end_time|date="Y-m-d",###}</dt>
                         </dl>
                     </div>
-                    <span class="price">￥{$vo.route|getPriceByRouteId}</span>
+                    <span class="price">￥{$vo.id|getPriceByRouteId}</span>
                 </li>
             </volist>
 		</ul>
