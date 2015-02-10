@@ -22,6 +22,7 @@
             <td>{$vo.img_url}</td>
             <td>{$vo.status|get_my_status_title}</td>
 			<td>
+				<a class="btn btn-mini" href="{$vo.img_url}">图片预览</a>
 			<a class="btn btn-mini" href="{:U('edit?id='.$vo['id'])}">编辑</a>
 			<a class="btn btn-mini ajax-get  confirm" href="{:U('delete?id='.$vo['id'])}">删除</a>
 			</td>
