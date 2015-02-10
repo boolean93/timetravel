@@ -36,7 +36,7 @@ class MemoryController extends BaseController {
             return ;
         }
 
-        $userInfo = session("user_info");
+        $userInfo = session("userinfo");
 
 //        $userId = $userInfo['id'];
         $userId = ( is_numeric($userInfo['id']) )? $userInfo['id'] : $userInfo['username'];
