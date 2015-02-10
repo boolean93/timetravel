@@ -57,7 +57,8 @@ class MemoryController extends BaseController {
         if($Memory->data($data)->add()){
             $this->success("发表成功, 感谢您的使用.如果您的文章文采够好, 我们会第一时间放在本栏目上.");
         }else{
-            $this->error("啊哦, 好像出了点小问题");
+//            $this->error("啊哦, 好像出了点小问题");
+            $this->error($Memory->getError());
         }
     }
 
