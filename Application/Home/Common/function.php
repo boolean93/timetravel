@@ -92,8 +92,9 @@ function divideInto($arr, $singleSum){
  * @return mixed
  */
 function getUsernameByUserId($id){
-    $res = M('User')->find($id);
-    return $res['username'];
+//    $res = M('User')->find($id);
+//    return $res['username'];
+    return $id;
 }
 
 function getUserName(){
