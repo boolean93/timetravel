@@ -122,18 +122,22 @@ $(function(){
 <include file="Public/nav" />
 	<div class="l_main clear">
 	<div class="bg_img">
-		<div id ="bg_title">
-			<p>
-				{$stuff[0]["title"]}
-			</p>
-		</div>
+        <if condition="$stuff[0]['title']">
+            <div id ="bg_title">
+                <p>
+                    {$stuff[0]["title"]}
+                </p>
+            </div>
+        </if>
 	</div>
     <div class="l_main_g">
     	<div class="main_center">
         	<div class="main_c1">
-            	<div class="c1_font">
-                    <p class="b">{$stuff[1]["title"]}</p>
-            	</div>
+                <if condition="$stuff[1]['title']">
+                    <div class="c1_font">
+                        <p class="b">{$stuff[1]["title"]}</p>
+                    </div>
+                </if>
             </div>
         </div>
     </div>
